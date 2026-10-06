@@ -1,0 +1,88 @@
+{
+  "badge": "SOLANA SVM × GPT-6.1 SOL",
+  "theme": {
+    "primaryColor": "#14F195",
+    "secondaryColor": "#9945FF",
+    "accentColor": "#00F0FF"
+  },
+  "scene1": {
+    "title": "TRADING DEFI LEBIH CERDAS DI SOLANA",
+    "highlightWords": [
+      "TRADING",
+      "CERDAS",
+      "SOLANA"
+    ],
+    "subtitle": "0–2 detik: Kilatan neon membuka peluncuran bot berbasis GPT-6.1 Sol."
+  },
+  "scene2": {
+    "sectionTitle": "STRATEGI OTOMATIS DENGAN KONTROL RISIKO ANDA",
+    "highlightWords": [
+      "OTOMATIS",
+      "KONTROL",
+      "RISIKO"
+    ],
+    "features": [
+      {
+        "title": "ANALISIS PASAR UNTUK KEPUTUSAN LEBIH TERARAH",
+        "desc": "2–4,5 detik: Kartu muncul beruntun. AI membantu membaca sinyal, bukan menjamin profit.",
+        "icon": "🧠",
+        "color": "#9945FF"
+      },
+      {
+        "title": "EKSEKUSI SWAP SESUAI ATURAN STRATEGI ANDA",
+        "desc": "Jalur transaksi menyala: swap di Solana mengikuti pemicu dan batas yang Anda tetapkan.",
+        "icon": "⚡",
+        "color": "#00F0FF"
+      },
+      {
+        "title": "BATAS RISIKO DALAM KENDALI ANDA",
+        "desc": "Perisai neon mengunci: atur ukuran posisi, toleransi slippage, dan penghentian bot.",
+        "icon": "🛡️",
+        "color": "#14F195"
+      }
+    ]
+  },
+  "scene3": {
+    "sectionTitle": "TARGET OPERASIONAL UNTUK TRADING LEBIH TERUKUR",
+    "highlightWords": [
+      "TARGET",
+      "TRADING",
+      "TERUKUR"
+    ],
+    "metrics": [
+      {
+        "label": "Interval Pemantauan",
+        "targetValue": 5,
+        "suffix": " DETIK",
+        "subtext": "4,5–7 detik: Angka menghitung naik. Contoh konfigurasi, bukan hasil pengujian.",
+        "accentColor": "#00F0FF"
+      },
+      {
+        "label": "Batas Ukuran Posisi",
+        "targetValue": 1,
+        "suffix": "%",
+        "subtext": "Contoh batas per posisi terhadap modal; bukan batas kerugian yang dijamin.",
+        "accentColor": "#14F195"
+      },
+      {
+        "label": "Toleransi Slippage",
+        "targetValue": 0.5,
+        "suffix": "%",
+        "decimals": 1,
+        "subtext": "Contoh toleransi swap; transaksi dapat gagal jika batas terlampaui.",
+        "accentColor": "#9945FF"
+      }
+    ]
+  },
+  "scene4": {
+    "badge": "MULAI DARI SIMULASI",
+    "headline": "AMBIL KENDALI TRADING DEFI ANDA HARI INI",
+    "highlightWords": [
+      "KENDALI",
+      "TRADING",
+      "DEFI"
+    ],
+    "ctaText": "Uji strategi sebelum trading nyata",
+    "url": "7–10 detik: CTA berpendar • Trading berisiko. Profit tidak dijamin."
+  }
+}

@@ -1,0 +1,1120 @@
+{
+  "transcript": "Pernah masuk ke suatu tempat, terus tiba-tiba merasa gue pernah disini. Padahal kalau dipikir-pikir, kamu belum pernah kesana. Aneh kan? Fenomena ini disebut Deja Vu. Otak kita kadang memproses pengalaman baru dengan cara yang membuatnya terasa seperti sesuatu yang pernah kita alami. Bukan berarti kamu benar-benar pernah melihat kejadian itu. Bisa jadi otak hanya menemukan kemiripan kecil dengan sesuatu yang pernah kamu lihat, dengar, atau alami sebelumnya. Misalnya suasana ruangan, posisi benda, atau bahkan perasaan yang mirip. Lalu otak seperti bilang, ini familiar, padahal sebenarnya belum tentu pernah terjadi. Jadi kalau suatu hari kamu merasa, gue kayaknya pernah mengalami ini. Tenang, mungkin bukan ingatan masa lalu. Otakmu cuma lagi bikin kamu merasa familiar dengan sesuatu yang baru. Ini Mino, tetap penasaran.",
+  "words": [
+    {
+      "word": "Pernah",
+      "start": 0,
+      "end": 0.4000000059604645
+    },
+    {
+      "word": "masuk",
+      "start": 0.4000000059604645,
+      "end": 0.6200000047683716
+    },
+    {
+      "word": "ke",
+      "start": 0.6200000047683716,
+      "end": 0.800000011920929
+    },
+    {
+      "word": "suatu",
+      "start": 0.800000011920929,
+      "end": 1.0199999809265137
+    },
+    {
+      "word": "tempat",
+      "start": 1.0199999809265137,
+      "end": 1.399999976158142
+    },
+    {
+      "word": "terus",
+      "start": 1.8799999952316284,
+      "end": 2.0799999237060547
+    },
+    {
+      "word": "tiba",
+      "start": 2.0799999237060547,
+      "end": 2.380000114440918
+    },
+    {
+      "word": "tiba",
+      "start": 2.380000114440918,
+      "end": 2.5
+    },
+    {
+      "word": "merasa",
+      "start": 2.5,
+      "end": 3
+    },
+    {
+      "word": "gue",
+      "start": 3,
+      "end": 3.700000047683716
+    },
+    {
+      "word": "pernah",
+      "start": 3.700000047683716,
+      "end": 3.9600000381469727
+    },
+    {
+      "word": "disini",
+      "start": 3.9600000381469727,
+      "end": 4.400000095367432
+    },
+    {
+      "word": "Padahal",
+      "start": 5,
+      "end": 5.519999980926514
+    },
+    {
+      "word": "kalau",
+      "start": 5.519999980926514,
+      "end": 5.840000152587891
+    },
+    {
+      "word": "dipikir",
+      "start": 5.840000152587891,
+      "end": 6.21999979019165
+    },
+    {
+      "word": "pikir",
+      "start": 6.21999979019165,
+      "end": 6.699999809265137
+    },
+    {
+      "word": "kamu",
+      "start": 7.320000171661377,
+      "end": 7.460000038146973
+    },
+    {
+      "word": "belum",
+      "start": 7.460000038146973,
+      "end": 7.639999866485596
+    },
+    {
+      "word": "pernah",
+      "start": 7.639999866485596,
+      "end": 7.880000114440918
+    },
+    {
+      "word": "kesana",
+      "start": 7.880000114440918,
+      "end": 8.279999732971191
+    },
+    {
+      "word": "Aneh",
+      "start": 8.979999542236328,
+      "end": 9.039999961853027
+    },
+    {
+      "word": "kan",
+      "start": 9.039999961853027,
+      "end": 9.300000190734863
+    },
+    {
+      "word": "Fenomena",
+      "start": 9.899999618530273,
+      "end": 10.140000343322754
+    },
+    {
+      "word": "ini",
+      "start": 10.140000343322754,
+      "end": 10.380000114440918
+    },
+    {
+      "word": "disebut",
+      "start": 10.380000114440918,
+      "end": 10.819999694824219
+    },
+    {
+      "word": "Deja",
+      "start": 10.819999694824219,
+      "end": 11.619999885559082
+    },
+    {
+      "word": "Vu",
+      "start": 11.619999885559082,
+      "end": 11.819999694824219
+    },
+    {
+      "word": "Otak",
+      "start": 12.479999542236328,
+      "end": 12.619999885559082
+    },
+    {
+      "word": "kita",
+      "start": 12.619999885559082,
+      "end": 13.0600004196167
+    },
+    {
+      "word": "kadang",
+      "start": 13.0600004196167,
+      "end": 13.359999656677246
+    },
+    {
+      "word": "memproses",
+      "start": 13.359999656677246,
+      "end": 13.819999694824219
+    },
+    {
+      "word": "pengalaman",
+      "start": 13.819999694824219,
+      "end": 14.34000015258789
+    },
+    {
+      "word": "baru",
+      "start": 14.34000015258789,
+      "end": 14.720000267028809
+    },
+    {
+      "word": "dengan",
+      "start": 14.979999542236328,
+      "end": 15.640000343322754
+    },
+    {
+      "word": "cara",
+      "start": 15.640000343322754,
+      "end": 15.920000076293945
+    },
+    {
+      "word": "yang",
+      "start": 15.920000076293945,
+      "end": 16.079999923706055
+    },
+    {
+      "word": "membuatnya",
+      "start": 16.079999923706055,
+      "end": 16.540000915527344
+    },
+    {
+      "word": "terasa",
+      "start": 16.540000915527344,
+      "end": 16.860000610351562
+    },
+    {
+      "word": "seperti",
+      "start": 16.860000610351562,
+      "end": 17.239999771118164
+    },
+    {
+      "word": "sesuatu",
+      "start": 17.239999771118164,
+      "end": 17.760000228881836
+    },
+    {
+      "word": "yang",
+      "start": 17.760000228881836,
+      "end": 17.979999542236328
+    },
+    {
+      "word": "pernah",
+      "start": 17.979999542236328,
+      "end": 18.200000762939453
+    },
+    {
+      "word": "kita",
+      "start": 18.200000762939453,
+      "end": 18.600000381469727
+    },
+    {
+      "word": "alami",
+      "start": 18.600000381469727,
+      "end": 18.860000610351562
+    },
+    {
+      "word": "Bukan",
+      "start": 19.520000457763672,
+      "end": 19.65999984741211
+    },
+    {
+      "word": "berarti",
+      "start": 19.65999984741211,
+      "end": 19.959999084472656
+    },
+    {
+      "word": "kamu",
+      "start": 19.959999084472656,
+      "end": 20.260000228881836
+    },
+    {
+      "word": "benar",
+      "start": 20.260000228881836,
+      "end": 20.600000381469727
+    },
+    {
+      "word": "benar",
+      "start": 20.600000381469727,
+      "end": 20.799999237060547
+    },
+    {
+      "word": "pernah",
+      "start": 20.799999237060547,
+      "end": 21.059999465942383
+    },
+    {
+      "word": "melihat",
+      "start": 21.059999465942383,
+      "end": 21.280000686645508
+    },
+    {
+      "word": "kejadian",
+      "start": 21.280000686645508,
+      "end": 21.639999389648438
+    },
+    {
+      "word": "itu",
+      "start": 21.639999389648438,
+      "end": 21.979999542236328
+    },
+    {
+      "word": "Bisa",
+      "start": 22.65999984741211,
+      "end": 22.739999771118164
+    },
+    {
+      "word": "jadi",
+      "start": 22.739999771118164,
+      "end": 22.979999542236328
+    },
+    {
+      "word": "otak",
+      "start": 22.979999542236328,
+      "end": 23.239999771118164
+    },
+    {
+      "word": "hanya",
+      "start": 23.239999771118164,
+      "end": 23.479999542236328
+    },
+    {
+      "word": "menemukan",
+      "start": 23.479999542236328,
+      "end": 24.040000915527344
+    },
+    {
+      "word": "kemiripan",
+      "start": 24.040000915527344,
+      "end": 25.139999389648438
+    },
+    {
+      "word": "kecil",
+      "start": 25.139999389648438,
+      "end": 25.5
+    },
+    {
+      "word": "dengan",
+      "start": 25.5,
+      "end": 26.079999923706055
+    },
+    {
+      "word": "sesuatu",
+      "start": 26.079999923706055,
+      "end": 26.639999389648438
+    },
+    {
+      "word": "yang",
+      "start": 26.639999389648438,
+      "end": 26.84000015258789
+    },
+    {
+      "word": "pernah",
+      "start": 26.84000015258789,
+      "end": 27.059999465942383
+    },
+    {
+      "word": "kamu",
+      "start": 27.059999465942383,
+      "end": 27.31999969482422
+    },
+    {
+      "word": "lihat",
+      "start": 27.31999969482422,
+      "end": 27.639999389648438
+    },
+    {
+      "word": "dengar",
+      "start": 28.31999969482422,
+      "end": 28.31999969482422
+    },
+    {
+      "word": "atau",
+      "start": 28.6200008392334,
+      "end": 28.8799991607666
+    },
+    {
+      "word": "alami",
+      "start": 28.8799991607666,
+      "end": 29.1200008392334
+    },
+    {
+      "word": "sebelumnya",
+      "start": 29.1200008392334,
+      "end": 29.899999618530273
+    },
+    {
+      "word": "Misalnya",
+      "start": 30.260000228881836,
+      "end": 30.639999389648438
+    },
+    {
+      "word": "suasana",
+      "start": 30.639999389648438,
+      "end": 31.280000686645508
+    },
+    {
+      "word": "ruangan",
+      "start": 31.280000686645508,
+      "end": 31.780000686645508
+    },
+    {
+      "word": "posisi",
+      "start": 32.81999969482422,
+      "end": 32.900001525878906
+    },
+    {
+      "word": "benda",
+      "start": 32.900001525878906,
+      "end": 33.31999969482422
+    },
+    {
+      "word": "atau",
+      "start": 34.119998931884766,
+      "end": 34.2400016784668
+    },
+    {
+      "word": "bahkan",
+      "start": 34.2400016784668,
+      "end": 34.560001373291016
+    },
+    {
+      "word": "perasaan",
+      "start": 34.560001373291016,
+      "end": 35.08000183105469
+    },
+    {
+      "word": "yang",
+      "start": 35.08000183105469,
+      "end": 35.279998779296875
+    },
+    {
+      "word": "mirip",
+      "start": 35.279998779296875,
+      "end": 35.560001373291016
+    },
+    {
+      "word": "Lalu",
+      "start": 36.060001373291016,
+      "end": 36.13999938964844
+    },
+    {
+      "word": "otak",
+      "start": 36.13999938964844,
+      "end": 36.47999954223633
+    },
+    {
+      "word": "seperti",
+      "start": 36.47999954223633,
+      "end": 36.86000061035156
+    },
+    {
+      "word": "bilang",
+      "start": 36.86000061035156,
+      "end": 37.220001220703125
+    },
+    {
+      "word": "ini",
+      "start": 37.79999923706055,
+      "end": 37.939998626708984
+    },
+    {
+      "word": "familiar",
+      "start": 37.939998626708984,
+      "end": 38.52000045776367
+    },
+    {
+      "word": "padahal",
+      "start": 39.34000015258789,
+      "end": 39.400001525878906
+    },
+    {
+      "word": "sebenarnya",
+      "start": 39.400001525878906,
+      "end": 40.060001373291016
+    },
+    {
+      "word": "belum",
+      "start": 40.060001373291016,
+      "end": 40.779998779296875
+    },
+    {
+      "word": "tentu",
+      "start": 40.779998779296875,
+      "end": 41.040000915527344
+    },
+    {
+      "word": "pernah",
+      "start": 41.040000915527344,
+      "end": 41.34000015258789
+    },
+    {
+      "word": "terjadi",
+      "start": 41.34000015258789,
+      "end": 41.779998779296875
+    },
+    {
+      "word": "Jadi",
+      "start": 42.400001525878906,
+      "end": 42.58000183105469
+    },
+    {
+      "word": "kalau",
+      "start": 42.58000183105469,
+      "end": 42.7599983215332
+    },
+    {
+      "word": "suatu",
+      "start": 42.7599983215332,
+      "end": 43.119998931884766
+    },
+    {
+      "word": "hari",
+      "start": 43.119998931884766,
+      "end": 43.29999923706055
+    },
+    {
+      "word": "kamu",
+      "start": 43.29999923706055,
+      "end": 43.560001373291016
+    },
+    {
+      "word": "merasa",
+      "start": 43.560001373291016,
+      "end": 44.099998474121094
+    },
+    {
+      "word": "gue",
+      "start": 44.880001068115234,
+      "end": 45.13999938964844
+    },
+    {
+      "word": "kayaknya",
+      "start": 45.13999938964844,
+      "end": 46.099998474121094
+    },
+    {
+      "word": "pernah",
+      "start": 46.099998474121094,
+      "end": 46.34000015258789
+    },
+    {
+      "word": "mengalami",
+      "start": 46.34000015258789,
+      "end": 46.7599983215332
+    },
+    {
+      "word": "ini",
+      "start": 46.7599983215332,
+      "end": 47.119998931884766
+    },
+    {
+      "word": "Tenang",
+      "start": 47.7400016784668,
+      "end": 47.84000015258789
+    },
+    {
+      "word": "mungkin",
+      "start": 48.58000183105469,
+      "end": 48.58000183105469
+    },
+    {
+      "word": "bukan",
+      "start": 48.58000183105469,
+      "end": 48.79999923706055
+    },
+    {
+      "word": "ingatan",
+      "start": 48.79999923706055,
+      "end": 49.08000183105469
+    },
+    {
+      "word": "masa",
+      "start": 49.08000183105469,
+      "end": 49.380001068115234
+    },
+    {
+      "word": "lalu",
+      "start": 49.380001068115234,
+      "end": 49.68000030517578
+    },
+    {
+      "word": "Otakmu",
+      "start": 50.380001068115234,
+      "end": 50.720001220703125
+    },
+    {
+      "word": "cuma",
+      "start": 50.720001220703125,
+      "end": 50.939998626708984
+    },
+    {
+      "word": "lagi",
+      "start": 50.939998626708984,
+      "end": 51.18000030517578
+    },
+    {
+      "word": "bikin",
+      "start": 51.18000030517578,
+      "end": 51.400001525878906
+    },
+    {
+      "word": "kamu",
+      "start": 51.400001525878906,
+      "end": 51.63999938964844
+    },
+    {
+      "word": "merasa",
+      "start": 51.63999938964844,
+      "end": 51.959999084472656
+    },
+    {
+      "word": "familiar",
+      "start": 51.959999084472656,
+      "end": 52.619998931884766
+    },
+    {
+      "word": "dengan",
+      "start": 52.619998931884766,
+      "end": 53.119998931884766
+    },
+    {
+      "word": "sesuatu",
+      "start": 53.119998931884766,
+      "end": 53.52000045776367
+    },
+    {
+      "word": "yang",
+      "start": 53.52000045776367,
+      "end": 53.900001525878906
+    },
+    {
+      "word": "baru",
+      "start": 53.900001525878906,
+      "end": 54.02000045776367
+    },
+    {
+      "word": "Ini",
+      "start": 54.02000045776367,
+      "end": 54.81999969482422
+    },
+    {
+      "word": "Mino",
+      "start": 54.81999969482422,
+      "end": 55.18000030517578
+    },
+    {
+      "word": "tetap",
+      "start": 55.880001068115234,
+      "end": 56.040000915527344
+    },
+    {
+      "word": "penasaran",
+      "start": 56.040000915527344,
+      "end": 56.52000045776367
+    }
+  ],
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 4.400000095367432,
+      "text": " Pernah masuk ke suatu tempat, terus tiba-tiba merasa gue pernah disini.",
+      "tokens": [
+        50364,
+        430,
+        1248,
+        545,
+        42364,
+        803,
+        459,
+        20546,
+        1383,
+        11584,
+        11,
+        35977,
+        256,
+        17036,
+        12,
+        83,
+        17036,
+        3551,
+        9994,
+        13987,
+        41136,
+        717,
+        3812,
+        13,
+        50604
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2642080783843994,
+      "compression_ratio": 1.6709401607513428,
+      "no_speech_prob": 0.09322264790534973
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5,
+      "end": 8.279999732971191,
+      "text": " Padahal kalau dipikir-pikir, kamu belum pernah kesana.",
+      "tokens": [
+        50604,
+        18691,
+        545,
+        304,
+        20218,
+        10460,
+        1035,
+        347,
+        12,
+        79,
+        1035,
+        347,
+        11,
+        20705,
+        48532,
+        41136,
+        16050,
+        2095,
+        13,
+        50796
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2642080783843994,
+      "compression_ratio": 1.6709401607513428,
+      "no_speech_prob": 0.09322264790534973
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 8.979999542236328,
+      "end": 9.300000190734863,
+      "text": " Aneh kan?",
+      "tokens": [
+        50796,
+        316,
+        30540,
+        4608,
+        30,
+        50850
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2642080783843994,
+      "compression_ratio": 1.6709401607513428,
+      "no_speech_prob": 0.09322264790534973
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 9.899999618530273,
+      "end": 11.819999694824219,
+      "text": " Fenomena ini disebut Deja Vu.",
+      "tokens": [
+        50850,
+        30993,
+        21041,
+        7408,
+        3814,
+        5955,
+        1346,
+        2938,
+        37703,
+        13,
+        50976
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2642080783843994,
+      "compression_ratio": 1.6709401607513428,
+      "no_speech_prob": 0.09322264790534973
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 12.479999542236328,
+      "end": 14.720000267028809,
+      "text": " Otak kita kadang memproses pengalaman baru",
+      "tokens": [
+        50976,
+        12936,
+        514,
+        8965,
+        8064,
+        656,
+        1334,
+        1424,
+        4201,
+        17289,
+        304,
+        6147,
+        36171,
+        51128
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2642080783843994,
+      "compression_ratio": 1.6709401607513428,
+      "no_speech_prob": 0.09322264790534973
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 14.979999542236328,
+      "end": 18.860000610351562,
+      "text": " dengan cara yang membuatnya terasa seperti sesuatu yang pernah kita alami.",
+      "tokens": [
+        51128,
+        13877,
+        10962,
+        5581,
+        1334,
+        45143,
+        7457,
+        1796,
+        9994,
+        28693,
+        5385,
+        84,
+        20546,
+        5581,
+        41136,
+        8965,
+        419,
+        4526,
+        13,
+        51330
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2642080783843994,
+      "compression_ratio": 1.6709401607513428,
+      "no_speech_prob": 0.09322264790534973
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 19.520000457763672,
+      "end": 21.979999542236328,
+      "text": " Bukan berarti kamu benar-benar pernah melihat kejadian itu.",
+      "tokens": [
+        51330,
+        363,
+        22324,
+        5948,
+        40155,
+        20705,
+        3271,
+        289,
+        12,
+        1799,
+        289,
+        41136,
+        4795,
+        41650,
+        803,
+        73,
+        42985,
+        9032,
+        13,
+        51484
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2642080783843994,
+      "compression_ratio": 1.6709401607513428,
+      "no_speech_prob": 0.09322264790534973
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 22.65999984741211,
+      "end": 25.5,
+      "text": " Bisa jadi otak hanya menemukan kemiripan kecil",
+      "tokens": [
+        51484,
+        363,
+        3837,
+        19399,
+        4337,
+        514,
+        46291,
+        1706,
+        443,
+        22324,
+        803,
+        19834,
+        647,
+        282,
+        803,
+        3208,
+        51656
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2642080783843994,
+      "compression_ratio": 1.6709401607513428,
+      "no_speech_prob": 0.09322264790534973
+    },
+    {
+      "id": 8,
+      "seek": 2550,
+      "start": 25.5,
+      "end": 29.899999618530273,
+      "text": " dengan sesuatu yang pernah kamu lihat, dengar, atau alami sebelumnya.",
+      "tokens": [
+        50364,
+        13877,
+        5385,
+        84,
+        20546,
+        5581,
+        41136,
+        20705,
+        45153,
+        11,
+        1441,
+        2976,
+        11,
+        22823,
+        419,
+        4526,
+        46122,
+        449,
+        7457,
+        13,
+        50578
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.257421612739563,
+      "compression_ratio": 1.7226890325546265,
+      "no_speech_prob": 0.8735690712928772
+    },
+    {
+      "id": 9,
+      "seek": 2550,
+      "start": 30.260000228881836,
+      "end": 35.560001373291016,
+      "text": " Misalnya suasana ruangan, posisi benda, atau bahkan perasaan yang mirip.",
+      "tokens": [
+        50578,
+        23240,
+        38656,
+        23410,
+        2095,
+        5420,
+        17017,
+        11,
+        1366,
+        8021,
+        272,
+        7639,
+        11,
+        22823,
+        12913,
+        5225,
+        680,
+        9994,
+        282,
+        5581,
+        3149,
+        647,
+        13,
+        50868
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.257421612739563,
+      "compression_ratio": 1.7226890325546265,
+      "no_speech_prob": 0.8735690712928772
+    },
+    {
+      "id": 10,
+      "seek": 2550,
+      "start": 36.060001373291016,
+      "end": 37.220001220703125,
+      "text": " Lalu otak seperti bilang,",
+      "tokens": [
+        50868,
+        441,
+        4929,
+        4337,
+        514,
+        28693,
+        46712,
+        11,
+        50960
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.257421612739563,
+      "compression_ratio": 1.7226890325546265,
+      "no_speech_prob": 0.8735690712928772
+    },
+    {
+      "id": 11,
+      "seek": 2550,
+      "start": 37.79999923706055,
+      "end": 41.779998779296875,
+      "text": " ini familiar, padahal sebenarnya belum tentu pernah terjadi.",
+      "tokens": [
+        50960,
+        7408,
+        4963,
+        11,
+        6887,
+        545,
+        304,
+        46031,
+        38039,
+        48532,
+        7054,
+        84,
+        41136,
+        1796,
+        30574,
+        13,
+        51190
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.257421612739563,
+      "compression_ratio": 1.7226890325546265,
+      "no_speech_prob": 0.8735690712928772
+    },
+    {
+      "id": 12,
+      "seek": 2550,
+      "start": 42.400001525878906,
+      "end": 44.099998474121094,
+      "text": " Jadi kalau suatu hari kamu merasa,",
+      "tokens": [
+        51190,
+        21662,
+        20218,
+        459,
+        20546,
+        33264,
+        20705,
+        3551,
+        9994,
+        11,
+        51308
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.257421612739563,
+      "compression_ratio": 1.7226890325546265,
+      "no_speech_prob": 0.8735690712928772
+    },
+    {
+      "id": 13,
+      "seek": 2550,
+      "start": 44.880001068115234,
+      "end": 47.119998931884766,
+      "text": " gue kayaknya pernah mengalami ini.",
+      "tokens": [
+        51308,
+        13987,
+        22438,
+        7457,
+        41136,
+        15330,
+        304,
+        4526,
+        7408,
+        13,
+        51450
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.257421612739563,
+      "compression_ratio": 1.7226890325546265,
+      "no_speech_prob": 0.8735690712928772
+    },
+    {
+      "id": 14,
+      "seek": 2550,
+      "start": 47.7400016784668,
+      "end": 49.68000030517578,
+      "text": " Tenang, mungkin bukan ingatan masa lalu.",
+      "tokens": [
+        51450,
+        9380,
+        656,
+        11,
+        32633,
+        31794,
+        3957,
+        25649,
+        29216,
+        287,
+        4929,
+        13,
+        51582
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.257421612739563,
+      "compression_ratio": 1.7226890325546265,
+      "no_speech_prob": 0.8735690712928772
+    },
+    {
+      "id": 15,
+      "seek": 2550,
+      "start": 50.380001068115234,
+      "end": 54.02000045776367,
+      "text": " Otakmu cuma lagi bikin kamu merasa familiar dengan sesuatu yang baru.",
+      "tokens": [
+        51582,
+        12936,
+        514,
+        20140,
+        44630,
+        17742,
+        26730,
+        259,
+        20705,
+        3551,
+        9994,
+        4963,
+        13877,
+        5385,
+        84,
+        20546,
+        5581,
+        36171,
+        13,
+        51800
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.257421612739563,
+      "compression_ratio": 1.7226890325546265,
+      "no_speech_prob": 0.8735690712928772
+    },
+    {
+      "id": 16,
+      "seek": 5402,
+      "start": 54.02000045776367,
+      "end": 56.52000045776367,
+      "text": " Ini Mino, tetap penasaran.",
+      "tokens": [
+        50384,
+        28929,
+        2829,
+        78,
+        11,
+        23319,
+        569,
+        3435,
+        296,
+        17142,
+        13,
+        50510
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.6148313283920288,
+      "compression_ratio": 0.7647058963775635,
+      "no_speech_prob": 0.6122698187828064
+    }
+  ],
+  "duration": 56.86000061035156
+}

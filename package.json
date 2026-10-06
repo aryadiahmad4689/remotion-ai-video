@@ -1,0 +1,26 @@
+{
+  "name": "remotion-gpt6-solana",
+  "version": "1.0.0",
+  "description": "High-performance Remotion video for GPT-6.1 Sol x Solana motion graphics",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render src/index.ts Gpt6SolanaPromo out/video.mp4",
+    "still": "remotion still src/index.ts Gpt6SolanaPromo out/thumbnail.png --frame=60",
+    "generate": "node scripts/generate.mjs",
+    "generate:code": "node scripts/generate-autonomous.mjs",
+    "vox": "node scripts/generate-vox.mjs",
+    "longform": "node scripts/generate-longform.mjs",
+    "mino": "node scripts/generate-mino.mjs"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.260"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.260",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0"
+  }
+}

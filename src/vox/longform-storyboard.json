@@ -1,0 +1,6468 @@
+{
+  "title": "Long-Form Documentary",
+  "audioFile": "voiceover.mp3",
+  "totalDurationSeconds": 568,
+  "totalFrames": 17032,
+  "chapters": [
+    {
+      "id": 1,
+      "type": "document",
+      "title": "Bagaimana Jika Otak Kita Sedang Menebak?",
+      "durationFrames": 1310,
+      "data": {
+        "source": "Andy Clark — Behavioral and Brain Sciences, Cambridge University Press. DOI: 10.1017/S0140525X12000477",
+        "date": "Juni 2013",
+        "headline": "Whatever next? Predictive brains, situated agents, and the future of cognitive science",
+        "quote": "Brains, it is increasingly argued, are fundamentally prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions.",
+        "highlightedExcerpt": "constantly attempting to match incoming sensory inputs with top-down expectations or predictions"
+      }
+    },
+    {
+      "id": 2,
+      "type": "chart",
+      "title": "Petunjuk Terlihat, Identitas Belum Pasti",
+      "durationFrames": 1310,
+      "data": {
+        "title": "Otak punya petunjuk—bukan jawaban lengkap",
+        "subtitle": "Ilustrasi melihat seseorang dari jauh: beberapa ciri terlihat, tetapi siapa orangnya belum terkonfirmasi. Bukan data eksperimen.",
+        "unit": "Status informasi: 1 = tersedia, 0 = belum terkonfirmasi",
+        "items": [
+          {
+            "label": "Bentuk tubuh",
+            "value": 1,
+            "highlight": false
+          },
+          {
+            "label": "Cara berjalan",
+            "value": 1,
+            "highlight": false
+          },
+          {
+            "label": "Pakaian",
+            "value": 1,
+            "highlight": false
+          },
+          {
+            "label": "Rambut",
+            "value": 1,
+            "highlight": false
+          },
+          {
+            "label": "Identitas orang",
+            "value": 0,
+            "highlight": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "type": "timeline",
+      "title": "Otak Menebak Sebelum Kita Tahu",
+      "durationFrames": 1310,
+      "data": {
+        "title": "Dari Pengalaman ke Prediksi",
+        "subtitle": "Jalan pintas otak membantu kita memahami dunia dengan cepat—tetapi prediksinya bisa keliru.",
+        "steps": [
+          {
+            "time": "01",
+            "title": "Informasi Masuk",
+            "desc": "Kamu melihat seseorang. Sebelum tahu siapa dia, otak mulai menafsirkan apa yang terlihat."
+          },
+          {
+            "time": "02",
+            "title": "Pengalaman Jadi Acuan",
+            "desc": "Otak menggunakan pengalaman sebelumnya, tanpa harus memproses setiap hal dari nol."
+          },
+          {
+            "time": "03",
+            "title": "Prediksi Terbentuk",
+            "desc": "“Teman gue?” Kesimpulan awal muncul sebelum identitas orang itu benar-benar dipastikan."
+          },
+          {
+            "time": "04",
+            "title": "Jalan Pintas yang Berguna",
+            "desc": "Saat melihat kursi, kamu tidak perlu menelusuri ulang setiap pertanyaan untuk memahami bahwa benda itu bisa diduduki."
+          },
+          {
+            "time": "05",
+            "title": "Ketika Tebakan Keliru",
+            "desc": "Prediksi tidak selalu tepat. Kekeliruan ini membuka pembahasan tentang pengalaman aneh: déjà vu."
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "type": "quote",
+      "title": "Familiar Bukan Berarti Pernah Terjadi",
+      "durationFrames": 1310,
+      "data": {
+        "quote": "Rasa familiar tidak selalu berarti pengalaman itu benar-benar pernah terjadi.",
+        "author": "Narator",
+        "source": "Narasi Bab 4",
+        "highlightWord": "familiar"
+      }
+    },
+    {
+      "id": 5,
+      "type": "document",
+      "title": "Ingatan Bukan Rekaman",
+      "durationFrames": 1310,
+      "data": {
+        "source": "Elizabeth F. Loftus & John C. Palmer, Journal of Verbal Learning and Verbal Behavior, 13(5), 585–589. DOI: 10.1016/S0022-5371(74)80011-3",
+        "date": "1974-10",
+        "headline": "Reconstruction of Automobile Destruction: An Example of the Interaction Between Language and Memory",
+        "quote": "These results are consistent with the view that the questions asked subsequent to an event can cause a reconstruction in one's memory of that event.",
+        "highlightedExcerpt": "can cause a reconstruction in one's memory of that event"
+      }
+    },
+    {
+      "id": 6,
+      "type": "chart",
+      "title": "Mata Membaca, Pikiran ke Mana?",
+      "durationFrames": 1310,
+      "data": {
+        "title": "Perhatian membantu membentuk ingatan",
+        "subtitle": "Perbandingan konseptual: informasi yang diproses lebih dalam berpotensi membentuk ingatan lebih kuat. Angka ilustratif, bukan hasil penelitian.",
+        "unit": "Potensi kekuatan ingatan — skala ilustratif 1–3",
+        "items": [
+          {
+            "label": "Membaca, tetapi pikiran terdistraksi",
+            "value": 1,
+            "highlight": true
+          },
+          {
+            "label": "Membaca dengan perhatian penuh",
+            "value": 3,
+            "highlight": false
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "type": "timeline",
+      "title": "Ketika Otak Menipu Waktu",
+      "durationFrames": 1311,
+      "data": {
+        "title": "Satu Jam, Terasa Sepuluh Menit",
+        "subtitle": "Jam terus berjalan. Pengalaman kita tentang waktu bisa berbeda.",
+        "steps": [
+          {
+            "time": "Satu halaman kemudian",
+            "title": "Baca, Tapi Tidak Ingat",
+            "desc": "Sampai di akhir halaman, kamu sadar: isinya tidak kamu ingat."
+          },
+          {
+            "time": "Lagi, dan lagi",
+            "title": "Kembali ke Awal",
+            "desc": "Kamu membaca ulang, tetapi tetap bisa lupa. Ingatan bukan satu-satunya yang mengecoh."
+          },
+          {
+            "time": "Mulai larut",
+            "title": "Perhatian Terserap",
+            "desc": "Main game, menonton film, mengobrol, atau scroll HP. Waktu berlalu tanpa kamu sadari."
+          },
+          {
+            "time": "Satu jam kemudian",
+            "title": "Rasanya Baru Sepuluh Menit",
+            "desc": "Satu jam sudah lewat, tetapi pengalamanmu terasa jauh lebih singkat."
+          },
+          {
+            "time": "Pukul 12.00",
+            "title": "“Hah? Udah Jam 12?”",
+            "desc": "Kamu melihat jam. Baru sekarang terasa jarak antara waktu yang berlalu dan waktu yang kamu rasakan."
+          },
+          {
+            "time": "Sekarang, coba sebaliknya",
+            "title": "Duduk dan Menunggu",
+            "desc": "Tidak bermain, tidak menonton. Hanya menunggu seseorang. Bagaimana waktu terasa sekarang?"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "type": "quote",
+      "title": "Waktu Tetap, Persepsi Berubah",
+      "durationFrames": 1310,
+      "data": {
+        "quote": "Yang berubah bukan waktunya. Pengalaman otak kita terhadap waktu yang berubah.",
+        "author": "Narator",
+        "source": "Narasi Bab 8",
+        "highlightWord": "Pengalaman"
+      }
+    },
+    {
+      "id": 9,
+      "type": "document",
+      "title": "Melihat Belum Tentu Menyadari",
+      "durationFrames": 1310,
+      "data": {
+        "source": "Daniel J. Simons & Christopher F. Chabris, Perception, 28(9), 1059–1074. DOI: 10.1068/p281059",
+        "date": "1999",
+        "headline": "Gorillas in our midst: sustained inattentional blindness for dynamic events",
+        "quote": "With each eye fixation, we experience a richly detailed visual world. Yet recent work on visual attention suggests that we may be aware of much less of our visual world than we think.",
+        "highlightedExcerpt": "we may be aware of much less of our visual world than we think"
+      }
+    },
+    {
+      "id": 10,
+      "type": "chart",
+      "title": "Kenyataan yang Dibangun Otak",
+      "durationFrames": 1310,
+      "data": {
+        "title": "Dari informasi terbatas menjadi kenyataan yang terasa",
+        "subtitle": "Skema konseptual: angka menunjukkan urutan proses, bukan besaran hasil pengukuran.",
+        "unit": "Urutan tahap",
+        "items": [
+          {
+            "label": "Mengambil informasi yang terbatas",
+            "value": 1,
+            "highlight": false
+          },
+          {
+            "label": "Menggabungkannya dengan pengalaman masa lalu",
+            "value": 2,
+            "highlight": false
+          },
+          {
+            "label": "Membuat prediksi yang paling masuk akal",
+            "value": 3,
+            "highlight": false
+          },
+          {
+            "label": "Menghasilkan versi dunia yang terasa nyata",
+            "value": 4,
+            "highlight": true
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "type": "timeline",
+      "title": "Otak Bukan Perekam Sempurna",
+      "durationFrames": 1310,
+      "data": {
+        "title": "Dari Pola ke Kehidupan Sehari-hari",
+        "subtitle": "Otak menafsirkan pengalaman—bukan sekadar merekamnya.",
+        "steps": [
+          {
+            "time": "01",
+            "title": "Menghubungkan Pola",
+            "desc": "Otak menghubungkan informasi untuk memahami apa yang sedang terjadi."
+          },
+          {
+            "time": "02",
+            "title": "Perhatian Menentukan",
+            "desc": "Lupa bacaan yang baru selesai bisa berarti perhatian belum cukup mendalam."
+          },
+          {
+            "time": "03",
+            "title": "Menilai Pengalaman",
+            "desc": "Waktu yang terasa cepat mencerminkan cara otak menilai pengalaman."
+          },
+          {
+            "time": "04",
+            "title": "Keyakinan Bukan Ketepatan",
+            "desc": "Yakin pada sebuah ingatan tidak menjadikannya rekaman yang sempurna."
+          },
+          {
+            "time": "05",
+            "title": "Jalan Pintas yang Berguna",
+            "desc": "Memprediksi, menyederhanakan, dan mengisi informasi yang kurang membantu kita menjalani keseharian."
+          },
+          {
+            "time": "06",
+            "title": "Tak Perlu Mengurai Segalanya",
+            "desc": "Saat melihat jalan, kita tidak harus menganalisis setiap kendaraan satu per satu."
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "type": "quote",
+      "title": "Bukan Menipu, Melainkan Menyederhanakan",
+      "durationFrames": 1310,
+      "data": {
+        "quote": "Otak kita bukan sedang berusaha menipu kita. Otak hanya berusaha membuat dunia yang sangat rumit menjadi cukup sederhana untuk kita pahami.",
+        "author": "Narator",
+        "source": "Narasi Bab 12",
+        "highlightWord": "sederhana"
+      }
+    },
+    {
+      "id": 13,
+      "type": "document",
+      "title": "Kenyataan, Versi Otak Kita",
+      "durationFrames": 1311,
+      "data": {
+        "source": "Anil Seth — TED, TED2017",
+        "date": "2017",
+        "headline": "Your brain hallucinates your conscious reality",
+        "quote": "We're all hallucinating all the time, including right now. It's just that when we agree about our hallucinations, we call that reality.",
+        "highlightedExcerpt": "when we agree about our hallucinations, we call that reality."
+      }
+    }
+  ],
+  "captions": [
+    {
+      "word": "Bagaimana",
+      "start": 0,
+      "end": 0.6200000047683716
+    },
+    {
+      "word": "kalau",
+      "start": 0.6200000047683716,
+      "end": 0.8399999737739563
+    },
+    {
+      "word": "ternyata",
+      "start": 0.8399999737739563,
+      "end": 1.340000033378601
+    },
+    {
+      "word": "otak",
+      "start": 1.340000033378601,
+      "end": 1.5199999809265137
+    },
+    {
+      "word": "kita",
+      "start": 1.5199999809265137,
+      "end": 2.2799999713897705
+    },
+    {
+      "word": "nggak",
+      "start": 2.2799999713897705,
+      "end": 2.640000104904175
+    },
+    {
+      "word": "selalu",
+      "start": 2.640000104904175,
+      "end": 2.940000057220459
+    },
+    {
+      "word": "mengatakan",
+      "start": 2.940000057220459,
+      "end": 3.4200000762939453
+    },
+    {
+      "word": "yang",
+      "start": 3.4200000762939453,
+      "end": 3.559999942779541
+    },
+    {
+      "word": "sebenarnya",
+      "start": 3.559999942779541,
+      "end": 4.119999885559082
+    },
+    {
+      "word": "Bukan",
+      "start": 4.619999885559082,
+      "end": 4.820000171661377
+    },
+    {
+      "word": "karena",
+      "start": 4.820000171661377,
+      "end": 5.079999923706055
+    },
+    {
+      "word": "otak",
+      "start": 5.079999923706055,
+      "end": 5.340000152587891
+    },
+    {
+      "word": "kita",
+      "start": 5.340000152587891,
+      "end": 5.619999885559082
+    },
+    {
+      "word": "sengaja",
+      "start": 5.619999885559082,
+      "end": 5.840000152587891
+    },
+    {
+      "word": "berbohong",
+      "start": 5.840000152587891,
+      "end": 6.460000038146973
+    },
+    {
+      "word": "tapi",
+      "start": 7.039999961853027,
+      "end": 7.139999866485596
+    },
+    {
+      "word": "karena",
+      "start": 7.139999866485596,
+      "end": 7.420000076293945
+    },
+    {
+      "word": "hampir",
+      "start": 7.420000076293945,
+      "end": 7.659999847412109
+    },
+    {
+      "word": "setiap",
+      "start": 7.659999847412109,
+      "end": 8.020000457763672
+    },
+    {
+      "word": "detik",
+      "start": 8.020000457763672,
+      "end": 8.460000038146973
+    },
+    {
+      "word": "otak",
+      "start": 8.460000038146973,
+      "end": 8.979999542236328
+    },
+    {
+      "word": "kita",
+      "start": 8.979999542236328,
+      "end": 9.220000267028809
+    },
+    {
+      "word": "sedang",
+      "start": 9.220000267028809,
+      "end": 9.479999542236328
+    },
+    {
+      "word": "menebak",
+      "start": 9.479999542236328,
+      "end": 9.779999732971191
+    },
+    {
+      "word": "apa",
+      "start": 9.779999732971191,
+      "end": 10
+    },
+    {
+      "word": "yang",
+      "start": 10,
+      "end": 10.140000343322754
+    },
+    {
+      "word": "sedang",
+      "start": 10.140000343322754,
+      "end": 10.359999656677246
+    },
+    {
+      "word": "terjadi",
+      "start": 10.359999656677246,
+      "end": 10.739999771118164
+    },
+    {
+      "word": "Dan",
+      "start": 11.260000228881836,
+      "end": 11.399999618530273
+    },
+    {
+      "word": "yang",
+      "start": 11.399999618530273,
+      "end": 11.539999961853027
+    },
+    {
+      "word": "lebih",
+      "start": 11.539999961853027,
+      "end": 11.800000190734863
+    },
+    {
+      "word": "aneh",
+      "start": 11.800000190734863,
+      "end": 11.9399995803833
+    },
+    {
+      "word": "lagi",
+      "start": 11.9399995803833,
+      "end": 12.359999656677246
+    },
+    {
+      "word": "kita",
+      "start": 12.899999618530273,
+      "end": 13.0600004196167
+    },
+    {
+      "word": "biasanya",
+      "start": 13.0600004196167,
+      "end": 13.4399995803833
+    },
+    {
+      "word": "percaya",
+      "start": 13.4399995803833,
+      "end": 13.779999732971191
+    },
+    {
+      "word": "begitu",
+      "start": 13.779999732971191,
+      "end": 14.119999885559082
+    },
+    {
+      "word": "saja",
+      "start": 14.119999885559082,
+      "end": 14.5
+    },
+    {
+      "word": "Coba",
+      "start": 15.15999984741211,
+      "end": 15.239999771118164
+    },
+    {
+      "word": "ingat",
+      "start": 15.239999771118164,
+      "end": 15.619999885559082
+    },
+    {
+      "word": "sesuatu",
+      "start": 16.059999465942383,
+      "end": 16.3799991607666
+    },
+    {
+      "word": "yang",
+      "start": 16.3799991607666,
+      "end": 16.559999465942383
+    },
+    {
+      "word": "pernah",
+      "start": 16.559999465942383,
+      "end": 16.780000686645508
+    },
+    {
+      "word": "kamu",
+      "start": 16.780000686645508,
+      "end": 17.020000457763672
+    },
+    {
+      "word": "alami",
+      "start": 17.020000457763672,
+      "end": 17.719999313354492
+    },
+    {
+      "word": "Pernah",
+      "start": 17.899999618530273,
+      "end": 18.020000457763672
+    },
+    {
+      "word": "masuk",
+      "start": 18.020000457763672,
+      "end": 18.299999237060547
+    },
+    {
+      "word": "ke",
+      "start": 18.299999237060547,
+      "end": 18.459999084472656
+    },
+    {
+      "word": "sebuah",
+      "start": 18.459999084472656,
+      "end": 18.68000030517578
+    },
+    {
+      "word": "tempat",
+      "start": 18.68000030517578,
+      "end": 19.020000457763672
+    },
+    {
+      "word": "lalu",
+      "start": 19.68000030517578,
+      "end": 19.84000015258789
+    },
+    {
+      "word": "tiba",
+      "start": 19.84000015258789,
+      "end": 20.040000915527344
+    },
+    {
+      "word": "tiba",
+      "start": 20.040000915527344,
+      "end": 20.219999313354492
+    },
+    {
+      "word": "merasa",
+      "start": 20.219999313354492,
+      "end": 20.719999313354492
+    },
+    {
+      "word": "gue",
+      "start": 21.3799991607666,
+      "end": 21.440000534057617
+    },
+    {
+      "word": "kayaknya",
+      "start": 21.440000534057617,
+      "end": 21.84000015258789
+    },
+    {
+      "word": "pernah",
+      "start": 21.84000015258789,
+      "end": 22.040000915527344
+    },
+    {
+      "word": "di",
+      "start": 22.040000915527344,
+      "end": 22.239999771118164
+    },
+    {
+      "word": "sini",
+      "start": 22.239999771118164,
+      "end": 22.459999084472656
+    },
+    {
+      "word": "Padahal",
+      "start": 22.959999084472656,
+      "end": 23.1200008392334
+    },
+    {
+      "word": "kamu",
+      "start": 23.1200008392334,
+      "end": 23.420000076293945
+    },
+    {
+      "word": "yakin",
+      "start": 23.420000076293945,
+      "end": 23.860000610351562
+    },
+    {
+      "word": "belum",
+      "start": 24.459999084472656,
+      "end": 24.559999465942383
+    },
+    {
+      "word": "pernah",
+      "start": 24.559999465942383,
+      "end": 24.799999237060547
+    },
+    {
+      "word": "datang",
+      "start": 24.799999237060547,
+      "end": 25.059999465942383
+    },
+    {
+      "word": "ke",
+      "start": 25.059999465942383,
+      "end": 25.299999237060547
+    },
+    {
+      "word": "tempat",
+      "start": 25.299999237060547,
+      "end": 25.399999618530273
+    },
+    {
+      "word": "itu",
+      "start": 25.399999618530273,
+      "end": 25.739999771118164
+    },
+    {
+      "word": "Atau",
+      "start": 25.739999771118164,
+      "end": 26.68000030517578
+    },
+    {
+      "word": "pernah",
+      "start": 27.18000030517578,
+      "end": 27.31999969482422
+    },
+    {
+      "word": "membaca",
+      "start": 27.31999969482422,
+      "end": 27.639999389648438
+    },
+    {
+      "word": "satu",
+      "start": 27.639999389648438,
+      "end": 27.959999084472656
+    },
+    {
+      "word": "paragraf",
+      "start": 27.959999084472656,
+      "end": 28.420000076293945
+    },
+    {
+      "word": "sampai",
+      "start": 28.899999618530273,
+      "end": 29.15999984741211
+    },
+    {
+      "word": "selesai",
+      "start": 29.15999984741211,
+      "end": 29.719999313354492
+    },
+    {
+      "word": "Lalu",
+      "start": 30.31999969482422,
+      "end": 30.3799991607666
+    },
+    {
+      "word": "beberapa",
+      "start": 30.3799991607666,
+      "end": 30.760000228881836
+    },
+    {
+      "word": "detik",
+      "start": 30.760000228881836,
+      "end": 31.100000381469727
+    },
+    {
+      "word": "kemudian",
+      "start": 31.100000381469727,
+      "end": 31.459999084472656
+    },
+    {
+      "word": "berpikir",
+      "start": 31.459999084472656,
+      "end": 32.08000183105469
+    },
+    {
+      "word": "tadi",
+      "start": 32.619998931884766,
+      "end": 32.65999984741211
+    },
+    {
+      "word": "gue",
+      "start": 32.65999984741211,
+      "end": 32.880001068115234
+    },
+    {
+      "word": "sebenarnya",
+      "start": 32.880001068115234,
+      "end": 33.2400016784668
+    },
+    {
+      "word": "baca",
+      "start": 33.2400016784668,
+      "end": 33.459999084472656
+    },
+    {
+      "word": "apa",
+      "start": 33.459999084472656,
+      "end": 33.779998779296875
+    },
+    {
+      "word": "Atau",
+      "start": 34.400001525878906,
+      "end": 34.79999923706055
+    },
+    {
+      "word": "sedang",
+      "start": 35.279998779296875,
+      "end": 35.380001068115234
+    },
+    {
+      "word": "mencari",
+      "start": 35.380001068115234,
+      "end": 35.7400016784668
+    },
+    {
+      "word": "HP",
+      "start": 35.7400016784668,
+      "end": 36.040000915527344
+    },
+    {
+      "word": "karena",
+      "start": 36.560001373291016,
+      "end": 36.619998931884766
+    },
+    {
+      "word": "merasa",
+      "start": 36.619998931884766,
+      "end": 36.959999084472656
+    },
+    {
+      "word": "HPmu",
+      "start": 36.959999084472656,
+      "end": 37.41999816894531
+    },
+    {
+      "word": "hilang",
+      "start": 37.41999816894531,
+      "end": 37.7599983215332
+    },
+    {
+      "word": "Padahal",
+      "start": 38.220001220703125,
+      "end": 38.65999984741211
+    },
+    {
+      "word": "ternyata",
+      "start": 39.41999816894531,
+      "end": 39.540000915527344
+    },
+    {
+      "word": "HPnya",
+      "start": 39.540000915527344,
+      "end": 40.20000076293945
+    },
+    {
+      "word": "sedang",
+      "start": 40.20000076293945,
+      "end": 40.41999816894531
+    },
+    {
+      "word": "ada",
+      "start": 40.41999816894531,
+      "end": 40.599998474121094
+    },
+    {
+      "word": "di",
+      "start": 40.599998474121094,
+      "end": 40.880001068115234
+    },
+    {
+      "word": "tangan",
+      "start": 40.880001068115234,
+      "end": 41.380001068115234
+    },
+    {
+      "word": "Dan",
+      "start": 41.47999954223633,
+      "end": 41.63999938964844
+    },
+    {
+      "word": "mungkin",
+      "start": 41.63999938964844,
+      "end": 41.939998626708984
+    },
+    {
+      "word": "yang",
+      "start": 41.939998626708984,
+      "end": 42.18000030517578
+    },
+    {
+      "word": "paling",
+      "start": 42.18000030517578,
+      "end": 42.400001525878906
+    },
+    {
+      "word": "sering",
+      "start": 42.400001525878906,
+      "end": 42.7400016784668
+    },
+    {
+      "word": "kita",
+      "start": 43.31999969482422,
+      "end": 43.459999084472656
+    },
+    {
+      "word": "melihat",
+      "start": 43.459999084472656,
+      "end": 43.720001220703125
+    },
+    {
+      "word": "seseorang",
+      "start": 43.720001220703125,
+      "end": 44.18000030517578
+    },
+    {
+      "word": "dari",
+      "start": 44.18000030517578,
+      "end": 44.47999954223633
+    },
+    {
+      "word": "jauh",
+      "start": 44.47999954223633,
+      "end": 44.91999816894531
+    },
+    {
+      "word": "Kita",
+      "start": 45.279998779296875,
+      "end": 45.41999816894531
+    },
+    {
+      "word": "yakin",
+      "start": 45.41999816894531,
+      "end": 45.720001220703125
+    },
+    {
+      "word": "itu",
+      "start": 45.720001220703125,
+      "end": 45.91999816894531
+    },
+    {
+      "word": "teman",
+      "start": 45.91999816894531,
+      "end": 46.15999984741211
+    },
+    {
+      "word": "kita",
+      "start": 46.15999984741211,
+      "end": 46.5
+    },
+    {
+      "word": "Kita",
+      "start": 47.099998474121094,
+      "end": 47.2400016784668
+    },
+    {
+      "word": "panggil",
+      "start": 47.2400016784668,
+      "end": 47.52000045776367
+    },
+    {
+      "word": "namanya",
+      "start": 47.52000045776367,
+      "end": 48
+    },
+    {
+      "word": "orangnya",
+      "start": 48.540000915527344,
+      "end": 48.81999969482422
+    },
+    {
+      "word": "menoleh",
+      "start": 48.81999969482422,
+      "end": 49.5
+    },
+    {
+      "word": "Ternyata",
+      "start": 49.86000061035156,
+      "end": 50.040000915527344
+    },
+    {
+      "word": "bukan",
+      "start": 50.040000915527344,
+      "end": 50.459999084472656
+    },
+    {
+      "word": "Malu",
+      "start": 51.060001373291016,
+      "end": 51.13999938964844
+    },
+    {
+      "word": "Tentu",
+      "start": 51.81999969482422,
+      "end": 51.959999084472656
+    },
+    {
+      "word": "Tapi",
+      "start": 51.959999084472656,
+      "end": 52.58000183105469
+    },
+    {
+      "word": "sebenarnya",
+      "start": 52.58000183105469,
+      "end": 53.15999984741211
+    },
+    {
+      "word": "ada",
+      "start": 54.279998779296875,
+      "end": 54.380001068115234
+    },
+    {
+      "word": "sesuatu",
+      "start": 54.380001068115234,
+      "end": 54.779998779296875
+    },
+    {
+      "word": "yang",
+      "start": 54.779998779296875,
+      "end": 55.08000183105469
+    },
+    {
+      "word": "menarik",
+      "start": 55.08000183105469,
+      "end": 55.279998779296875
+    },
+    {
+      "word": "di",
+      "start": 55.279998779296875,
+      "end": 55.52000045776367
+    },
+    {
+      "word": "balik",
+      "start": 55.52000045776367,
+      "end": 55.65999984741211
+    },
+    {
+      "word": "semua",
+      "start": 55.65999984741211,
+      "end": 55.91999816894531
+    },
+    {
+      "word": "kejadian",
+      "start": 55.91999816894531,
+      "end": 56.2400016784668
+    },
+    {
+      "word": "itu",
+      "start": 56.2400016784668,
+      "end": 56.70000076293945
+    },
+    {
+      "word": "Otak",
+      "start": 57.060001373291016,
+      "end": 57.2400016784668
+    },
+    {
+      "word": "kita",
+      "start": 57.2400016784668,
+      "end": 57.619998931884766
+    },
+    {
+      "word": "bukan",
+      "start": 57.619998931884766,
+      "end": 58.060001373291016
+    },
+    {
+      "word": "kamera",
+      "start": 58.060001373291016,
+      "end": 58.5
+    },
+    {
+      "word": "Otak",
+      "start": 59.119998931884766,
+      "end": 59.20000076293945
+    },
+    {
+      "word": "kita",
+      "start": 59.20000076293945,
+      "end": 59.41999816894531
+    },
+    {
+      "word": "lebih",
+      "start": 59.41999816894531,
+      "end": 59.7400016784668
+    },
+    {
+      "word": "mirip",
+      "start": 59.7400016784668,
+      "end": 59.97999954223633
+    },
+    {
+      "word": "Mesin",
+      "start": 60.380001068115234,
+      "end": 60.52000045776367
+    },
+    {
+      "word": "prediksi",
+      "start": 60.52000045776367,
+      "end": 61.060001373291016
+    },
+    {
+      "word": "Setiap",
+      "start": 61.880001068115234,
+      "end": 61.97999954223633
+    },
+    {
+      "word": "saat",
+      "start": 61.97999954223633,
+      "end": 62.29999923706055
+    },
+    {
+      "word": "otak",
+      "start": 62.29999923706055,
+      "end": 62.58000183105469
+    },
+    {
+      "word": "menerima",
+      "start": 62.58000183105469,
+      "end": 62.959999084472656
+    },
+    {
+      "word": "informasi",
+      "start": 62.959999084472656,
+      "end": 63.5
+    },
+    {
+      "word": "dari",
+      "start": 63.5,
+      "end": 63.7400016784668
+    },
+    {
+      "word": "mata",
+      "start": 63.7400016784668,
+      "end": 64.12000274658203
+    },
+    {
+      "word": "telinga",
+      "start": 64.9000015258789,
+      "end": 65.16000366210938
+    },
+    {
+      "word": "hidung",
+      "start": 66.0199966430664,
+      "end": 66.0199966430664
+    },
+    {
+      "word": "kulit",
+      "start": 66.69999694824219,
+      "end": 66.9000015258789
+    },
+    {
+      "word": "dan",
+      "start": 67.0999984741211,
+      "end": 67.37999725341797
+    },
+    {
+      "word": "seluruh",
+      "start": 67.37999725341797,
+      "end": 67.66000366210938
+    },
+    {
+      "word": "tubuh",
+      "start": 67.66000366210938,
+      "end": 68.16000366210938
+    },
+    {
+      "word": "Masalahnya",
+      "start": 68.94000244140625,
+      "end": 69.58000183105469
+    },
+    {
+      "word": "informasi",
+      "start": 69.66000366210938,
+      "end": 70.05999755859375
+    },
+    {
+      "word": "yang",
+      "start": 70.05999755859375,
+      "end": 70.30000305175781
+    },
+    {
+      "word": "masuk",
+      "start": 70.30000305175781,
+      "end": 70.45999908447266
+    },
+    {
+      "word": "itu",
+      "start": 70.45999908447266,
+      "end": 71.23999786376953
+    },
+    {
+      "word": "sebenarnya",
+      "start": 71.23999786376953,
+      "end": 71.77999877929688
+    },
+    {
+      "word": "nggak",
+      "start": 71.77999877929688,
+      "end": 71.9800033569336
+    },
+    {
+      "word": "selalu",
+      "start": 71.9800033569336,
+      "end": 72.31999969482422
+    },
+    {
+      "word": "lengkap",
+      "start": 72.31999969482422,
+      "end": 72.69999694824219
+    },
+    {
+      "word": "Misalnya",
+      "start": 73.19999694824219,
+      "end": 73.44000244140625
+    },
+    {
+      "word": "kamu",
+      "start": 73.66000366210938,
+      "end": 73.73999786376953
+    },
+    {
+      "word": "melihat",
+      "start": 73.73999786376953,
+      "end": 74.0199966430664
+    },
+    {
+      "word": "seseorang",
+      "start": 74.0199966430664,
+      "end": 74.41999816894531
+    },
+    {
+      "word": "dari",
+      "start": 74.41999816894531,
+      "end": 74.73999786376953
+    },
+    {
+      "word": "jauh",
+      "start": 74.73999786376953,
+      "end": 75.36000061035156
+    },
+    {
+      "word": "Yang",
+      "start": 75.5999984741211,
+      "end": 75.68000030517578
+    },
+    {
+      "word": "kamu",
+      "start": 75.68000030517578,
+      "end": 75.95999908447266
+    },
+    {
+      "word": "lihat",
+      "start": 75.95999908447266,
+      "end": 76.18000030517578
+    },
+    {
+      "word": "mungkin",
+      "start": 76.18000030517578,
+      "end": 76.4800033569336
+    },
+    {
+      "word": "cuma",
+      "start": 76.4800033569336,
+      "end": 76.76000213623047
+    },
+    {
+      "word": "bentuk",
+      "start": 76.76000213623047,
+      "end": 77.0199966430664
+    },
+    {
+      "word": "tubuhnya",
+      "start": 77.0199966430664,
+      "end": 77.58000183105469
+    },
+    {
+      "word": "cara",
+      "start": 78.22000122070312,
+      "end": 78.31999969482422
+    },
+    {
+      "word": "jalannya",
+      "start": 78.31999969482422,
+      "end": 78.81999969482422
+    },
+    {
+      "word": "bajunya",
+      "start": 79.31999969482422,
+      "end": 79.62000274658203
+    },
+    {
+      "word": "rambutnya",
+      "start": 80.18000030517578,
+      "end": 80.5999984741211
+    },
+    {
+      "word": "Otak",
+      "start": 80.5999984741211,
+      "end": 81.26000213623047
+    },
+    {
+      "word": "kemudian",
+      "start": 81.26000213623047,
+      "end": 81.62000274658203
+    },
+    {
+      "word": "mengambil",
+      "start": 81.62000274658203,
+      "end": 82.05999755859375
+    },
+    {
+      "word": "semua",
+      "start": 82.05999755859375,
+      "end": 82.36000061035156
+    },
+    {
+      "word": "informasi",
+      "start": 82.36000061035156,
+      "end": 82.80000305175781
+    },
+    {
+      "word": "itu",
+      "start": 82.80000305175781,
+      "end": 83.13999938964844
+    },
+    {
+      "word": "dan",
+      "start": 83.77999877929688,
+      "end": 83.87999725341797
+    },
+    {
+      "word": "mencoba",
+      "start": 83.87999725341797,
+      "end": 84.26000213623047
+    },
+    {
+      "word": "menjawab",
+      "start": 84.26000213623047,
+      "end": 84.62000274658203
+    },
+    {
+      "word": "satu",
+      "start": 84.62000274658203,
+      "end": 84.87999725341797
+    },
+    {
+      "word": "pertanyaan",
+      "start": 84.87999725341797,
+      "end": 85.69999694824219
+    },
+    {
+      "word": "Siapa",
+      "start": 86.0199966430664,
+      "end": 86.18000030517578
+    },
+    {
+      "word": "orang",
+      "start": 86.18000030517578,
+      "end": 86.4000015258789
+    },
+    {
+      "word": "ini",
+      "start": 86.4000015258789,
+      "end": 86.62000274658203
+    },
+    {
+      "word": "Kalau",
+      "start": 87.0999984741211,
+      "end": 87.26000213623047
+    },
+    {
+      "word": "beberapa",
+      "start": 87.26000213623047,
+      "end": 87.77999877929688
+    },
+    {
+      "word": "cirinya",
+      "start": 87.77999877929688,
+      "end": 88.22000122070312
+    },
+    {
+      "word": "mirip",
+      "start": 88.22000122070312,
+      "end": 88.54000091552734
+    },
+    {
+      "word": "dengan",
+      "start": 88.54000091552734,
+      "end": 88.86000061035156
+    },
+    {
+      "word": "temanmu",
+      "start": 88.86000061035156,
+      "end": 89.26000213623047
+    },
+    {
+      "word": "otak",
+      "start": 89.81999969482422,
+      "end": 90
+    },
+    {
+      "word": "bisa",
+      "start": 90,
+      "end": 90.22000122070312
+    },
+    {
+      "word": "langsung",
+      "start": 90.22000122070312,
+      "end": 90.5199966430664
+    },
+    {
+      "word": "membuat",
+      "start": 90.5199966430664,
+      "end": 90.73999786376953
+    },
+    {
+      "word": "kesimpulan",
+      "start": 90.73999786376953,
+      "end": 91.5
+    },
+    {
+      "word": "Teman",
+      "start": 91.9000015258789,
+      "end": 92.05999755859375
+    },
+    {
+      "word": "gue",
+      "start": 92.05999755859375,
+      "end": 92.27999877929688
+    },
+    {
+      "word": "Padahal",
+      "start": 92.83999633789062,
+      "end": 93.0199966430664
+    },
+    {
+      "word": "belum",
+      "start": 93.0199966430664,
+      "end": 93.23999786376953
+    },
+    {
+      "word": "tentu",
+      "start": 93.23999786376953,
+      "end": 93.81999969482422
+    },
+    {
+      "word": "Jadi",
+      "start": 93.9000015258789,
+      "end": 94.54000091552734
+    },
+    {
+      "word": "sebelum",
+      "start": 95.63999938964844,
+      "end": 95.81999969482422
+    },
+    {
+      "word": "kamu",
+      "start": 95.81999969482422,
+      "end": 96.0999984741211
+    },
+    {
+      "word": "benar",
+      "start": 96.0999984741211,
+      "end": 96.45999908447266
+    },
+    {
+      "word": "benar",
+      "start": 96.45999908447266,
+      "end": 96.69999694824219
+    },
+    {
+      "word": "tahu",
+      "start": 96.69999694824219,
+      "end": 96.94000244140625
+    },
+    {
+      "word": "siapa",
+      "start": 96.94000244140625,
+      "end": 97.23999786376953
+    },
+    {
+      "word": "orang",
+      "start": 97.23999786376953,
+      "end": 97.5199966430664
+    },
+    {
+      "word": "itu",
+      "start": 97.5199966430664,
+      "end": 97.80000305175781
+    },
+    {
+      "word": "otakmu",
+      "start": 98.27999877929688,
+      "end": 98.5999984741211
+    },
+    {
+      "word": "sudah",
+      "start": 98.5999984741211,
+      "end": 98.80000305175781
+    },
+    {
+      "word": "membuat",
+      "start": 98.80000305175781,
+      "end": 99.05999755859375
+    },
+    {
+      "word": "perkiraan",
+      "start": 99.05999755859375,
+      "end": 99.5999984741211
+    },
+    {
+      "word": "terlebih",
+      "start": 99.5999984741211,
+      "end": 99.87999725341797
+    },
+    {
+      "word": "dahulu",
+      "start": 99.87999725341797,
+      "end": 100.18000030517578
+    },
+    {
+      "word": "Dan",
+      "start": 100.68000030517578,
+      "end": 100.83999633789062
+    },
+    {
+      "word": "ini",
+      "start": 100.83999633789062,
+      "end": 101.0199966430664
+    },
+    {
+      "word": "sebenarnya",
+      "start": 101.0199966430664,
+      "end": 101.36000061035156
+    },
+    {
+      "word": "sangat",
+      "start": 101.36000061035156,
+      "end": 101.63999938964844
+    },
+    {
+      "word": "berguna",
+      "start": 101.63999938964844,
+      "end": 102.0999984741211
+    },
+    {
+      "word": "Bayangkan",
+      "start": 102.4800033569336,
+      "end": 103.12000274658203
+    },
+    {
+      "word": "kalau",
+      "start": 103.80000305175781,
+      "end": 103.94000244140625
+    },
+    {
+      "word": "setiap",
+      "start": 103.94000244140625,
+      "end": 104.30000305175781
+    },
+    {
+      "word": "hal",
+      "start": 104.30000305175781,
+      "end": 104.5
+    },
+    {
+      "word": "kecil",
+      "start": 104.5,
+      "end": 104.94000244140625
+    },
+    {
+      "word": "harus",
+      "start": 104.94000244140625,
+      "end": 105.72000122070312
+    },
+    {
+      "word": "diproses",
+      "start": 105.72000122070312,
+      "end": 106.26000213623047
+    },
+    {
+      "word": "dari",
+      "start": 106.26000213623047,
+      "end": 106.54000091552734
+    },
+    {
+      "word": "nol",
+      "start": 106.54000091552734,
+      "end": 106.76000213623047
+    },
+    {
+      "word": "kamu",
+      "start": 107.27999877929688,
+      "end": 107.41999816894531
+    },
+    {
+      "word": "melihat",
+      "start": 107.41999816894531,
+      "end": 107.73999786376953
+    },
+    {
+      "word": "kursi",
+      "start": 107.73999786376953,
+      "end": 108.54000091552734
+    },
+    {
+      "word": "Otak",
+      "start": 108.72000122070312,
+      "end": 108.83999633789062
+    },
+    {
+      "word": "harus",
+      "start": 108.83999633789062,
+      "end": 109.04000091552734
+    },
+    {
+      "word": "berpikir",
+      "start": 109.04000091552734,
+      "end": 109.5999984741211
+    },
+    {
+      "word": "Ini",
+      "start": 109.5999984741211,
+      "end": 110.13999938964844
+    },
+    {
+      "word": "benda",
+      "start": 110.13999938964844,
+      "end": 110.37999725341797
+    },
+    {
+      "word": "apa",
+      "start": 110.37999725341797,
+      "end": 110.81999969482422
+    },
+    {
+      "word": "Apakah",
+      "start": 111.5,
+      "end": 111.55999755859375
+    },
+    {
+      "word": "bisa",
+      "start": 111.55999755859375,
+      "end": 111.91999816894531
+    },
+    {
+      "word": "diduduki",
+      "start": 111.91999816894531,
+      "end": 112.45999908447266
+    },
+    {
+      "word": "Apakah",
+      "start": 113.0999984741211,
+      "end": 113.19999694824219
+    },
+    {
+      "word": "kuat",
+      "start": 113.19999694824219,
+      "end": 113.54000091552734
+    },
+    {
+      "word": "Apakah",
+      "start": 114.0199966430664,
+      "end": 114.26000213623047
+    },
+    {
+      "word": "ini",
+      "start": 114.26000213623047,
+      "end": 114.55999755859375
+    },
+    {
+      "word": "kursi",
+      "start": 114.55999755859375,
+      "end": 115.23999786376953
+    },
+    {
+      "word": "Kamu",
+      "start": 115.45999908447266,
+      "end": 115.58000183105469
+    },
+    {
+      "word": "nggak",
+      "start": 115.58000183105469,
+      "end": 115.69999694824219
+    },
+    {
+      "word": "akan",
+      "start": 115.69999694824219,
+      "end": 116
+    },
+    {
+      "word": "selesai",
+      "start": 116,
+      "end": 116.36000061035156
+    },
+    {
+      "word": "selesai",
+      "start": 116.36000061035156,
+      "end": 117.16000366210938
+    },
+    {
+      "word": "Makanya",
+      "start": 117.41999816894531,
+      "end": 117.5199966430664
+    },
+    {
+      "word": "otak",
+      "start": 117.5199966430664,
+      "end": 117.86000061035156
+    },
+    {
+      "word": "menggunakan",
+      "start": 117.86000061035156,
+      "end": 118.36000061035156
+    },
+    {
+      "word": "pengalaman",
+      "start": 118.36000061035156,
+      "end": 118.81999969482422
+    },
+    {
+      "word": "sebelumnya",
+      "start": 118.81999969482422,
+      "end": 119.76000213623047
+    },
+    {
+      "word": "untuk",
+      "start": 119.76000213623047,
+      "end": 120.08000183105469
+    },
+    {
+      "word": "membuat",
+      "start": 120.08000183105469,
+      "end": 120.45999908447266
+    },
+    {
+      "word": "prediksi",
+      "start": 120.45999908447266,
+      "end": 120.9000015258789
+    },
+    {
+      "word": "dengan",
+      "start": 120.9000015258789,
+      "end": 121.33999633789062
+    },
+    {
+      "word": "cepat",
+      "start": 121.33999633789062,
+      "end": 121.5999984741211
+    },
+    {
+      "word": "Masalahnya",
+      "start": 122.19999694824219,
+      "end": 122.91999816894531
+    },
+    {
+      "word": "prediksi",
+      "start": 123.22000122070312,
+      "end": 123.31999969482422
+    },
+    {
+      "word": "bisa",
+      "start": 123.31999969482422,
+      "end": 123.66000366210938
+    },
+    {
+      "word": "salah",
+      "start": 123.66000366210938,
+      "end": 124.0199966430664
+    },
+    {
+      "word": "Dan",
+      "start": 124.41999816894531,
+      "end": 125
+    },
+    {
+      "word": "ketika",
+      "start": 125,
+      "end": 125.4000015258789
+    },
+    {
+      "word": "prediksi",
+      "start": 125.4000015258789,
+      "end": 125.86000061035156
+    },
+    {
+      "word": "itu",
+      "start": 125.86000061035156,
+      "end": 126.31999969482422
+    },
+    {
+      "word": "salah",
+      "start": 126.31999969482422,
+      "end": 126.45999908447266
+    },
+    {
+      "word": "kita",
+      "start": 127.05999755859375,
+      "end": 127.19999694824219
+    },
+    {
+      "word": "bisa",
+      "start": 127.19999694824219,
+      "end": 127.45999908447266
+    },
+    {
+      "word": "mengalami",
+      "start": 127.45999908447266,
+      "end": 127.9000015258789
+    },
+    {
+      "word": "hal",
+      "start": 127.9000015258789,
+      "end": 128.13999938964844
+    },
+    {
+      "word": "hal",
+      "start": 128.13999938964844,
+      "end": 128.52000427246094
+    },
+    {
+      "word": "aneh",
+      "start": 128.52000427246094,
+      "end": 128.63999938964844
+    },
+    {
+      "word": "Salah",
+      "start": 129.22000122070312,
+      "end": 129.32000732421875
+    },
+    {
+      "word": "satunya",
+      "start": 129.32000732421875,
+      "end": 129.75999450683594
+    },
+    {
+      "word": "adalah",
+      "start": 129.75999450683594,
+      "end": 131
+    },
+    {
+      "word": "dejavu",
+      "start": 131,
+      "end": 132.02000427246094
+    },
+    {
+      "word": "Kamu",
+      "start": 132.5,
+      "end": 132.66000366210938
+    },
+    {
+      "word": "sedang",
+      "start": 132.66000366210938,
+      "end": 132.86000061035156
+    },
+    {
+      "word": "berada",
+      "start": 132.86000061035156,
+      "end": 133.1199951171875
+    },
+    {
+      "word": "di",
+      "start": 133.1199951171875,
+      "end": 133.36000061035156
+    },
+    {
+      "word": "tempat",
+      "start": 133.36000061035156,
+      "end": 133.52000427246094
+    },
+    {
+      "word": "baru",
+      "start": 133.52000427246094,
+      "end": 133.83999633789062
+    },
+    {
+      "word": "Tiba",
+      "start": 134.3800048828125,
+      "end": 134.47999572753906
+    },
+    {
+      "word": "tiba",
+      "start": 134.47999572753906,
+      "end": 134.6999969482422
+    },
+    {
+      "word": "muncul",
+      "start": 134.6999969482422,
+      "end": 135.05999755859375
+    },
+    {
+      "word": "perasaan",
+      "start": 135.05999755859375,
+      "end": 136.1999969482422
+    },
+    {
+      "word": "gue",
+      "start": 136.25999450683594,
+      "end": 136.39999389648438
+    },
+    {
+      "word": "pernah",
+      "start": 136.39999389648438,
+      "end": 136.6999969482422
+    },
+    {
+      "word": "mengalami",
+      "start": 136.6999969482422,
+      "end": 137.13999938964844
+    },
+    {
+      "word": "ini",
+      "start": 137.13999938964844,
+      "end": 137.4600067138672
+    },
+    {
+      "word": "Padahal",
+      "start": 137.94000244140625,
+      "end": 138.1999969482422
+    },
+    {
+      "word": "belum",
+      "start": 138.1999969482422,
+      "end": 138.39999389648438
+    },
+    {
+      "word": "tentu",
+      "start": 138.39999389648438,
+      "end": 138.77999877929688
+    },
+    {
+      "word": "Otak",
+      "start": 138.77999877929688,
+      "end": 139.44000244140625
+    },
+    {
+      "word": "mungkin",
+      "start": 139.44000244140625,
+      "end": 139.72000122070312
+    },
+    {
+      "word": "menemukan",
+      "start": 139.72000122070312,
+      "end": 140.17999267578125
+    },
+    {
+      "word": "kemiripan",
+      "start": 140.17999267578125,
+      "end": 140.82000732421875
+    },
+    {
+      "word": "antara",
+      "start": 140.82000732421875,
+      "end": 141.17999267578125
+    },
+    {
+      "word": "situasi",
+      "start": 141.17999267578125,
+      "end": 141.55999755859375
+    },
+    {
+      "word": "sekarang",
+      "start": 141.55999755859375,
+      "end": 142
+    },
+    {
+      "word": "dengan",
+      "start": 142,
+      "end": 142.27999877929688
+    },
+    {
+      "word": "pengalaman",
+      "start": 142.27999877929688,
+      "end": 142.6999969482422
+    },
+    {
+      "word": "sebelumnya",
+      "start": 142.6999969482422,
+      "end": 143.66000366210938
+    },
+    {
+      "word": "Mungkin",
+      "start": 143.86000061035156,
+      "end": 144.24000549316406
+    },
+    {
+      "word": "tata",
+      "start": 144.24000549316406,
+      "end": 145
+    },
+    {
+      "word": "letak",
+      "start": 145,
+      "end": 145.3000030517578
+    },
+    {
+      "word": "ruangan",
+      "start": 145.3000030517578,
+      "end": 145.52000427246094
+    },
+    {
+      "word": "mirip",
+      "start": 145.52000427246094,
+      "end": 145.8800048828125
+    },
+    {
+      "word": "suasananya",
+      "start": 146.5,
+      "end": 146.82000732421875
+    },
+    {
+      "word": "mirip",
+      "start": 146.82000732421875,
+      "end": 147.1999969482422
+    },
+    {
+      "word": "pencahayaan",
+      "start": 147.82000732421875,
+      "end": 148.25999450683594
+    },
+    {
+      "word": "mirip",
+      "start": 148.25999450683594,
+      "end": 148.5399932861328
+    },
+    {
+      "word": "atau",
+      "start": 148.9600067138672,
+      "end": 149.10000610351562
+    },
+    {
+      "word": "bahkan",
+      "start": 149.10000610351562,
+      "end": 149.60000610351562
+    },
+    {
+      "word": "perasaan",
+      "start": 149.60000610351562,
+      "end": 150.5800018310547
+    },
+    {
+      "word": "yang",
+      "start": 150.5800018310547,
+      "end": 150.67999267578125
+    },
+    {
+      "word": "kamu",
+      "start": 150.67999267578125,
+      "end": 150.9199981689453
+    },
+    {
+      "word": "rasakan",
+      "start": 150.9199981689453,
+      "end": 151.47999572753906
+    },
+    {
+      "word": "mirip",
+      "start": 151.47999572753906,
+      "end": 152.10000610351562
+    },
+    {
+      "word": "dengan",
+      "start": 152.10000610351562,
+      "end": 152.3800048828125
+    },
+    {
+      "word": "pengalaman",
+      "start": 152.3800048828125,
+      "end": 152.75999450683594
+    },
+    {
+      "word": "lama",
+      "start": 152.75999450683594,
+      "end": 153.1199951171875
+    },
+    {
+      "word": "Otak",
+      "start": 153.60000610351562,
+      "end": 153.75999450683594
+    },
+    {
+      "word": "kemudian",
+      "start": 153.75999450683594,
+      "end": 154.17999267578125
+    },
+    {
+      "word": "memberi",
+      "start": 154.17999267578125,
+      "end": 154.5399932861328
+    },
+    {
+      "word": "sinyal",
+      "start": 154.5399932861328,
+      "end": 154.83999633789062
+    },
+    {
+      "word": "ini",
+      "start": 155.25999450683594,
+      "end": 155.44000244140625
+    },
+    {
+      "word": "familiar",
+      "start": 155.44000244140625,
+      "end": 156.02000427246094
+    },
+    {
+      "word": "Se",
+      "start": 157.05999755859375,
+      "end": 157.89999389648438
+    },
+    {
+      "word": "Dan",
+      "start": 157.89999389648438,
+      "end": 158.0399932861328
+    },
+    {
+      "word": "kita",
+      "start": 158.0399932861328,
+      "end": 158.36000061035156
+    },
+    {
+      "word": "menerjemahkannya",
+      "start": 158.36000061035156,
+      "end": 159.10000610351562
+    },
+    {
+      "word": "sebagai",
+      "start": 159.10000610351562,
+      "end": 159.60000610351562
+    },
+    {
+      "word": "gue",
+      "start": 160.25999450683594,
+      "end": 160.36000061035156
+    },
+    {
+      "word": "pernah",
+      "start": 160.36000061035156,
+      "end": 160.66000366210938
+    },
+    {
+      "word": "mengalami",
+      "start": 160.66000366210938,
+      "end": 161.10000610351562
+    },
+    {
+      "word": "ini",
+      "start": 161.10000610351562,
+      "end": 161.8000030517578
+    },
+    {
+      "word": "Padahal",
+      "start": 161.89999389648438,
+      "end": 162.39999389648438
+    },
+    {
+      "word": "rasa",
+      "start": 163.5399932861328,
+      "end": 163.6999969482422
+    },
+    {
+      "word": "familiar",
+      "start": 163.6999969482422,
+      "end": 164.24000549316406
+    },
+    {
+      "word": "tidak",
+      "start": 164.24000549316406,
+      "end": 164.89999389648438
+    },
+    {
+      "word": "selalu",
+      "start": 164.89999389648438,
+      "end": 165.22000122070312
+    },
+    {
+      "word": "berarti",
+      "start": 165.22000122070312,
+      "end": 165.66000366210938
+    },
+    {
+      "word": "pengalaman",
+      "start": 165.66000366210938,
+      "end": 166.1999969482422
+    },
+    {
+      "word": "itu",
+      "start": 166.1999969482422,
+      "end": 166.6999969482422
+    },
+    {
+      "word": "benar",
+      "start": 166.6999969482422,
+      "end": 167.3000030517578
+    },
+    {
+      "word": "benar",
+      "start": 167.3000030517578,
+      "end": 167.5
+    },
+    {
+      "word": "pernah",
+      "start": 167.5,
+      "end": 167.77999877929688
+    },
+    {
+      "word": "terjadi",
+      "start": 167.77999877929688,
+      "end": 168.22000122070312
+    },
+    {
+      "word": "Sekarang",
+      "start": 168.22000122070312,
+      "end": 169.16000366210938
+    },
+    {
+      "word": "kita",
+      "start": 169.63999938964844,
+      "end": 169.83999633789062
+    },
+    {
+      "word": "masuk",
+      "start": 169.83999633789062,
+      "end": 170.0800018310547
+    },
+    {
+      "word": "ke",
+      "start": 170.0800018310547,
+      "end": 170.36000061035156
+    },
+    {
+      "word": "hal",
+      "start": 170.36000061035156,
+      "end": 170.36000061035156
+    },
+    {
+      "word": "yang",
+      "start": 170.36000061035156,
+      "end": 170.67999267578125
+    },
+    {
+      "word": "lebih",
+      "start": 170.67999267578125,
+      "end": 170.74000549316406
+    },
+    {
+      "word": "dekat",
+      "start": 170.74000549316406,
+      "end": 170.83999633789062
+    },
+    {
+      "word": "lagi",
+      "start": 170.83999633789062,
+      "end": 171.36000061035156
+    },
+    {
+      "word": "Ingatan",
+      "start": 171.66000366210938,
+      "end": 172.1199951171875
+    },
+    {
+      "word": "Kita",
+      "start": 172.74000549316406,
+      "end": 172.83999633789062
+    },
+    {
+      "word": "sering",
+      "start": 172.83999633789062,
+      "end": 173.10000610351562
+    },
+    {
+      "word": "menganggap",
+      "start": 173.10000610351562,
+      "end": 173.60000610351562
+    },
+    {
+      "word": "ingatan",
+      "start": 173.60000610351562,
+      "end": 174
+    },
+    {
+      "word": "seperti",
+      "start": 174,
+      "end": 174.39999389648438
+    },
+    {
+      "word": "video",
+      "start": 174.39999389648438,
+      "end": 174.77999877929688
+    },
+    {
+      "word": "yang",
+      "start": 174.77999877929688,
+      "end": 175.0800018310547
+    },
+    {
+      "word": "tersimpan",
+      "start": 175.0800018310547,
+      "end": 175.4199981689453
+    },
+    {
+      "word": "di",
+      "start": 175.4199981689453,
+      "end": 175.60000610351562
+    },
+    {
+      "word": "dalam",
+      "start": 175.60000610351562,
+      "end": 175.8000030517578
+    },
+    {
+      "word": "kepala",
+      "start": 175.8000030517578,
+      "end": 176.24000549316406
+    },
+    {
+      "word": "Kalau",
+      "start": 176.9199981689453,
+      "end": 177
+    },
+    {
+      "word": "mau",
+      "start": 177,
+      "end": 177.39999389648438
+    },
+    {
+      "word": "mengingat",
+      "start": 177.39999389648438,
+      "end": 177.82000732421875
+    },
+    {
+      "word": "sesuatu",
+      "start": 177.82000732421875,
+      "end": 178.4199981689453
+    },
+    {
+      "word": "tinggal",
+      "start": 178.97999572753906,
+      "end": 179.10000610351562
+    },
+    {
+      "word": "tekan",
+      "start": 179.10000610351562,
+      "end": 179.36000061035156
+    },
+    {
+      "word": "play",
+      "start": 179.36000061035156,
+      "end": 179.67999267578125
+    },
+    {
+      "word": "Tapi",
+      "start": 180.1999969482422,
+      "end": 180.25999450683594
+    },
+    {
+      "word": "ternyata",
+      "start": 180.25999450683594,
+      "end": 180.63999938964844
+    },
+    {
+      "word": "tidak",
+      "start": 180.63999938964844,
+      "end": 180.9199981689453
+    },
+    {
+      "word": "sesederhana",
+      "start": 180.9199981689453,
+      "end": 181.52000427246094
+    },
+    {
+      "word": "itu",
+      "start": 181.52000427246094,
+      "end": 181.86000061035156
+    },
+    {
+      "word": "Ketika",
+      "start": 182.5,
+      "end": 182.55999755859375
+    },
+    {
+      "word": "kamu",
+      "start": 182.55999755859375,
+      "end": 182.9199981689453
+    },
+    {
+      "word": "mengingat",
+      "start": 182.9199981689453,
+      "end": 183.27999877929688
+    },
+    {
+      "word": "sesuatu",
+      "start": 183.27999877929688,
+      "end": 183.8000030517578
+    },
+    {
+      "word": "otak",
+      "start": 184.44000244140625,
+      "end": 184.52000427246094
+    },
+    {
+      "word": "tidak",
+      "start": 184.52000427246094,
+      "end": 184.77999877929688
+    },
+    {
+      "word": "sekadar",
+      "start": 184.77999877929688,
+      "end": 185.25999450683594
+    },
+    {
+      "word": "memutar",
+      "start": 185.25999450683594,
+      "end": 185.66000366210938
+    },
+    {
+      "word": "rekaman",
+      "start": 185.66000366210938,
+      "end": 186.13999938964844
+    },
+    {
+      "word": "Otak",
+      "start": 186.74000549316406,
+      "end": 186.86000061035156
+    },
+    {
+      "word": "seperti",
+      "start": 186.86000061035156,
+      "end": 187.4600067138672
+    },
+    {
+      "word": "membangun",
+      "start": 188,
+      "end": 188.1999969482422
+    },
+    {
+      "word": "kembali",
+      "start": 188.1999969482422,
+      "end": 188.55999755859375
+    },
+    {
+      "word": "kejadian",
+      "start": 188.55999755859375,
+      "end": 188.89999389648438
+    },
+    {
+      "word": "tersebut",
+      "start": 188.89999389648438,
+      "end": 189.44000244140625
+    },
+    {
+      "word": "Makanya",
+      "start": 190,
+      "end": 190.1199951171875
+    },
+    {
+      "word": "dua",
+      "start": 190.1199951171875,
+      "end": 190.3800048828125
+    },
+    {
+      "word": "orang",
+      "start": 190.3800048828125,
+      "end": 190.6199951171875
+    },
+    {
+      "word": "yang",
+      "start": 190.6199951171875,
+      "end": 190.86000061035156
+    },
+    {
+      "word": "mengalami",
+      "start": 190.86000061035156,
+      "end": 191.1199951171875
+    },
+    {
+      "word": "kejadian",
+      "start": 191.1199951171875,
+      "end": 191.5
+    },
+    {
+      "word": "yang",
+      "start": 191.5,
+      "end": 191.77999877929688
+    },
+    {
+      "word": "sama",
+      "start": 191.77999877929688,
+      "end": 192.0800018310547
+    },
+    {
+      "word": "bisa",
+      "start": 192.55999755859375,
+      "end": 192.6999969482422
+    },
+    {
+      "word": "mengingat",
+      "start": 192.6999969482422,
+      "end": 193.05999755859375
+    },
+    {
+      "word": "detail",
+      "start": 193.05999755859375,
+      "end": 193.39999389648438
+    },
+    {
+      "word": "yang",
+      "start": 193.39999389648438,
+      "end": 193.60000610351562
+    },
+    {
+      "word": "berbeda",
+      "start": 193.60000610351562,
+      "end": 194
+    },
+    {
+      "word": "Satu",
+      "start": 194.6199951171875,
+      "end": 194.74000549316406
+    },
+    {
+      "word": "orang",
+      "start": 194.74000549316406,
+      "end": 194.9199981689453
+    },
+    {
+      "word": "bilang",
+      "start": 194.9199981689453,
+      "end": 195.25999450683594
+    },
+    {
+      "word": "waktu",
+      "start": 195.74000549316406,
+      "end": 195.94000244140625
+    },
+    {
+      "word": "itu",
+      "start": 195.94000244140625,
+      "end": 196.13999938964844
+    },
+    {
+      "word": "hujan",
+      "start": 196.13999938964844,
+      "end": 196.44000244140625
+    },
+    {
+      "word": "Yang",
+      "start": 197.0800018310547,
+      "end": 197.1199951171875
+    },
+    {
+      "word": "lain",
+      "start": 197.1199951171875,
+      "end": 197.33999633789062
+    },
+    {
+      "word": "bilang",
+      "start": 197.33999633789062,
+      "end": 197.63999938964844
+    },
+    {
+      "word": "enggak",
+      "start": 197.63999938964844,
+      "end": 198.39999389648438
+    },
+    {
+      "word": "waktu",
+      "start": 198.9199981689453,
+      "end": 199.02000427246094
+    },
+    {
+      "word": "itu",
+      "start": 199.02000427246094,
+      "end": 199.22000122070312
+    },
+    {
+      "word": "panas",
+      "start": 199.22000122070312,
+      "end": 199.60000610351562
+    },
+    {
+      "word": "Padahal",
+      "start": 200.27999877929688,
+      "end": 200.6199951171875
+    },
+    {
+      "word": "mereka",
+      "start": 201.36000061035156,
+      "end": 201.4199981689453
+    },
+    {
+      "word": "berada",
+      "start": 201.4199981689453,
+      "end": 201.75999450683594
+    },
+    {
+      "word": "di",
+      "start": 201.75999450683594,
+      "end": 201.97999572753906
+    },
+    {
+      "word": "tempat",
+      "start": 201.97999572753906,
+      "end": 202.13999938964844
+    },
+    {
+      "word": "yang",
+      "start": 202.13999938964844,
+      "end": 202.52000427246094
+    },
+    {
+      "word": "sama",
+      "start": 202.52000427246094,
+      "end": 202.66000366210938
+    },
+    {
+      "word": "Bahkan",
+      "start": 203.25999450683594,
+      "end": 203.4600067138672
+    },
+    {
+      "word": "kita",
+      "start": 204.60000610351562,
+      "end": 204.67999267578125
+    },
+    {
+      "word": "sendiri",
+      "start": 204.67999267578125,
+      "end": 205.0399932861328
+    },
+    {
+      "word": "bisa",
+      "start": 205.0399932861328,
+      "end": 205.32000732421875
+    },
+    {
+      "word": "yakin",
+      "start": 205.32000732421875,
+      "end": 205.72000122070312
+    },
+    {
+      "word": "terhadap",
+      "start": 205.74000549316406,
+      "end": 206.4199981689453
+    },
+    {
+      "word": "sebuah",
+      "start": 206.4199981689453,
+      "end": 206.75999450683594
+    },
+    {
+      "word": "ingatan",
+      "start": 206.75999450683594,
+      "end": 207.10000610351562
+    },
+    {
+      "word": "dan",
+      "start": 207.55999755859375,
+      "end": 207.83999633789062
+    },
+    {
+      "word": "tetap",
+      "start": 207.83999633789062,
+      "end": 208.27999877929688
+    },
+    {
+      "word": "salah",
+      "start": 208.27999877929688,
+      "end": 208.6199951171875
+    },
+    {
+      "word": "Itulah",
+      "start": 209.10000610351562,
+      "end": 209.32000732421875
+    },
+    {
+      "word": "kenapa",
+      "start": 209.32000732421875,
+      "end": 209.8000030517578
+    },
+    {
+      "word": "kamu",
+      "start": 210.60000610351562,
+      "end": 210.6199951171875
+    },
+    {
+      "word": "mungkin",
+      "start": 210.6199951171875,
+      "end": 210.9199981689453
+    },
+    {
+      "word": "pernah",
+      "start": 210.9199981689453,
+      "end": 211.1999969482422
+    },
+    {
+      "word": "yakin",
+      "start": 211.1999969482422,
+      "end": 211.4600067138672
+    },
+    {
+      "word": "banget",
+      "start": 211.4600067138672,
+      "end": 211.83999633789062
+    },
+    {
+      "word": "pernah",
+      "start": 211.83999633789062,
+      "end": 212.33999633789062
+    },
+    {
+      "word": "melakukan",
+      "start": 212.33999633789062,
+      "end": 212.6999969482422
+    },
+    {
+      "word": "sesuatu",
+      "start": 212.6999969482422,
+      "end": 213.3000030517578
+    },
+    {
+      "word": "sampai",
+      "start": 213.86000061035156,
+      "end": 214.1199951171875
+    },
+    {
+      "word": "akhirnya",
+      "start": 214.1199951171875,
+      "end": 214.55999755859375
+    },
+    {
+      "word": "sadar",
+      "start": 214.55999755859375,
+      "end": 215.32000732421875
+    },
+    {
+      "word": "Oh",
+      "start": 215.66000366210938,
+      "end": 216.33999633789062
+    },
+    {
+      "word": "ternyata",
+      "start": 216.8000030517578,
+      "end": 216.94000244140625
+    },
+    {
+      "word": "bukan",
+      "start": 216.94000244140625,
+      "end": 217.16000366210938
+    },
+    {
+      "word": "gue",
+      "start": 217.16000366210938,
+      "end": 217.47999572753906
+    },
+    {
+      "word": "Otak",
+      "start": 218.0399932861328,
+      "end": 218.10000610351562
+    },
+    {
+      "word": "kita",
+      "start": 218.10000610351562,
+      "end": 218.33999633789062
+    },
+    {
+      "word": "mengisi",
+      "start": 218.33999633789062,
+      "end": 218.6199951171875
+    },
+    {
+      "word": "bagian",
+      "start": 218.6199951171875,
+      "end": 218.9600067138672
+    },
+    {
+      "word": "yang",
+      "start": 218.9600067138672,
+      "end": 219.27999877929688
+    },
+    {
+      "word": "hilang",
+      "start": 219.27999877929688,
+      "end": 219.47999572753906
+    },
+    {
+      "word": "dengan",
+      "start": 219.66000366210938,
+      "end": 220.33999633789062
+    },
+    {
+      "word": "informasi",
+      "start": 220.33999633789062,
+      "end": 220.8800048828125
+    },
+    {
+      "word": "yang",
+      "start": 220.8800048828125,
+      "end": 221.05999755859375
+    },
+    {
+      "word": "dianggap",
+      "start": 221.05999755859375,
+      "end": 221.32000732421875
+    },
+    {
+      "word": "masuk",
+      "start": 221.32000732421875,
+      "end": 221.6199951171875
+    },
+    {
+      "word": "akal",
+      "start": 221.6199951171875,
+      "end": 221.97999572753906
+    },
+    {
+      "word": "Dan",
+      "start": 222.3000030517578,
+      "end": 222.52000427246094
+    },
+    {
+      "word": "karena",
+      "start": 222.52000427246094,
+      "end": 222.75999450683594
+    },
+    {
+      "word": "hasil",
+      "start": 222.75999450683594,
+      "end": 223.05999755859375
+    },
+    {
+      "word": "akhirnya",
+      "start": 223.05999755859375,
+      "end": 223.52000427246094
+    },
+    {
+      "word": "terasa",
+      "start": 223.52000427246094,
+      "end": 223.8000030517578
+    },
+    {
+      "word": "seperti",
+      "start": 223.8000030517578,
+      "end": 224.16000366210938
+    },
+    {
+      "word": "ingatan",
+      "start": 224.16000366210938,
+      "end": 224.63999938964844
+    },
+    {
+      "word": "kita",
+      "start": 225.17999267578125,
+      "end": 225.33999633789062
+    },
+    {
+      "word": "jarang",
+      "start": 225.33999633789062,
+      "end": 225.5399932861328
+    },
+    {
+      "word": "mempertanyakannya",
+      "start": 225.5399932861328,
+      "end": 226.33999633789062
+    },
+    {
+      "word": "Sekarang",
+      "start": 226.33999633789062,
+      "end": 227.1199951171875
+    },
+    {
+      "word": "coba",
+      "start": 227.1199951171875,
+      "end": 227.3800048828125
+    },
+    {
+      "word": "perhatikan",
+      "start": 227.3800048828125,
+      "end": 227.72000122070312
+    },
+    {
+      "word": "hal",
+      "start": 227.72000122070312,
+      "end": 227.97999572753906
+    },
+    {
+      "word": "lain",
+      "start": 227.97999572753906,
+      "end": 228.17999267578125
+    },
+    {
+      "word": "Pernah",
+      "start": 228.60000610351562,
+      "end": 228.89999389648438
+    },
+    {
+      "word": "baca",
+      "start": 228.89999389648438,
+      "end": 229.24000549316406
+    },
+    {
+      "word": "artikel",
+      "start": 229.24000549316406,
+      "end": 229.6999969482422
+    },
+    {
+      "word": "panjang",
+      "start": 229.6999969482422,
+      "end": 230.1999969482422
+    },
+    {
+      "word": "sampai",
+      "start": 230.5800018310547,
+      "end": 230.8000030517578
+    },
+    {
+      "word": "selesai",
+      "start": 230.8000030517578,
+      "end": 231.32000732421875
+    },
+    {
+      "word": "tapi",
+      "start": 231.86000061035156,
+      "end": 231.9600067138672
+    },
+    {
+      "word": "begitu",
+      "start": 231.9600067138672,
+      "end": 232.27999877929688
+    },
+    {
+      "word": "ditanya",
+      "start": 232.27999877929688,
+      "end": 232.67999267578125
+    },
+    {
+      "word": "isinya",
+      "start": 232.67999267578125,
+      "end": 233.22000122070312
+    },
+    {
+      "word": "kosong",
+      "start": 233.97999572753906,
+      "end": 234.1999969482422
+    },
+    {
+      "word": "Padahal",
+      "start": 234.6999969482422,
+      "end": 235.33999633789062
+    },
+    {
+      "word": "matamu",
+      "start": 235.9600067138672,
+      "end": 236.10000610351562
+    },
+    {
+      "word": "membaca",
+      "start": 236.10000610351562,
+      "end": 236.47999572753906
+    },
+    {
+      "word": "semua",
+      "start": 236.47999572753906,
+      "end": 236.86000061035156
+    },
+    {
+      "word": "kalimatnya",
+      "start": 236.86000061035156,
+      "end": 237.44000244140625
+    },
+    {
+      "word": "Ini",
+      "start": 237.9600067138672,
+      "end": 238.02000427246094
+    },
+    {
+      "word": "juga",
+      "start": 238.02000427246094,
+      "end": 238.3000030517578
+    },
+    {
+      "word": "bukan",
+      "start": 238.3000030517578,
+      "end": 238.52000427246094
+    },
+    {
+      "word": "berarti",
+      "start": 238.52000427246094,
+      "end": 238.9600067138672
+    },
+    {
+      "word": "otakmu",
+      "start": 239.66000366210938,
+      "end": 240
+    },
+    {
+      "word": "tiba",
+      "start": 240,
+      "end": 240.25999450683594
+    },
+    {
+      "word": "tiba",
+      "start": 240.25999450683594,
+      "end": 240.3800048828125
+    },
+    {
+      "word": "menghapus",
+      "start": 240.3800048828125,
+      "end": 240.86000061035156
+    },
+    {
+      "word": "semuanya",
+      "start": 240.86000061035156,
+      "end": 241.32000732421875
+    },
+    {
+      "word": "Bisa",
+      "start": 241.94000244140625,
+      "end": 242.02000427246094
+    },
+    {
+      "word": "jadi",
+      "start": 242.02000427246094,
+      "end": 242.39999389648438
+    },
+    {
+      "word": "sejak",
+      "start": 243.0399932861328,
+      "end": 243.10000610351562
+    },
+    {
+      "word": "awal",
+      "start": 243.10000610351562,
+      "end": 243.75999450683594
+    },
+    {
+      "word": "perhatianmu",
+      "start": 244.32000732421875,
+      "end": 245.05999755859375
+    },
+    {
+      "word": "tidak",
+      "start": 245.05999755859375,
+      "end": 245.8000030517578
+    },
+    {
+      "word": "benar",
+      "start": 245.8000030517578,
+      "end": 246.17999267578125
+    },
+    {
+      "word": "benar",
+      "start": 246.17999267578125,
+      "end": 246.5
+    },
+    {
+      "word": "berada",
+      "start": 246.5,
+      "end": 246.75999450683594
+    },
+    {
+      "word": "di",
+      "start": 246.75999450683594,
+      "end": 247.02000427246094
+    },
+    {
+      "word": "sana",
+      "start": 247.02000427246094,
+      "end": 247.17999267578125
+    },
+    {
+      "word": "Mata",
+      "start": 247.75999450683594,
+      "end": 247.86000061035156
+    },
+    {
+      "word": "membaca",
+      "start": 247.86000061035156,
+      "end": 248.36000061035156
+    },
+    {
+      "word": "tapi",
+      "start": 248.83999633789062,
+      "end": 249.10000610351562
+    },
+    {
+      "word": "pikiran",
+      "start": 249.10000610351562,
+      "end": 249.4600067138672
+    },
+    {
+      "word": "sedang",
+      "start": 249.4600067138672,
+      "end": 249.74000549316406
+    },
+    {
+      "word": "memikirkan",
+      "start": 249.74000549316406,
+      "end": 250.3000030517578
+    },
+    {
+      "word": "chat",
+      "start": 250.3000030517578,
+      "end": 250.55999755859375
+    },
+    {
+      "word": "kerjaan",
+      "start": 251.05999755859375,
+      "end": 251.5
+    },
+    {
+      "word": "masalah",
+      "start": 251.9199981689453,
+      "end": 252.13999938964844
+    },
+    {
+      "word": "tadi",
+      "start": 252.13999938964844,
+      "end": 252.3800048828125
+    },
+    {
+      "word": "pagi",
+      "start": 252.3800048828125,
+      "end": 252.82000732421875
+    },
+    {
+      "word": "atau",
+      "start": 253.17999267578125,
+      "end": 253.3800048828125
+    },
+    {
+      "word": "bahkan",
+      "start": 253.3800048828125,
+      "end": 253.74000549316406
+    },
+    {
+      "word": "setelah",
+      "start": 254.33999633789062,
+      "end": 254.44000244140625
+    },
+    {
+      "word": "ini",
+      "start": 254.44000244140625,
+      "end": 254.63999938964844
+    },
+    {
+      "word": "makan",
+      "start": 254.63999938964844,
+      "end": 254.8800048828125
+    },
+    {
+      "word": "apa",
+      "start": 254.8800048828125,
+      "end": 255.13999938964844
+    },
+    {
+      "word": "Jadi",
+      "start": 255.13999938964844,
+      "end": 256.1600036621094
+    },
+    {
+      "word": "secara",
+      "start": 257.17999267578125,
+      "end": 257.17999267578125
+    },
+    {
+      "word": "fisik",
+      "start": 257.17999267578125,
+      "end": 257.55999755859375
+    },
+    {
+      "word": "kamu",
+      "start": 257.739990234375,
+      "end": 257.82000732421875
+    },
+    {
+      "word": "sedang",
+      "start": 257.82000732421875,
+      "end": 258.0799865722656
+    },
+    {
+      "word": "membaca",
+      "start": 258.0799865722656,
+      "end": 258.55999755859375
+    },
+    {
+      "word": "Tapi",
+      "start": 258.94000244140625,
+      "end": 259.2799987792969
+    },
+    {
+      "word": "informasi",
+      "start": 260.05999755859375,
+      "end": 260.3800048828125
+    },
+    {
+      "word": "yang",
+      "start": 260.3800048828125,
+      "end": 260.5400085449219
+    },
+    {
+      "word": "kamu",
+      "start": 260.5400085449219,
+      "end": 260.9200134277344
+    },
+    {
+      "word": "baca",
+      "start": 260.9200134277344,
+      "end": 261.1000061035156
+    },
+    {
+      "word": "tidak",
+      "start": 261.17999267578125,
+      "end": 261.82000732421875
+    },
+    {
+      "word": "diproses",
+      "start": 261.82000732421875,
+      "end": 262.3399963378906
+    },
+    {
+      "word": "cukup",
+      "start": 262.3399963378906,
+      "end": 262.6600036621094
+    },
+    {
+      "word": "dalam",
+      "start": 262.6600036621094,
+      "end": 262.9800109863281
+    },
+    {
+      "word": "untuk",
+      "start": 262.9800109863281,
+      "end": 263.2200012207031
+    },
+    {
+      "word": "menjadi",
+      "start": 263.2200012207031,
+      "end": 263.5199890136719
+    },
+    {
+      "word": "ingatan",
+      "start": 263.5199890136719,
+      "end": 263.82000732421875
+    },
+    {
+      "word": "yang",
+      "start": 263.82000732421875,
+      "end": 264.1199951171875
+    },
+    {
+      "word": "kuat",
+      "start": 264.1199951171875,
+      "end": 264.3399963378906
+    },
+    {
+      "word": "Makanya",
+      "start": 264.760009765625,
+      "end": 264.9200134277344
+    },
+    {
+      "word": "kamu",
+      "start": 264.9200134277344,
+      "end": 265.1400146484375
+    },
+    {
+      "word": "bisa",
+      "start": 265.1400146484375,
+      "end": 265.3800048828125
+    },
+    {
+      "word": "membaca",
+      "start": 265.3800048828125,
+      "end": 265.70001220703125
+    },
+    {
+      "word": "satu",
+      "start": 265.70001220703125,
+      "end": 265.9800109863281
+    },
+    {
+      "word": "halaman",
+      "start": 265.9800109863281,
+      "end": 266.5
+    },
+    {
+      "word": "lalu",
+      "start": 266.8399963378906,
+      "end": 267
+    },
+    {
+      "word": "sadar",
+      "start": 267,
+      "end": 267.44000244140625
+    },
+    {
+      "word": "bahwa",
+      "start": 267.44000244140625,
+      "end": 267.8399963378906
+    },
+    {
+      "word": "kamu",
+      "start": 267.9800109863281,
+      "end": 268.6199951171875
+    },
+    {
+      "word": "sama",
+      "start": 268.6199951171875,
+      "end": 268.82000732421875
+    },
+    {
+      "word": "sekali",
+      "start": 268.82000732421875,
+      "end": 269.1199951171875
+    },
+    {
+      "word": "nggak",
+      "start": 269.1199951171875,
+      "end": 269.2799987792969
+    },
+    {
+      "word": "tahu",
+      "start": 269.2799987792969,
+      "end": 269.4200134277344
+    },
+    {
+      "word": "isinya",
+      "start": 269.4200134277344,
+      "end": 269.8599853515625
+    },
+    {
+      "word": "Dan",
+      "start": 270.29998779296875,
+      "end": 270.5199890136719
+    },
+    {
+      "word": "akhirnya",
+      "start": 270.5199890136719,
+      "end": 271.4599914550781
+    },
+    {
+      "word": "baca",
+      "start": 271.739990234375,
+      "end": 271.82000732421875
+    },
+    {
+      "word": "ulang",
+      "start": 271.82000732421875,
+      "end": 272.5
+    },
+    {
+      "word": "Lagi",
+      "start": 272.7799987792969,
+      "end": 272.9599914550781
+    },
+    {
+      "word": "dan",
+      "start": 273.3800048828125,
+      "end": 273.7200012207031
+    },
+    {
+      "word": "lagi",
+      "start": 273.7200012207031,
+      "end": 274.0199890136719
+    },
+    {
+      "word": "sampai",
+      "start": 274.7200012207031,
+      "end": 274.8399963378906
+    },
+    {
+      "word": "akhirnya",
+      "start": 274.8399963378906,
+      "end": 275.3999938964844
+    },
+    {
+      "word": "tetap",
+      "start": 275.3999938964844,
+      "end": 275.70001220703125
+    },
+    {
+      "word": "lupa",
+      "start": 275.70001220703125,
+      "end": 276.0400085449219
+    },
+    {
+      "word": "Otak",
+      "start": 276.6600036621094,
+      "end": 276.7799987792969
+    },
+    {
+      "word": "kita",
+      "start": 276.7799987792969,
+      "end": 277.0400085449219
+    },
+    {
+      "word": "memang",
+      "start": 277.0400085449219,
+      "end": 277.3399963378906
+    },
+    {
+      "word": "agak",
+      "start": 277.3399963378906,
+      "end": 277.5199890136719
+    },
+    {
+      "word": "ngeselin",
+      "start": 277.5199890136719,
+      "end": 277.94000244140625
+    },
+    {
+      "word": "tapi",
+      "start": 278.5199890136719,
+      "end": 278.6000061035156
+    },
+    {
+      "word": "belum",
+      "start": 278.6000061035156,
+      "end": 278.82000732421875
+    },
+    {
+      "word": "selesai",
+      "start": 278.82000732421875,
+      "end": 279.4200134277344
+    },
+    {
+      "word": "Karena",
+      "start": 279.8800048828125,
+      "end": 280.0400085449219
+    },
+    {
+      "word": "bukan",
+      "start": 280.0400085449219,
+      "end": 280.3399963378906
+    },
+    {
+      "word": "cuma",
+      "start": 280.3399963378906,
+      "end": 280.6199951171875
+    },
+    {
+      "word": "ingatan",
+      "start": 280.6199951171875,
+      "end": 281.05999755859375
+    },
+    {
+      "word": "dan",
+      "start": 281.05999755859375,
+      "end": 281.3999938964844
+    },
+    {
+      "word": "penglihatan",
+      "start": 281.3999938964844,
+      "end": 282.1600036621094
+    },
+    {
+      "word": "yang",
+      "start": 282.1600036621094,
+      "end": 282.32000732421875
+    },
+    {
+      "word": "bisa",
+      "start": 282.32000732421875,
+      "end": 282.5799865722656
+    },
+    {
+      "word": "membuat",
+      "start": 282.5799865722656,
+      "end": 282.8599853515625
+    },
+    {
+      "word": "kita",
+      "start": 282.8599853515625,
+      "end": 283.2200012207031
+    },
+    {
+      "word": "salah",
+      "start": 283.2200012207031,
+      "end": 283.5400085449219
+    },
+    {
+      "word": "Waktu",
+      "start": 283.5400085449219,
+      "end": 284.260009765625
+    },
+    {
+      "word": "juga",
+      "start": 284.260009765625,
+      "end": 284.5799865722656
+    },
+    {
+      "word": "bisa",
+      "start": 284.5799865722656,
+      "end": 284.79998779296875
+    },
+    {
+      "word": "ditipu",
+      "start": 284.79998779296875,
+      "end": 285.17999267578125
+    },
+    {
+      "word": "oleh",
+      "start": 285.17999267578125,
+      "end": 285.3399963378906
+    },
+    {
+      "word": "otak",
+      "start": 285.3399963378906,
+      "end": 285.67999267578125
+    },
+    {
+      "word": "Pernah",
+      "start": 286.1400146484375,
+      "end": 286.239990234375
+    },
+    {
+      "word": "merasa",
+      "start": 286.239990234375,
+      "end": 286.6199951171875
+    },
+    {
+      "word": "satu",
+      "start": 286.6199951171875,
+      "end": 287.05999755859375
+    },
+    {
+      "word": "jam",
+      "start": 287.05999755859375,
+      "end": 287.20001220703125
+    },
+    {
+      "word": "berlalu",
+      "start": 287.20001220703125,
+      "end": 287.6600036621094
+    },
+    {
+      "word": "seperti",
+      "start": 287.6600036621094,
+      "end": 288
+    },
+    {
+      "word": "10",
+      "start": 288,
+      "end": 288.4200134277344
+    },
+    {
+      "word": "menit",
+      "start": 288.4200134277344,
+      "end": 288.9200134277344
+    },
+    {
+      "word": "Misalnya",
+      "start": 289.17999267578125,
+      "end": 289.5400085449219
+    },
+    {
+      "word": "kamu",
+      "start": 289.7799987792969,
+      "end": 289.9200134277344
+    },
+    {
+      "word": "sedang",
+      "start": 289.9200134277344,
+      "end": 290.2200012207031
+    },
+    {
+      "word": "main",
+      "start": 290.2200012207031,
+      "end": 290.4599914550781
+    },
+    {
+      "word": "game",
+      "start": 290.4599914550781,
+      "end": 290.739990234375
+    },
+    {
+      "word": "nonton",
+      "start": 291.4200134277344,
+      "end": 291.6000061035156
+    },
+    {
+      "word": "film",
+      "start": 291.6000061035156,
+      "end": 291.9599914550781
+    },
+    {
+      "word": "ngobrol",
+      "start": 292.6400146484375,
+      "end": 292.8399963378906
+    },
+    {
+      "word": "dengan",
+      "start": 292.8399963378906,
+      "end": 293.1400146484375
+    },
+    {
+      "word": "teman",
+      "start": 293.1400146484375,
+      "end": 293.5
+    },
+    {
+      "word": "atau",
+      "start": 293.8599853515625,
+      "end": 294.2799987792969
+    },
+    {
+      "word": "scroll",
+      "start": 294.2799987792969,
+      "end": 294.5799865722656
+    },
+    {
+      "word": "HP",
+      "start": 294.5799865722656,
+      "end": 295
+    },
+    {
+      "word": "Tiba",
+      "start": 295.55999755859375,
+      "end": 295.6600036621094
+    },
+    {
+      "word": "tiba",
+      "start": 295.6600036621094,
+      "end": 296.1000061035156
+    },
+    {
+      "word": "lihat",
+      "start": 296.6199951171875,
+      "end": 296.7799987792969
+    },
+    {
+      "word": "jam",
+      "start": 296.7799987792969,
+      "end": 297.0400085449219
+    },
+    {
+      "word": "Hah",
+      "start": 297.5799865722656,
+      "end": 297.739990234375
+    },
+    {
+      "word": "Udah",
+      "start": 298.1199951171875,
+      "end": 298.2799987792969
+    },
+    {
+      "word": "jam",
+      "start": 298.2799987792969,
+      "end": 298.44000244140625
+    },
+    {
+      "word": "12",
+      "start": 298.44000244140625,
+      "end": 298.760009765625
+    },
+    {
+      "word": "Padahal",
+      "start": 299.4800109863281,
+      "end": 299.8399963378906
+    },
+    {
+      "word": "rasanya",
+      "start": 299.8399963378906,
+      "end": 300.2200012207031
+    },
+    {
+      "word": "baru",
+      "start": 300.2200012207031,
+      "end": 300.4599914550781
+    },
+    {
+      "word": "sebentar",
+      "start": 300.4599914550781,
+      "end": 301.20001220703125
+    },
+    {
+      "word": "Tapi",
+      "start": 301.4599914550781,
+      "end": 301.760009765625
+    },
+    {
+      "word": "coba",
+      "start": 302.3599853515625,
+      "end": 302.44000244140625
+    },
+    {
+      "word": "lakukan",
+      "start": 302.44000244140625,
+      "end": 302.739990234375
+    },
+    {
+      "word": "hal",
+      "start": 302.739990234375,
+      "end": 302.9599914550781
+    },
+    {
+      "word": "sebaliknya",
+      "start": 302.9599914550781,
+      "end": 303.5199890136719
+    },
+    {
+      "word": "Duduk",
+      "start": 304.1199951171875,
+      "end": 304.32000732421875
+    },
+    {
+      "word": "menunggu",
+      "start": 304.8599853515625,
+      "end": 305.1000061035156
+    },
+    {
+      "word": "seseorang",
+      "start": 305.1000061035156,
+      "end": 305.55999755859375
+    },
+    {
+      "word": "Tidak",
+      "start": 306.0799865722656,
+      "end": 306.17999267578125
+    },
+    {
+      "word": "melakukan",
+      "start": 306.17999267578125,
+      "end": 306.5199890136719
+    },
+    {
+      "word": "apa",
+      "start": 306.5199890136719,
+      "end": 306.8399963378906
+    },
+    {
+      "word": "apa",
+      "start": 306.8399963378906,
+      "end": 307.0400085449219
+    },
+    {
+      "word": "Lihat",
+      "start": 307.760009765625,
+      "end": 307.8399963378906
+    },
+    {
+      "word": "jam",
+      "start": 307.8399963378906,
+      "end": 308.1400146484375
+    },
+    {
+      "word": "5",
+      "start": 308.67999267578125,
+      "end": 308.8599853515625
+    },
+    {
+      "word": "menit",
+      "start": 308.8599853515625,
+      "end": 309.17999267578125
+    },
+    {
+      "word": "Lihat",
+      "start": 309.8399963378906,
+      "end": 309.8399963378906
+    },
+    {
+      "word": "lagi",
+      "start": 309.8399963378906,
+      "end": 310.1199951171875
+    },
+    {
+      "word": "Baru",
+      "start": 310.79998779296875,
+      "end": 310.8599853515625
+    },
+    {
+      "word": "2",
+      "start": 310.8599853515625,
+      "end": 311.1199951171875
+    },
+    {
+      "word": "menit",
+      "start": 311.1199951171875,
+      "end": 311.3599853515625
+    },
+    {
+      "word": "Lihat",
+      "start": 312.0400085449219,
+      "end": 312.0400085449219
+    },
+    {
+      "word": "lagi",
+      "start": 312.0400085449219,
+      "end": 312.3599853515625
+    },
+    {
+      "word": "Masih",
+      "start": 312.3599853515625,
+      "end": 313.1199951171875
+    },
+    {
+      "word": "1",
+      "start": 313.1199951171875,
+      "end": 313.3800048828125
+    },
+    {
+      "word": "menit",
+      "start": 313.3800048828125,
+      "end": 313.8599853515625
+    },
+    {
+      "word": "rasanya",
+      "start": 314.260009765625,
+      "end": 314.5400085449219
+    },
+    {
+      "word": "waktu",
+      "start": 314.5400085449219,
+      "end": 314.7799987792969
+    },
+    {
+      "word": "berhenti",
+      "start": 314.7799987792969,
+      "end": 315.2200012207031
+    },
+    {
+      "word": "Padahal",
+      "start": 315.739990234375,
+      "end": 316.3399963378906
+    },
+    {
+      "word": "jamnya",
+      "start": 316.7799987792969,
+      "end": 317.0199890136719
+    },
+    {
+      "word": "tetap",
+      "start": 317.0199890136719,
+      "end": 317.239990234375
+    },
+    {
+      "word": "berjalan",
+      "start": 317.239990234375,
+      "end": 318.0799865722656
+    },
+    {
+      "word": "dengan",
+      "start": 318.0799865722656,
+      "end": 318.44000244140625
+    },
+    {
+      "word": "kecepatan",
+      "start": 318.44000244140625,
+      "end": 319.0199890136719
+    },
+    {
+      "word": "yang",
+      "start": 319.0199890136719,
+      "end": 319.20001220703125
+    },
+    {
+      "word": "sama",
+      "start": 319.20001220703125,
+      "end": 319.4599914550781
+    },
+    {
+      "word": "Jadi",
+      "start": 320.0400085449219,
+      "end": 320.2200012207031
+    },
+    {
+      "word": "yang",
+      "start": 320.8800048828125,
+      "end": 320.94000244140625
+    },
+    {
+      "word": "berubah",
+      "start": 320.94000244140625,
+      "end": 321.2799987792969
+    },
+    {
+      "word": "bukan",
+      "start": 321.2799987792969,
+      "end": 321.5199890136719
+    },
+    {
+      "word": "waktunya",
+      "start": 321.5199890136719,
+      "end": 321.9800109863281
+    },
+    {
+      "word": "Pengalaman",
+      "start": 322.6600036621094,
+      "end": 322.94000244140625
+    },
+    {
+      "word": "otak",
+      "start": 322.94000244140625,
+      "end": 323.239990234375
+    },
+    {
+      "word": "kita",
+      "start": 323.239990234375,
+      "end": 324.17999267578125
+    },
+    {
+      "word": "terhadap",
+      "start": 324.17999267578125,
+      "end": 324.5400085449219
+    },
+    {
+      "word": "waktu",
+      "start": 324.5400085449219,
+      "end": 324.82000732421875
+    },
+    {
+      "word": "yang",
+      "start": 324.82000732421875,
+      "end": 325.0400085449219
+    },
+    {
+      "word": "berubah",
+      "start": 325.0400085449219,
+      "end": 325.5
+    },
+    {
+      "word": "Ketika",
+      "start": 325.9800109863281,
+      "end": 326.0199890136719
+    },
+    {
+      "word": "kita",
+      "start": 326.0199890136719,
+      "end": 326.3800048828125
+    },
+    {
+      "word": "sibuk",
+      "start": 326.3800048828125,
+      "end": 326.739990234375
+    },
+    {
+      "word": "dan",
+      "start": 326.739990234375,
+      "end": 327.260009765625
+    },
+    {
+      "word": "tidak",
+      "start": 327.260009765625,
+      "end": 327.44000244140625
+    },
+    {
+      "word": "terlalu",
+      "start": 327.44000244140625,
+      "end": 327.760009765625
+    },
+    {
+      "word": "memperhatikan",
+      "start": 327.760009765625,
+      "end": 328.239990234375
+    },
+    {
+      "word": "waktu",
+      "start": 328.239990234375,
+      "end": 328.6199951171875
+    },
+    {
+      "word": "waktu",
+      "start": 329.3599853515625,
+      "end": 329.3599853515625
+    },
+    {
+      "word": "terasa",
+      "start": 329.3599853515625,
+      "end": 329.67999267578125
+    },
+    {
+      "word": "cepat",
+      "start": 329.67999267578125,
+      "end": 330.1000061035156
+    },
+    {
+      "word": "Ketika",
+      "start": 330.5799865722656,
+      "end": 330.6600036621094
+    },
+    {
+      "word": "kita",
+      "start": 330.6600036621094,
+      "end": 331.0799865722656
+    },
+    {
+      "word": "menunggu",
+      "start": 331.0799865722656,
+      "end": 331.4599914550781
+    },
+    {
+      "word": "dan",
+      "start": 331.4599914550781,
+      "end": 331.67999267578125
+    },
+    {
+      "word": "terus",
+      "start": 331.67999267578125,
+      "end": 331.8399963378906
+    },
+    {
+      "word": "memperhatikan",
+      "start": 331.8399963378906,
+      "end": 332.44000244140625
+    },
+    {
+      "word": "waktu",
+      "start": 332.44000244140625,
+      "end": 332.8599853515625
+    },
+    {
+      "word": "waktu",
+      "start": 333.6600036621094,
+      "end": 333.6600036621094
+    },
+    {
+      "word": "terasa",
+      "start": 333.6600036621094,
+      "end": 334.0199890136719
+    },
+    {
+      "word": "lambat",
+      "start": 334.0199890136719,
+      "end": 334.4599914550781
+    },
+    {
+      "word": "Dan",
+      "start": 334.8399963378906,
+      "end": 335.0799865722656
+    },
+    {
+      "word": "ini",
+      "start": 335.0799865722656,
+      "end": 335.260009765625
+    },
+    {
+      "word": "membawa",
+      "start": 335.260009765625,
+      "end": 335.55999755859375
+    },
+    {
+      "word": "kita",
+      "start": 335.55999755859375,
+      "end": 336.32000732421875
+    },
+    {
+      "word": "ke",
+      "start": 336.32000732421875,
+      "end": 336.739990234375
+    },
+    {
+      "word": "sesuatu",
+      "start": 336.739990234375,
+      "end": 337.1400146484375
+    },
+    {
+      "word": "yang",
+      "start": 337.1400146484375,
+      "end": 337.3399963378906
+    },
+    {
+      "word": "mungkin",
+      "start": 337.3399963378906,
+      "end": 337.6400146484375
+    },
+    {
+      "word": "paling",
+      "start": 337.6400146484375,
+      "end": 337.8399963378906
+    },
+    {
+      "word": "menarik",
+      "start": 337.8399963378906,
+      "end": 338.17999267578125
+    },
+    {
+      "word": "Kadang",
+      "start": 338.8599853515625,
+      "end": 339.0799865722656
+    },
+    {
+      "word": "kita",
+      "start": 339.6400146484375,
+      "end": 339.8599853515625
+    },
+    {
+      "word": "bahkan",
+      "start": 339.8599853515625,
+      "end": 340.1400146484375
+    },
+    {
+      "word": "bisa",
+      "start": 340.1400146484375,
+      "end": 340.3599853515625
+    },
+    {
+      "word": "melihat",
+      "start": 340.3599853515625,
+      "end": 340.6199951171875
+    },
+    {
+      "word": "sesuatu",
+      "start": 340.6199951171875,
+      "end": 341.2200012207031
+    },
+    {
+      "word": "tanpa",
+      "start": 341.2200012207031,
+      "end": 342.1400146484375
+    },
+    {
+      "word": "benar",
+      "start": 342.1400146484375,
+      "end": 342.44000244140625
+    },
+    {
+      "word": "benar",
+      "start": 342.44000244140625,
+      "end": 342.6600036621094
+    },
+    {
+      "word": "menyadarinya",
+      "start": 342.6600036621094,
+      "end": 343.55999755859375
+    },
+    {
+      "word": "Bayangkan",
+      "start": 343.79998779296875,
+      "end": 344.239990234375
+    },
+    {
+      "word": "kamu",
+      "start": 344.739990234375,
+      "end": 344.79998779296875
+    },
+    {
+      "word": "sedang",
+      "start": 344.79998779296875,
+      "end": 345.0799865722656
+    },
+    {
+      "word": "berjalan",
+      "start": 345.0799865722656,
+      "end": 345.5
+    },
+    {
+      "word": "di",
+      "start": 345.5,
+      "end": 345.67999267578125
+    },
+    {
+      "word": "tempat",
+      "start": 345.67999267578125,
+      "end": 345.9200134277344
+    },
+    {
+      "word": "ramai",
+      "start": 345.9200134277344,
+      "end": 346.3399963378906
+    },
+    {
+      "word": "Ada",
+      "start": 346.82000732421875,
+      "end": 346.8999938964844
+    },
+    {
+      "word": "banyak",
+      "start": 346.8999938964844,
+      "end": 347.1199951171875
+    },
+    {
+      "word": "orang",
+      "start": 347.1199951171875,
+      "end": 347.4599914550781
+    },
+    {
+      "word": "Banyak",
+      "start": 348.1600036621094,
+      "end": 348.1600036621094
+    },
+    {
+      "word": "kendaraan",
+      "start": 348.1600036621094,
+      "end": 349.1400146484375
+    },
+    {
+      "word": "Banyak",
+      "start": 349.4599914550781,
+      "end": 349.4599914550781
+    },
+    {
+      "word": "suara",
+      "start": 349.4599914550781,
+      "end": 349.8999938964844
+    },
+    {
+      "word": "Banyak",
+      "start": 350.55999755859375,
+      "end": 350.55999755859375
+    },
+    {
+      "word": "benda",
+      "start": 350.55999755859375,
+      "end": 350.739990234375
+    },
+    {
+      "word": "bergerak",
+      "start": 350.739990234375,
+      "end": 351.239990234375
+    },
+    {
+      "word": "Kalau",
+      "start": 351.6400146484375,
+      "end": 351.739990234375
+    },
+    {
+      "word": "otak",
+      "start": 351.739990234375,
+      "end": 352.1600036621094
+    },
+    {
+      "word": "harus",
+      "start": 352.260009765625,
+      "end": 352.94000244140625
+    },
+    {
+      "word": "memperhatikan",
+      "start": 352.94000244140625,
+      "end": 353.5199890136719
+    },
+    {
+      "word": "semuanya",
+      "start": 353.5199890136719,
+      "end": 354.0400085449219
+    },
+    {
+      "word": "Kita",
+      "start": 354.5199890136719,
+      "end": 354.6400146484375
+    },
+    {
+      "word": "bakal",
+      "start": 354.6400146484375,
+      "end": 354.8999938964844
+    },
+    {
+      "word": "kewalahan",
+      "start": 354.8999938964844,
+      "end": 355.6600036621094
+    },
+    {
+      "word": "Jadi",
+      "start": 356,
+      "end": 356.17999267578125
+    },
+    {
+      "word": "otak",
+      "start": 356.17999267578125,
+      "end": 356.3800048828125
+    },
+    {
+      "word": "memilih",
+      "start": 356.3800048828125,
+      "end": 357.1600036621094
+    },
+    {
+      "word": "Ini",
+      "start": 357.44000244140625,
+      "end": 357.4599914550781
+    },
+    {
+      "word": "penting",
+      "start": 357.4599914550781,
+      "end": 357.79998779296875
+    },
+    {
+      "word": "Ini",
+      "start": 358.32000732421875,
+      "end": 358.4200134277344
+    },
+    {
+      "word": "tidak",
+      "start": 358.4200134277344,
+      "end": 358.6400146484375
+    },
+    {
+      "word": "penting",
+      "start": 358.6400146484375,
+      "end": 359.0799865722656
+    },
+    {
+      "word": "Ini",
+      "start": 359.55999755859375,
+      "end": 359.6199951171875
+    },
+    {
+      "word": "perlu",
+      "start": 359.6199951171875,
+      "end": 359.8599853515625
+    },
+    {
+      "word": "diperhatikan",
+      "start": 359.8599853515625,
+      "end": 360.4800109863281
+    },
+    {
+      "word": "Ini",
+      "start": 361.0400085449219,
+      "end": 361.1000061035156
+    },
+    {
+      "word": "bisa",
+      "start": 361.1000061035156,
+      "end": 361.32000732421875
+    },
+    {
+      "word": "diabaikan",
+      "start": 361.32000732421875,
+      "end": 361.8999938964844
+    },
+    {
+      "word": "Itulah",
+      "start": 362.5199890136719,
+      "end": 362.7200012207031
+    },
+    {
+      "word": "sebabnya",
+      "start": 362.7200012207031,
+      "end": 363.70001220703125
+    },
+    {
+      "word": "kadang",
+      "start": 363.9200134277344,
+      "end": 364.1199951171875
+    },
+    {
+      "word": "kita",
+      "start": 364.70001220703125,
+      "end": 364.7799987792969
+    },
+    {
+      "word": "bisa",
+      "start": 364.7799987792969,
+      "end": 365.05999755859375
+    },
+    {
+      "word": "melihat",
+      "start": 365.05999755859375,
+      "end": 365.3399963378906
+    },
+    {
+      "word": "sesuatu",
+      "start": 365.3399963378906,
+      "end": 365.8800048828125
+    },
+    {
+      "word": "di",
+      "start": 365.8800048828125,
+      "end": 366.1199951171875
+    },
+    {
+      "word": "depan",
+      "start": 366.1199951171875,
+      "end": 366.32000732421875
+    },
+    {
+      "word": "mata",
+      "start": 366.32000732421875,
+      "end": 366.6400146484375
+    },
+    {
+      "word": "tapi",
+      "start": 367.1600036621094,
+      "end": 367.2200012207031
+    },
+    {
+      "word": "tidak",
+      "start": 367.2200012207031,
+      "end": 367.4800109863281
+    },
+    {
+      "word": "benar",
+      "start": 367.4800109863281,
+      "end": 367.8399963378906
+    },
+    {
+      "word": "benar",
+      "start": 367.8399963378906,
+      "end": 368.0799865722656
+    },
+    {
+      "word": "menyadarinya",
+      "start": 368.0799865722656,
+      "end": 369.0400085449219
+    },
+    {
+      "word": "Contohnya",
+      "start": 369.29998779296875,
+      "end": 369.82000732421875
+    },
+    {
+      "word": "ketika",
+      "start": 370.4599914550781,
+      "end": 370.8999938964844
+    },
+    {
+      "word": "kamu",
+      "start": 370.8999938964844,
+      "end": 371.1400146484375
+    },
+    {
+      "word": "sedang",
+      "start": 371.1400146484375,
+      "end": 371.4200134277344
+    },
+    {
+      "word": "mencari",
+      "start": 371.4200134277344,
+      "end": 371.739990234375
+    },
+    {
+      "word": "kunci",
+      "start": 371.739990234375,
+      "end": 372.20001220703125
+    },
+    {
+      "word": "kuncinya",
+      "start": 372.94000244140625,
+      "end": 373.1199951171875
+    },
+    {
+      "word": "sebenarnya",
+      "start": 373.1199951171875,
+      "end": 373.5400085449219
+    },
+    {
+      "word": "ada",
+      "start": 373.5400085449219,
+      "end": 373.67999267578125
+    },
+    {
+      "word": "di",
+      "start": 373.67999267578125,
+      "end": 374.05999755859375
+    },
+    {
+      "word": "meja",
+      "start": 374.05999755859375,
+      "end": 374.1400146484375
+    },
+    {
+      "word": "Kamu",
+      "start": 374.739990234375,
+      "end": 374.8599853515625
+    },
+    {
+      "word": "sudah",
+      "start": 374.8599853515625,
+      "end": 375.05999755859375
+    },
+    {
+      "word": "melihat",
+      "start": 375.05999755859375,
+      "end": 375.32000732421875
+    },
+    {
+      "word": "meja",
+      "start": 375.32000732421875,
+      "end": 375.55999755859375
+    },
+    {
+      "word": "itu",
+      "start": 375.55999755859375,
+      "end": 376.05999755859375
+    },
+    {
+      "word": "Tapi",
+      "start": 376.4599914550781,
+      "end": 376.6199951171875
+    },
+    {
+      "word": "karena",
+      "start": 377.3800048828125,
+      "end": 377.5199890136719
+    },
+    {
+      "word": "otak",
+      "start": 377.5199890136719,
+      "end": 377.82000732421875
+    },
+    {
+      "word": "sedang",
+      "start": 377.82000732421875,
+      "end": 378.1199951171875
+    },
+    {
+      "word": "mencari",
+      "start": 378.1199951171875,
+      "end": 378.5
+    },
+    {
+      "word": "bentuk",
+      "start": 378.5,
+      "end": 378.79998779296875
+    },
+    {
+      "word": "tertentu",
+      "start": 378.79998779296875,
+      "end": 379.3800048828125
+    },
+    {
+      "word": "kamu",
+      "start": 379.94000244140625,
+      "end": 380.0199890136719
+    },
+    {
+      "word": "bisa",
+      "start": 380.0199890136719,
+      "end": 380.29998779296875
+    },
+    {
+      "word": "saja",
+      "start": 380.29998779296875,
+      "end": 380.5799865722656
+    },
+    {
+      "word": "melewatkannya",
+      "start": 380.5799865722656,
+      "end": 381.260009765625
+    },
+    {
+      "word": "Lalu",
+      "start": 381.8599853515625,
+      "end": 382.1199951171875
+    },
+    {
+      "word": "beberapa",
+      "start": 382.82000732421875,
+      "end": 383.1400146484375
+    },
+    {
+      "word": "detik",
+      "start": 383.1400146484375,
+      "end": 383.3599853515625
+    },
+    {
+      "word": "kemudian",
+      "start": 383.3599853515625,
+      "end": 383.8599853515625
+    },
+    {
+      "word": "lah",
+      "start": 384.4800109863281,
+      "end": 384.70001220703125
+    },
+    {
+      "word": "dari",
+      "start": 385.4200134277344,
+      "end": 385.55999755859375
+    },
+    {
+      "word": "tadi",
+      "start": 385.55999755859375,
+      "end": 385.7200012207031
+    },
+    {
+      "word": "ada",
+      "start": 385.7200012207031,
+      "end": 385.9200134277344
+    },
+    {
+      "word": "di",
+      "start": 385.9200134277344,
+      "end": 386.1199951171875
+    },
+    {
+      "word": "sini",
+      "start": 386.1199951171875,
+      "end": 386.260009765625
+    },
+    {
+      "word": "Bukan",
+      "start": 386.8800048828125,
+      "end": 386.94000244140625
+    },
+    {
+      "word": "matamu",
+      "start": 386.94000244140625,
+      "end": 387.32000732421875
+    },
+    {
+      "word": "yang",
+      "start": 387.32000732421875,
+      "end": 387.5199890136719
+    },
+    {
+      "word": "rusak",
+      "start": 387.5199890136719,
+      "end": 387.82000732421875
+    },
+    {
+      "word": "Otakmu",
+      "start": 388.4200134277344,
+      "end": 388.8999938964844
+    },
+    {
+      "word": "hanya",
+      "start": 388.8999938964844,
+      "end": 389.55999755859375
+    },
+    {
+      "word": "tidak",
+      "start": 389.55999755859375,
+      "end": 389.760009765625
+    },
+    {
+      "word": "memberikan",
+      "start": 389.760009765625,
+      "end": 390.17999267578125
+    },
+    {
+      "word": "perhatian",
+      "start": 390.17999267578125,
+      "end": 390.6199951171875
+    },
+    {
+      "word": "penuh",
+      "start": 390.6199951171875,
+      "end": 390.9800109863281
+    },
+    {
+      "word": "pada",
+      "start": 390.9800109863281,
+      "end": 391.3800048828125
+    },
+    {
+      "word": "benda",
+      "start": 391.3800048828125,
+      "end": 391.6000061035156
+    },
+    {
+      "word": "tersebut",
+      "start": 391.6000061035156,
+      "end": 392.1000061035156
+    },
+    {
+      "word": "Dan",
+      "start": 392.5,
+      "end": 392.94000244140625
+    },
+    {
+      "word": "sebenarnya",
+      "start": 393.5,
+      "end": 393.8800048828125
+    },
+    {
+      "word": "semua",
+      "start": 394.5799865722656,
+      "end": 394.7799987792969
+    },
+    {
+      "word": "ini",
+      "start": 394.7799987792969,
+      "end": 395.7200012207031
+    },
+    {
+      "word": "menunjukkan",
+      "start": 395.7200012207031,
+      "end": 396.3599853515625
+    },
+    {
+      "word": "sesuatu",
+      "start": 396.3599853515625,
+      "end": 396.8399963378906
+    },
+    {
+      "word": "yang",
+      "start": 396.8399963378906,
+      "end": 397.1000061035156
+    },
+    {
+      "word": "cukup",
+      "start": 397.1000061035156,
+      "end": 397.29998779296875
+    },
+    {
+      "word": "penting",
+      "start": 397.29998779296875,
+      "end": 397.7200012207031
+    },
+    {
+      "word": "Kita",
+      "start": 398.2799987792969,
+      "end": 398.3599853515625
+    },
+    {
+      "word": "sering",
+      "start": 398.3599853515625,
+      "end": 398.5799865722656
+    },
+    {
+      "word": "merasa",
+      "start": 398.5799865722656,
+      "end": 399.0199890136719
+    },
+    {
+      "word": "apa",
+      "start": 399.0199890136719,
+      "end": 399.7200012207031
+    },
+    {
+      "word": "yang",
+      "start": 399.7200012207031,
+      "end": 399.94000244140625
+    },
+    {
+      "word": "saya",
+      "start": 399.94000244140625,
+      "end": 400.2200012207031
+    },
+    {
+      "word": "lihat",
+      "start": 400.2200012207031,
+      "end": 400.4599914550781
+    },
+    {
+      "word": "berarti",
+      "start": 401.1199951171875,
+      "end": 401.20001220703125
+    },
+    {
+      "word": "itu",
+      "start": 401.20001220703125,
+      "end": 401.4800109863281
+    },
+    {
+      "word": "kenyataan",
+      "start": 401.4800109863281,
+      "end": 402.1400146484375
+    },
+    {
+      "word": "Kalau",
+      "start": 402.70001220703125,
+      "end": 402.70001220703125
+    },
+    {
+      "word": "saya",
+      "start": 402.70001220703125,
+      "end": 402.9800109863281
+    },
+    {
+      "word": "ingat",
+      "start": 402.9800109863281,
+      "end": 403.3599853515625
+    },
+    {
+      "word": "berarti",
+      "start": 403.8599853515625,
+      "end": 404.1400146484375
+    },
+    {
+      "word": "memang",
+      "start": 404.1400146484375,
+      "end": 404.44000244140625
+    },
+    {
+      "word": "terjadi",
+      "start": 404.44000244140625,
+      "end": 404.9599914550781
+    },
+    {
+      "word": "Kalau",
+      "start": 405.6400146484375,
+      "end": 405.70001220703125
+    },
+    {
+      "word": "saya",
+      "start": 405.70001220703125,
+      "end": 405.94000244140625
+    },
+    {
+      "word": "merasa",
+      "start": 405.94000244140625,
+      "end": 406.239990234375
+    },
+    {
+      "word": "familiar",
+      "start": 406.239990234375,
+      "end": 406.7799987792969
+    },
+    {
+      "word": "berarti",
+      "start": 407.7200012207031,
+      "end": 407.82000732421875
+    },
+    {
+      "word": "saya",
+      "start": 407.82000732421875,
+      "end": 408.1000061035156
+    },
+    {
+      "word": "pernah",
+      "start": 408.1000061035156,
+      "end": 408.3599853515625
+    },
+    {
+      "word": "mengalaminya",
+      "start": 408.3599853515625,
+      "end": 408.9599914550781
+    },
+    {
+      "word": "Kalau",
+      "start": 409.55999755859375,
+      "end": 409.55999755859375
+    },
+    {
+      "word": "saya",
+      "start": 409.55999755859375,
+      "end": 409.8399963378906
+    },
+    {
+      "word": "merasa",
+      "start": 409.8399963378906,
+      "end": 410.1199951171875
+    },
+    {
+      "word": "waktunya",
+      "start": 410.1199951171875,
+      "end": 410.4599914550781
+    },
+    {
+      "word": "lama",
+      "start": 410.4599914550781,
+      "end": 410.8599853515625
+    },
+    {
+      "word": "berarti",
+      "start": 411.739990234375,
+      "end": 411.79998779296875
+    },
+    {
+      "word": "memang",
+      "start": 411.79998779296875,
+      "end": 412.1000061035156
+    },
+    {
+      "word": "waktunya",
+      "start": 412.1000061035156,
+      "end": 412.44000244140625
+    },
+    {
+      "word": "lama",
+      "start": 412.44000244140625,
+      "end": 412.8599853515625
+    },
+    {
+      "word": "Padahal",
+      "start": 413.32000732421875,
+      "end": 413.760009765625
+    },
+    {
+      "word": "belum",
+      "start": 414.3999938964844,
+      "end": 414.4800109863281
+    },
+    {
+      "word": "tentu",
+      "start": 414.4800109863281,
+      "end": 415.260009765625
+    },
+    {
+      "word": "otak",
+      "start": 415.5400085449219,
+      "end": 415.6199951171875
+    },
+    {
+      "word": "kita",
+      "start": 415.6199951171875,
+      "end": 415.94000244140625
+    },
+    {
+      "word": "terus",
+      "start": 415.94000244140625,
+      "end": 416.20001220703125
+    },
+    {
+      "word": "mengambil",
+      "start": 416.20001220703125,
+      "end": 416.6400146484375
+    },
+    {
+      "word": "informasi",
+      "start": 416.6400146484375,
+      "end": 417.2200012207031
+    },
+    {
+      "word": "yang",
+      "start": 417.2200012207031,
+      "end": 417.4599914550781
+    },
+    {
+      "word": "terbatas",
+      "start": 417.4599914550781,
+      "end": 417.9200134277344
+    },
+    {
+      "word": "menggabungkannya",
+      "start": 418.6000061035156,
+      "end": 419.1000061035156
+    },
+    {
+      "word": "dengan",
+      "start": 419.1000061035156,
+      "end": 419.3599853515625
+    },
+    {
+      "word": "pengalaman",
+      "start": 419.3599853515625,
+      "end": 419.7799987792969
+    },
+    {
+      "word": "masa",
+      "start": 419.7799987792969,
+      "end": 420.05999755859375
+    },
+    {
+      "word": "lalu",
+      "start": 420.05999755859375,
+      "end": 420.6400146484375
+    },
+    {
+      "word": "membuat",
+      "start": 420.94000244140625,
+      "end": 421.1000061035156
+    },
+    {
+      "word": "prediksi",
+      "start": 421.1000061035156,
+      "end": 421.6199951171875
+    },
+    {
+      "word": "lalu",
+      "start": 422.0799865722656,
+      "end": 422.3599853515625
+    },
+    {
+      "word": "menghasilkan",
+      "start": 422.3599853515625,
+      "end": 422.9800109863281
+    },
+    {
+      "word": "versi",
+      "start": 422.9800109863281,
+      "end": 423.29998779296875
+    },
+    {
+      "word": "dunia",
+      "start": 423.29998779296875,
+      "end": 423.7200012207031
+    },
+    {
+      "word": "yang",
+      "start": 423.79998779296875,
+      "end": 424.4800109863281
+    },
+    {
+      "word": "menurut",
+      "start": 424.4800109863281,
+      "end": 424.8800048828125
+    },
+    {
+      "word": "otak",
+      "start": 424.8800048828125,
+      "end": 425.3399963378906
+    },
+    {
+      "word": "paling",
+      "start": 425.3399963378906,
+      "end": 425.82000732421875
+    },
+    {
+      "word": "masuk",
+      "start": 425.82000732421875,
+      "end": 426.1400146484375
+    },
+    {
+      "word": "akal",
+      "start": 426.1400146484375,
+      "end": 426.82000732421875
+    },
+    {
+      "word": "Dan",
+      "start": 426.8800048828125,
+      "end": 427.1000061035156
+    },
+    {
+      "word": "versi",
+      "start": 427.1000061035156,
+      "end": 427.44000244140625
+    },
+    {
+      "word": "itulah",
+      "start": 427.44000244140625,
+      "end": 427.7799987792969
+    },
+    {
+      "word": "yang",
+      "start": 427.7799987792969,
+      "end": 428.3800048828125
+    },
+    {
+      "word": "kita",
+      "start": 428.3800048828125,
+      "end": 428.6600036621094
+    },
+    {
+      "word": "rasakan",
+      "start": 428.6600036621094,
+      "end": 429
+    },
+    {
+      "word": "sebagai",
+      "start": 429,
+      "end": 429.4599914550781
+    },
+    {
+      "word": "kenyataan",
+      "start": 430.29998779296875,
+      "end": 430.9800109863281
+    },
+    {
+      "word": "Jadi",
+      "start": 431.1199951171875,
+      "end": 431.239990234375
+    },
+    {
+      "word": "ketika",
+      "start": 431.239990234375,
+      "end": 431.5
+    },
+    {
+      "word": "kamu",
+      "start": 431.5,
+      "end": 431.8399963378906
+    },
+    {
+      "word": "salah",
+      "start": 431.8399963378906,
+      "end": 432.20001220703125
+    },
+    {
+      "word": "mengenali",
+      "start": 432.20001220703125,
+      "end": 432.67999267578125
+    },
+    {
+      "word": "orang",
+      "start": 432.67999267578125,
+      "end": 433.3800048828125
+    },
+    {
+      "word": "otak",
+      "start": 433.6600036621094,
+      "end": 433.739990234375
+    },
+    {
+      "word": "sedang",
+      "start": 433.739990234375,
+      "end": 434.0199890136719
+    },
+    {
+      "word": "melakukan",
+      "start": 434.0199890136719,
+      "end": 434.44000244140625
+    },
+    {
+      "word": "prediksi",
+      "start": 434.44000244140625,
+      "end": 434.9599914550781
+    },
+    {
+      "word": "Ketika",
+      "start": 435.760009765625,
+      "end": 435.760009765625
+    },
+    {
+      "word": "kamu",
+      "start": 435.760009765625,
+      "end": 436.0199890136719
+    },
+    {
+      "word": "merasa",
+      "start": 436.0199890136719,
+      "end": 436.3599853515625
+    },
+    {
+      "word": "pernah",
+      "start": 436.3599853515625,
+      "end": 436.67999267578125
+    },
+    {
+      "word": "mengalami",
+      "start": 436.67999267578125,
+      "end": 437.0400085449219
+    },
+    {
+      "word": "sesuatu",
+      "start": 437.0400085449219,
+      "end": 437.6199951171875
+    },
+    {
+      "word": "otak",
+      "start": 438.260009765625,
+      "end": 438.3599853515625
+    },
+    {
+      "word": "sedang",
+      "start": 438.3599853515625,
+      "end": 438.67999267578125
+    },
+    {
+      "word": "menghubungkan",
+      "start": 438.67999267578125,
+      "end": 439.3599853515625
+    },
+    {
+      "word": "pola",
+      "start": 439.3599853515625,
+      "end": 439.79998779296875
+    },
+    {
+      "word": "Ketika",
+      "start": 440.17999267578125,
+      "end": 440.29998779296875
+    },
+    {
+      "word": "kamu",
+      "start": 440.29998779296875,
+      "end": 440.6199951171875
+    },
+    {
+      "word": "lupa",
+      "start": 440.6199951171875,
+      "end": 440.8800048828125
+    },
+    {
+      "word": "apa",
+      "start": 440.8800048828125,
+      "end": 441.1400146484375
+    },
+    {
+      "word": "yang",
+      "start": 441.1400146484375,
+      "end": 441.32000732421875
+    },
+    {
+      "word": "baru",
+      "start": 441.32000732421875,
+      "end": 441.5199890136719
+    },
+    {
+      "word": "saja",
+      "start": 441.5199890136719,
+      "end": 441.70001220703125
+    },
+    {
+      "word": "dibaca",
+      "start": 441.70001220703125,
+      "end": 442.17999267578125
+    },
+    {
+      "word": "perhatianmu",
+      "start": 442.8399963378906,
+      "end": 443.260009765625
+    },
+    {
+      "word": "mungkin",
+      "start": 443.260009765625,
+      "end": 443.5199890136719
+    },
+    {
+      "word": "tidak",
+      "start": 443.5199890136719,
+      "end": 443.70001220703125
+    },
+    {
+      "word": "cukup",
+      "start": 443.70001220703125,
+      "end": 443.9200134277344
+    },
+    {
+      "word": "dalam",
+      "start": 443.9200134277344,
+      "end": 444.2200012207031
+    },
+    {
+      "word": "Ketika",
+      "start": 444.8999938964844,
+      "end": 444.9200134277344
+    },
+    {
+      "word": "waktu",
+      "start": 444.9200134277344,
+      "end": 445.2200012207031
+    },
+    {
+      "word": "terasa",
+      "start": 445.2200012207031,
+      "end": 445.55999755859375
+    },
+    {
+      "word": "cepat",
+      "start": 445.55999755859375,
+      "end": 445.9800109863281
+    },
+    {
+      "word": "otak",
+      "start": 446.5,
+      "end": 446.6400146484375
+    },
+    {
+      "word": "sedang",
+      "start": 446.6400146484375,
+      "end": 446.9200134277344
+    },
+    {
+      "word": "menilai",
+      "start": 446.9200134277344,
+      "end": 447.2200012207031
+    },
+    {
+      "word": "pengalamanmu",
+      "start": 447.2200012207031,
+      "end": 447.94000244140625
+    },
+    {
+      "word": "Dan",
+      "start": 448.29998779296875,
+      "end": 448.5199890136719
+    },
+    {
+      "word": "ketika",
+      "start": 448.5199890136719,
+      "end": 448.7799987792969
+    },
+    {
+      "word": "kamu",
+      "start": 448.7799987792969,
+      "end": 449.1199951171875
+    },
+    {
+      "word": "yakin",
+      "start": 449.1199951171875,
+      "end": 449.5199890136719
+    },
+    {
+      "word": "terhadap",
+      "start": 449.5199890136719,
+      "end": 449.9800109863281
+    },
+    {
+      "word": "sebuah",
+      "start": 449.9800109863281,
+      "end": 450.3399963378906
+    },
+    {
+      "word": "ingatan",
+      "start": 450.3399963378906,
+      "end": 450.8599853515625
+    },
+    {
+      "word": "belum",
+      "start": 451.4800109863281,
+      "end": 451.5400085449219
+    },
+    {
+      "word": "tentu",
+      "start": 451.5400085449219,
+      "end": 451.8599853515625
+    },
+    {
+      "word": "ingatan",
+      "start": 451.8599853515625,
+      "end": 452.2200012207031
+    },
+    {
+      "word": "itu",
+      "start": 452.2200012207031,
+      "end": 452.4800109863281
+    },
+    {
+      "word": "merupakan",
+      "start": 452.4800109863281,
+      "end": 452.9200134277344
+    },
+    {
+      "word": "rekaman",
+      "start": 452.9200134277344,
+      "end": 453.32000732421875
+    },
+    {
+      "word": "sempurna",
+      "start": 453.32000732421875,
+      "end": 454.05999755859375
+    },
+    {
+      "word": "Tapi",
+      "start": 454.3599853515625,
+      "end": 454.5
+    },
+    {
+      "word": "jangan",
+      "start": 454.5,
+      "end": 454.760009765625
+    },
+    {
+      "word": "salah",
+      "start": 454.760009765625,
+      "end": 455.1199951171875
+    },
+    {
+      "word": "ini",
+      "start": 455.1199951171875,
+      "end": 455.7200012207031
+    },
+    {
+      "word": "bukan",
+      "start": 455.7200012207031,
+      "end": 456
+    },
+    {
+      "word": "berarti",
+      "start": 456,
+      "end": 456.3399963378906
+    },
+    {
+      "word": "kita",
+      "start": 456.3399963378906,
+      "end": 456.67999267578125
+    },
+    {
+      "word": "tidak",
+      "start": 456.67999267578125,
+      "end": 456.79998779296875
+    },
+    {
+      "word": "bisa",
+      "start": 456.79998779296875,
+      "end": 457.1000061035156
+    },
+    {
+      "word": "mempercayai",
+      "start": 457.1000061035156,
+      "end": 457.739990234375
+    },
+    {
+      "word": "otak",
+      "start": 457.739990234375,
+      "end": 458.0400085449219
+    },
+    {
+      "word": "sama",
+      "start": 458.0400085449219,
+      "end": 458.2799987792969
+    },
+    {
+      "word": "sekali",
+      "start": 458.2799987792969,
+      "end": 458.6600036621094
+    },
+    {
+      "word": "Justru",
+      "start": 459.260009765625,
+      "end": 459.44000244140625
+    },
+    {
+      "word": "sebaliknya",
+      "start": 459.44000244140625,
+      "end": 460.4599914550781
+    },
+    {
+      "word": "kemampuan",
+      "start": 460.6000061035156,
+      "end": 460.8999938964844
+    },
+    {
+      "word": "otak",
+      "start": 460.8999938964844,
+      "end": 461.239990234375
+    },
+    {
+      "word": "untuk",
+      "start": 461.239990234375,
+      "end": 461.5
+    },
+    {
+      "word": "memprediksi",
+      "start": 461.5,
+      "end": 462.1400146484375
+    },
+    {
+      "word": "menyederhanakan",
+      "start": 462.8399963378906,
+      "end": 463.5199890136719
+    },
+    {
+      "word": "dan",
+      "start": 464.0400085449219,
+      "end": 464.239990234375
+    },
+    {
+      "word": "mengisi",
+      "start": 464.239990234375,
+      "end": 464.5400085449219
+    },
+    {
+      "word": "informasi",
+      "start": 464.5400085449219,
+      "end": 465.1000061035156
+    },
+    {
+      "word": "yang",
+      "start": 465.1000061035156,
+      "end": 465.3399963378906
+    },
+    {
+      "word": "kurang",
+      "start": 465.3399963378906,
+      "end": 465.5799865722656
+    },
+    {
+      "word": "adalah",
+      "start": 466.20001220703125,
+      "end": 466.3599853515625
+    },
+    {
+      "word": "salah",
+      "start": 466.3599853515625,
+      "end": 466.6199951171875
+    },
+    {
+      "word": "satu",
+      "start": 466.6199951171875,
+      "end": 466.8999938964844
+    },
+    {
+      "word": "alasan",
+      "start": 466.8999938964844,
+      "end": 467.2799987792969
+    },
+    {
+      "word": "kita",
+      "start": 467.2799987792969,
+      "end": 467.8999938964844
+    },
+    {
+      "word": "bisa",
+      "start": 467.8999938964844,
+      "end": 468.2200012207031
+    },
+    {
+      "word": "menjalani",
+      "start": 468.2200012207031,
+      "end": 468.5799865722656
+    },
+    {
+      "word": "kehidupan",
+      "start": 468.5799865722656,
+      "end": 469.1199951171875
+    },
+    {
+      "word": "sehari",
+      "start": 469.1199951171875,
+      "end": 469.4599914550781
+    },
+    {
+      "word": "hari",
+      "start": 469.4599914550781,
+      "end": 469.70001220703125
+    },
+    {
+      "word": "tanpa",
+      "start": 469.70001220703125,
+      "end": 470.32000732421875
+    },
+    {
+      "word": "harus",
+      "start": 470.32000732421875,
+      "end": 470.6400146484375
+    },
+    {
+      "word": "memikirkan",
+      "start": 470.6400146484375,
+      "end": 471.239990234375
+    },
+    {
+      "word": "setiap",
+      "start": 471.239990234375,
+      "end": 471.5199890136719
+    },
+    {
+      "word": "hal",
+      "start": 471.5199890136719,
+      "end": 471.7200012207031
+    },
+    {
+      "word": "kecil",
+      "start": 471.7200012207031,
+      "end": 472.05999755859375
+    },
+    {
+      "word": "Bayangkan",
+      "start": 472.8599853515625,
+      "end": 473.5400085449219
+    },
+    {
+      "word": "kalau",
+      "start": 473.82000732421875,
+      "end": 473.9599914550781
+    },
+    {
+      "word": "setiap",
+      "start": 473.9599914550781,
+      "end": 474.3800048828125
+    },
+    {
+      "word": "kali",
+      "start": 474.3800048828125,
+      "end": 474.5799865722656
+    },
+    {
+      "word": "melihat",
+      "start": 474.5799865722656,
+      "end": 474.8999938964844
+    },
+    {
+      "word": "jalan",
+      "start": 474.8999938964844,
+      "end": 475.29998779296875
+    },
+    {
+      "word": "kita",
+      "start": 475.8599853515625,
+      "end": 476.0199890136719
+    },
+    {
+      "word": "harus",
+      "start": 476.0199890136719,
+      "end": 476.17999267578125
+    },
+    {
+      "word": "menganalisis",
+      "start": 476.17999267578125,
+      "end": 476.8999938964844
+    },
+    {
+      "word": "setiap",
+      "start": 477.05999755859375,
+      "end": 477.739990234375
+    },
+    {
+      "word": "kendaraan",
+      "start": 477.739990234375,
+      "end": 478.4200134277344
+    },
+    {
+      "word": "Setiap",
+      "start": 478.94000244140625,
+      "end": 478.94000244140625
+    },
+    {
+      "word": "kali",
+      "start": 478.94000244140625,
+      "end": 479.1600036621094
+    },
+    {
+      "word": "mendengar",
+      "start": 479.1600036621094,
+      "end": 479.5799865722656
+    },
+    {
+      "word": "suara",
+      "start": 479.5799865722656,
+      "end": 479.9200134277344
+    },
+    {
+      "word": "kita",
+      "start": 480.3999938964844,
+      "end": 480.55999755859375
+    },
+    {
+      "word": "harus",
+      "start": 480.55999755859375,
+      "end": 480.70001220703125
+    },
+    {
+      "word": "memproses",
+      "start": 480.70001220703125,
+      "end": 481.260009765625
+    },
+    {
+      "word": "setiap",
+      "start": 481.260009765625,
+      "end": 481.6199951171875
+    },
+    {
+      "word": "gelombangnya",
+      "start": 481.6199951171875,
+      "end": 482.4200134277344
+    },
+    {
+      "word": "Setiap",
+      "start": 482.94000244140625,
+      "end": 483.1400146484375
+    },
+    {
+      "word": "kali",
+      "start": 483.1400146484375,
+      "end": 483.3399963378906
+    },
+    {
+      "word": "melihat",
+      "start": 483.3399963378906,
+      "end": 483.67999267578125
+    },
+    {
+      "word": "wajah",
+      "start": 483.67999267578125,
+      "end": 484.2799987792969
+    },
+    {
+      "word": "kita",
+      "start": 484.2799987792969,
+      "end": 484.6400146484375
+    },
+    {
+      "word": "harus",
+      "start": 484.6400146484375,
+      "end": 484.79998779296875
+    },
+    {
+      "word": "menghitung",
+      "start": 484.79998779296875,
+      "end": 485.2200012207031
+    },
+    {
+      "word": "semua",
+      "start": 485.2200012207031,
+      "end": 485.6400146484375
+    },
+    {
+      "word": "cirinya",
+      "start": 485.6400146484375,
+      "end": 485.8800048828125
+    },
+    {
+      "word": "satu",
+      "start": 485.8800048828125,
+      "end": 486.1600036621094
+    },
+    {
+      "word": "persatu",
+      "start": 486.1600036621094,
+      "end": 486.6600036621094
+    },
+    {
+      "word": "Kita",
+      "start": 487.20001220703125,
+      "end": 487.260009765625
+    },
+    {
+      "word": "akan",
+      "start": 487.260009765625,
+      "end": 487.44000244140625
+    },
+    {
+      "word": "kelelahan",
+      "start": 487.44000244140625,
+      "end": 488
+    },
+    {
+      "word": "Jadi",
+      "start": 488.3599853515625,
+      "end": 488.4800109863281
+    },
+    {
+      "word": "otak",
+      "start": 488.4800109863281,
+      "end": 488.82000732421875
+    },
+    {
+      "word": "memilih",
+      "start": 488.82000732421875,
+      "end": 489.32000732421875
+    },
+    {
+      "word": "jalan",
+      "start": 489.32000732421875,
+      "end": 489.5199890136719
+    },
+    {
+      "word": "pintas",
+      "start": 489.5199890136719,
+      "end": 490
+    },
+    {
+      "word": "Cepat",
+      "start": 490.8599853515625,
+      "end": 490.94000244140625
+    },
+    {
+      "word": "efisien",
+      "start": 491.55999755859375,
+      "end": 491.8399963378906
+    },
+    {
+      "word": "praktis",
+      "start": 492.5400085449219,
+      "end": 492.8399963378906
+    },
+    {
+      "word": "Hanya",
+      "start": 493.4800109863281,
+      "end": 493.4800109863281
+    },
+    {
+      "word": "saja",
+      "start": 493.4800109863281,
+      "end": 494.0799865722656
+    },
+    {
+      "word": "jalan",
+      "start": 494.6400146484375,
+      "end": 494.82000732421875
+    },
+    {
+      "word": "pintas",
+      "start": 494.82000732421875,
+      "end": 495.55999755859375
+    },
+    {
+      "word": "kadang",
+      "start": 495.55999755859375,
+      "end": 496.260009765625
+    },
+    {
+      "word": "menghasilkan",
+      "start": 496.260009765625,
+      "end": 496.9200134277344
+    },
+    {
+      "word": "kesalahan",
+      "start": 496.9200134277344,
+      "end": 497.6400146484375
+    },
+    {
+      "word": "Dan",
+      "start": 498.0199890136719,
+      "end": 498.20001220703125
+    },
+    {
+      "word": "mungkin",
+      "start": 498.20001220703125,
+      "end": 498.6199951171875
+    },
+    {
+      "word": "itu",
+      "start": 499.20001220703125,
+      "end": 499.260009765625
+    },
+    {
+      "word": "sebabnya",
+      "start": 499.260009765625,
+      "end": 499.9200134277344
+    },
+    {
+      "word": "kita",
+      "start": 499.9200134277344,
+      "end": 500.55999755859375
+    },
+    {
+      "word": "sering",
+      "start": 500.55999755859375,
+      "end": 500.760009765625
+    },
+    {
+      "word": "mengalami",
+      "start": 500.760009765625,
+      "end": 501.20001220703125
+    },
+    {
+      "word": "momen",
+      "start": 501.20001220703125,
+      "end": 501.5199890136719
+    },
+    {
+      "word": "seperti",
+      "start": 501.5199890136719,
+      "end": 501.9599914550781
+    },
+    {
+      "word": "eh",
+      "start": 502.5400085449219,
+      "end": 502.6199951171875
+    },
+    {
+      "word": "bukannya",
+      "start": 503.0799865722656,
+      "end": 503.32000732421875
+    },
+    {
+      "word": "tadi",
+      "start": 503.32000732421875,
+      "end": 503.5199890136719
+    },
+    {
+      "word": "begini",
+      "start": 503.5199890136719,
+      "end": 504.260009765625
+    },
+    {
+      "word": "Kayaknya",
+      "start": 504.6199951171875,
+      "end": 505
+    },
+    {
+      "word": "gue",
+      "start": 505.5400085449219,
+      "end": 505.6199951171875
+    },
+    {
+      "word": "pernah",
+      "start": 505.6199951171875,
+      "end": 505.8399963378906
+    },
+    {
+      "word": "lihat",
+      "start": 505.8399963378906,
+      "end": 506.05999755859375
+    },
+    {
+      "word": "ini",
+      "start": 506.05999755859375,
+      "end": 506.3999938964844
+    },
+    {
+      "word": "Perasaan",
+      "start": 507,
+      "end": 507.29998779296875
+    },
+    {
+      "word": "HP",
+      "start": 507.29998779296875,
+      "end": 507.5199890136719
+    },
+    {
+      "word": "gue",
+      "start": 507.5199890136719,
+      "end": 507.8399963378906
+    },
+    {
+      "word": "tadi",
+      "start": 507.8399963378906,
+      "end": 508.0799865722656
+    },
+    {
+      "word": "di",
+      "start": 508.0799865722656,
+      "end": 508.32000732421875
+    },
+    {
+      "word": "sini",
+      "start": 508.32000732421875,
+      "end": 508.67999267578125
+    },
+    {
+      "word": "gue",
+      "start": 509.32000732421875,
+      "end": 509.5199890136719
+    },
+    {
+      "word": "yakin",
+      "start": 509.5199890136719,
+      "end": 509.6600036621094
+    },
+    {
+      "word": "banget",
+      "start": 509.6600036621094,
+      "end": 509.9599914550781
+    },
+    {
+      "word": "tadi",
+      "start": 509.9599914550781,
+      "end": 510.1000061035156
+    },
+    {
+      "word": "udah",
+      "start": 510.1000061035156,
+      "end": 510.260009765625
+    },
+    {
+      "word": "baca",
+      "start": 510.260009765625,
+      "end": 510.6000061035156
+    },
+    {
+      "word": "Atau",
+      "start": 511.239990234375,
+      "end": 511.5400085449219
+    },
+    {
+      "word": "gue",
+      "start": 512.2999877929688,
+      "end": 512.4199829101562
+    },
+    {
+      "word": "tahu",
+      "start": 512.4199829101562,
+      "end": 512.6199951171875
+    },
+    {
+      "word": "jawabannya",
+      "start": 512.6199951171875,
+      "end": 513.1400146484375
+    },
+    {
+      "word": "Tapi",
+      "start": 513.1400146484375,
+      "end": 514.02001953125
+    },
+    {
+      "word": "kok",
+      "start": 514.02001953125,
+      "end": 514.239990234375
+    },
+    {
+      "word": "sekarang",
+      "start": 514.239990234375,
+      "end": 514.5
+    },
+    {
+      "word": "lupa",
+      "start": 514.5,
+      "end": 514.7999877929688
+    },
+    {
+      "word": "Jadi",
+      "start": 515.4000244140625,
+      "end": 515.47998046875
+    },
+    {
+      "word": "sebenarnya",
+      "start": 515.47998046875,
+      "end": 516.1599731445312
+    },
+    {
+      "word": "otak",
+      "start": 516.8400268554688,
+      "end": 516.9199829101562
+    },
+    {
+      "word": "kita",
+      "start": 516.9199829101562,
+      "end": 517.219970703125
+    },
+    {
+      "word": "bukan",
+      "start": 517.219970703125,
+      "end": 517.4000244140625
+    },
+    {
+      "word": "sedang",
+      "start": 517.4000244140625,
+      "end": 517.7000122070312
+    },
+    {
+      "word": "berusaha",
+      "start": 517.7000122070312,
+      "end": 518.1199951171875
+    },
+    {
+      "word": "menipu",
+      "start": 518.1199951171875,
+      "end": 518.5399780273438
+    },
+    {
+      "word": "kita",
+      "start": 518.5399780273438,
+      "end": 519.0399780273438
+    },
+    {
+      "word": "Otak",
+      "start": 519.4600219726562,
+      "end": 519.5599975585938
+    },
+    {
+      "word": "hanya",
+      "start": 519.5599975585938,
+      "end": 519.7999877929688
+    },
+    {
+      "word": "berusaha",
+      "start": 519.7999877929688,
+      "end": 520.3400268554688
+    },
+    {
+      "word": "membuat",
+      "start": 520.3400268554688,
+      "end": 520.7000122070312
+    },
+    {
+      "word": "dunia",
+      "start": 520.7000122070312,
+      "end": 521
+    },
+    {
+      "word": "yang",
+      "start": 521,
+      "end": 521.1799926757812
+    },
+    {
+      "word": "sangat",
+      "start": 521.1799926757812,
+      "end": 521.47998046875
+    },
+    {
+      "word": "rumit",
+      "start": 521.47998046875,
+      "end": 521.6799926757812
+    },
+    {
+      "word": "menjadi",
+      "start": 522.0599975585938,
+      "end": 522.3400268554688
+    },
+    {
+      "word": "cukup",
+      "start": 522.3400268554688,
+      "end": 522.5800170898438
+    },
+    {
+      "word": "sederhana",
+      "start": 522.5800170898438,
+      "end": 523
+    },
+    {
+      "word": "untuk",
+      "start": 523,
+      "end": 523.2000122070312
+    },
+    {
+      "word": "kita",
+      "start": 523.2000122070312,
+      "end": 523.5
+    },
+    {
+      "word": "pahami",
+      "start": 523.5,
+      "end": 523.780029296875
+    },
+    {
+      "word": "Masalahnya",
+      "start": 524.52001953125,
+      "end": 525.1799926757812
+    },
+    {
+      "word": "kadang",
+      "start": 525.5999755859375,
+      "end": 525.780029296875
+    },
+    {
+      "word": "otak",
+      "start": 525.780029296875,
+      "end": 526.02001953125
+    },
+    {
+      "word": "terlalu",
+      "start": 526.02001953125,
+      "end": 526.3599853515625
+    },
+    {
+      "word": "percaya",
+      "start": 526.3599853515625,
+      "end": 526.760009765625
+    },
+    {
+      "word": "diri",
+      "start": 526.760009765625,
+      "end": 527.0999755859375
+    },
+    {
+      "word": "dengan",
+      "start": 527.0999755859375,
+      "end": 527.3200073242188
+    },
+    {
+      "word": "tebakannya",
+      "start": 527.3200073242188,
+      "end": 527.760009765625
+    },
+    {
+      "word": "sendiri",
+      "start": 527.760009765625,
+      "end": 528.1599731445312
+    },
+    {
+      "word": "Dan",
+      "start": 528.6599731445312,
+      "end": 528.8400268554688
+    },
+    {
+      "word": "mungkin",
+      "start": 528.8400268554688,
+      "end": 529.239990234375
+    },
+    {
+      "word": "bagian",
+      "start": 529.239990234375,
+      "end": 529.6599731445312
+    },
+    {
+      "word": "paling",
+      "start": 529.6599731445312,
+      "end": 529.9600219726562
+    },
+    {
+      "word": "anehnya",
+      "start": 529.9600219726562,
+      "end": 530.4000244140625
+    },
+    {
+      "word": "adalah",
+      "start": 530.4000244140625,
+      "end": 530.739990234375
+    },
+    {
+      "word": "kita",
+      "start": 531.2000122070312,
+      "end": 531.3599853515625
+    },
+    {
+      "word": "tidak",
+      "start": 531.3599853515625,
+      "end": 531.5800170898438
+    },
+    {
+      "word": "sadar",
+      "start": 531.5800170898438,
+      "end": 532
+    },
+    {
+      "word": "sedang",
+      "start": 532,
+      "end": 532.280029296875
+    },
+    {
+      "word": "ditebak",
+      "start": 532.280029296875,
+      "end": 532.7000122070312
+    },
+    {
+      "word": "Kita",
+      "start": 533.1199951171875,
+      "end": 533.260009765625
+    },
+    {
+      "word": "cuma",
+      "start": 533.260009765625,
+      "end": 533.5
+    },
+    {
+      "word": "merasa",
+      "start": 533.5,
+      "end": 533.9600219726562
+    },
+    {
+      "word": "yah",
+      "start": 534.5599975585938,
+      "end": 535
+    },
+    {
+      "word": "memang",
+      "start": 535.3599853515625,
+      "end": 535.5800170898438
+    },
+    {
+      "word": "begitulah",
+      "start": 535.5800170898438,
+      "end": 536.0999755859375
+    },
+    {
+      "word": "kenyataannya",
+      "start": 536.0999755859375,
+      "end": 536.7999877929688
+    },
+    {
+      "word": "Padahal",
+      "start": 537.4199829101562,
+      "end": 537.8400268554688
+    },
+    {
+      "word": "dibalik",
+      "start": 538.5999755859375,
+      "end": 538.739990234375
+    },
+    {
+      "word": "setiap",
+      "start": 538.739990234375,
+      "end": 539.0599975585938
+    },
+    {
+      "word": "hal",
+      "start": 539.0599975585938,
+      "end": 539.239990234375
+    },
+    {
+      "word": "yang",
+      "start": 539.239990234375,
+      "end": 539.3599853515625
+    },
+    {
+      "word": "kita",
+      "start": 539.3599853515625,
+      "end": 539.6799926757812
+    },
+    {
+      "word": "lihat",
+      "start": 539.6799926757812,
+      "end": 539.9199829101562
+    },
+    {
+      "word": "ingat",
+      "start": 540.6599731445312,
+      "end": 540.8200073242188
+    },
+    {
+      "word": "dan",
+      "start": 541.0999755859375,
+      "end": 541.2999877929688
+    },
+    {
+      "word": "rasakan",
+      "start": 541.2999877929688,
+      "end": 542.239990234375
+    },
+    {
+      "word": "ada",
+      "start": 542.239990234375,
+      "end": 542.6400146484375
+    },
+    {
+      "word": "otak",
+      "start": 542.6400146484375,
+      "end": 542.760009765625
+    },
+    {
+      "word": "yang",
+      "start": 542.760009765625,
+      "end": 542.97998046875
+    },
+    {
+      "word": "terus",
+      "start": 542.97998046875,
+      "end": 543.1599731445312
+    },
+    {
+      "word": "bekerja",
+      "start": 543.1599731445312,
+      "end": 543.7000122070312
+    },
+    {
+      "word": "menebak",
+      "start": 544.0999755859375,
+      "end": 544.4400024414062
+    },
+    {
+      "word": "memilih",
+      "start": 544.9600219726562,
+      "end": 545.52001953125
+    },
+    {
+      "word": "menghubungkan",
+      "start": 546.1599731445312,
+      "end": 546.6599731445312
+    },
+    {
+      "word": "dan",
+      "start": 547.0599975585938,
+      "end": 547.219970703125
+    },
+    {
+      "word": "sesekali",
+      "start": 547.219970703125,
+      "end": 547.9000244140625
+    },
+    {
+      "word": "salah",
+      "start": 548.239990234375,
+      "end": 548.6199951171875
+    },
+    {
+      "word": "Jadi",
+      "start": 549.0999755859375,
+      "end": 549.219970703125
+    },
+    {
+      "word": "lain",
+      "start": 549.219970703125,
+      "end": 549.5
+    },
+    {
+      "word": "kali",
+      "start": 549.5,
+      "end": 549.8400268554688
+    },
+    {
+      "word": "kalau",
+      "start": 550.3400268554688,
+      "end": 550.4400024414062
+    },
+    {
+      "word": "kamu",
+      "start": 550.4400024414062,
+      "end": 550.7000122070312
+    },
+    {
+      "word": "yakin",
+      "start": 550.7000122070312,
+      "end": 550.9600219726562
+    },
+    {
+      "word": "banget",
+      "start": 550.9600219726562,
+      "end": 551.280029296875
+    },
+    {
+      "word": "terhadap",
+      "start": 551.280029296875,
+      "end": 551.5800170898438
+    },
+    {
+      "word": "sesuatu",
+      "start": 551.5800170898438,
+      "end": 552.1199951171875
+    },
+    {
+      "word": "coba",
+      "start": 552.8200073242188,
+      "end": 552.9000244140625
+    },
+    {
+      "word": "berhenti",
+      "start": 552.9000244140625,
+      "end": 553.1799926757812
+    },
+    {
+      "word": "sebentar",
+      "start": 553.1799926757812,
+      "end": 553.6400146484375
+    },
+    {
+      "word": "dan",
+      "start": 553.6400146484375,
+      "end": 553.9600219726562
+    },
+    {
+      "word": "tanya",
+      "start": 553.9600219726562,
+      "end": 554.1599731445312
+    },
+    {
+      "word": "ini",
+      "start": 554.8200073242188,
+      "end": 554.8400268554688
+    },
+    {
+      "word": "benar",
+      "start": 554.8400268554688,
+      "end": 555.1400146484375
+    },
+    {
+      "word": "benar",
+      "start": 555.1400146484375,
+      "end": 555.4199829101562
+    },
+    {
+      "word": "yang",
+      "start": 555.4199829101562,
+      "end": 555.5800170898438
+    },
+    {
+      "word": "terjadi",
+      "start": 555.5800170898438,
+      "end": 556.0800170898438
+    },
+    {
+      "word": "Atau",
+      "start": 557.0399780273438,
+      "end": 557.260009765625
+    },
+    {
+      "word": "ini",
+      "start": 557.260009765625,
+      "end": 557.5399780273438
+    },
+    {
+      "word": "cuma",
+      "start": 557.5399780273438,
+      "end": 557.8400268554688
+    },
+    {
+      "word": "versi",
+      "start": 557.8400268554688,
+      "end": 558.1400146484375
+    },
+    {
+      "word": "yang",
+      "start": 558.1400146484375,
+      "end": 558.3200073242188
+    },
+    {
+      "word": "dibuat",
+      "start": 558.3200073242188,
+      "end": 558.5800170898438
+    },
+    {
+      "word": "otakku",
+      "start": 558.5800170898438,
+      "end": 559.0800170898438
+    },
+    {
+      "word": "Karena",
+      "start": 559.5599975585938,
+      "end": 559.780029296875
+    },
+    {
+      "word": "ternyata",
+      "start": 559.780029296875,
+      "end": 560.3200073242188
+    },
+    {
+      "word": "kadang",
+      "start": 560.9400024414062,
+      "end": 561.0800170898438
+    },
+    {
+      "word": "yang",
+      "start": 561.0800170898438,
+      "end": 561.260009765625
+    },
+    {
+      "word": "paling",
+      "start": 561.260009765625,
+      "end": 561.47998046875
+    },
+    {
+      "word": "mudah",
+      "start": 561.47998046875,
+      "end": 561.760009765625
+    },
+    {
+      "word": "menipu",
+      "start": 561.760009765625,
+      "end": 562.1400146484375
+    },
+    {
+      "word": "kita",
+      "start": 562.1400146484375,
+      "end": 562.47998046875
+    },
+    {
+      "word": "bukan",
+      "start": 563,
+      "end": 563.1799926757812
+    },
+    {
+      "word": "orang",
+      "start": 563.1799926757812,
+      "end": 563.4400024414062
+    },
+    {
+      "word": "lain",
+      "start": 563.4400024414062,
+      "end": 563.7999877929688
+    },
+    {
+      "word": "tapi",
+      "start": 564.1599731445312,
+      "end": 564.3599853515625
+    },
+    {
+      "word": "otak",
+      "start": 564.3599853515625,
+      "end": 564.5999755859375
+    },
+    {
+      "word": "kita",
+      "start": 564.5999755859375,
+      "end": 564.8400268554688
+    },
+    {
+      "word": "sendiri",
+      "start": 564.8400268554688,
+      "end": 565.1799926757812
+    },
+    {
+      "word": "Ini",
+      "start": 565.7000122070312,
+      "end": 565.8400268554688
+    },
+    {
+      "word": "Mino",
+      "start": 565.8400268554688,
+      "end": 566.1799926757812
+    },
+    {
+      "word": "Tetap",
+      "start": 566.760009765625,
+      "end": 566.8599853515625
+    },
+    {
+      "word": "penasaran",
+      "start": 566.8599853515625,
+      "end": 567.3800048828125
+    }
+  ]
+}
