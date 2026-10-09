@@ -9,10 +9,15 @@ import { MinoShortsComposition } from "./vox/mino/MinoShortsComposition";
 import defaultProps from "./dynamic-props.json";
 import voxMeta from "./vox/vox-meta.json";
 import longformMeta from "./vox/longform-meta.json";
+import stockMeta from "./stock/stock-meta.json";
+import { StockVideoComposition } from "./stock/StockVideoComposition";
 
 export const Root: React.FC = () => {
   const voxFrames = Math.max(90, Math.ceil((voxMeta.durationSeconds || 10) * 30));
   const longformFrames = Math.max(90, longformMeta.totalFrames || 1800);
+  const stockFrames = Math.max(90, stockMeta.durationFrames || 180);
+  const stockWidth = stockMeta.width || 3840;
+  const stockHeight = stockMeta.height || 2160;
 
   return (
     <>
@@ -75,6 +80,16 @@ export const Root: React.FC = () => {
         fps={30}
         width={1920}
         height={1080}
+      />
+
+      {/* 6. Stock Footage 5-6s Seamless Loop for Adobe Stock & Shutterstock */}
+      <Composition
+        id="StockVideo"
+        component={StockVideoComposition}
+        durationInFrames={stockFrames}
+        fps={30}
+        width={stockWidth}
+        height={stockHeight}
       />
     </>
   );

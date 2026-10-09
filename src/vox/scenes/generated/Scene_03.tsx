@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Sequence,
   interpolate,
   spring,
   useCurrentFrame,
@@ -11,862 +10,1338 @@ const C = {
   paper: "#F5F2EB",
   ink: "#18181B",
   muted: "#77746D",
-  line: "#D8D3C8",
+  line: "#D9D4C9",
   yellow: "#FFE600",
   red: "#E63946",
   blue: "#2563EB",
   teal: "#0D9488",
-  white: "#FFFDF8",
+  white: "#FFFD F8".replace(" ", ""),
 };
 
 const CLAMP = {
-  extrapolateLeft: "clamp" as const,
-  extrapolateRight: "clamp" as const,
-};
+  extrapolateLeft: "clamp",
+  extrapolateRight: "clamp",
+} as const;
 
 const FONT = 'Arial, Helvetica, sans-serif';
-const MONO = '"Courier New", monospace';
+const MONO = '"Courier New", Courier, monospace';
 
-type MotionProps = {
-  frame: number;
-  fps: number;
-};
+const ramp = (frame: number, start: number, duration = 24) =>
+  interpolate(frame, [start, start + duration], [0, 1], CLAMP);
 
-const beats = [
-  { start: 122, end: 160, text: "kamu melihat kursi." },
-  { start: 165, end: 191, text: "Otak harus berpikir." },
-  { start: 191, end: 228, text: "Ini benda apa?" },
-  { start: 248, end: 277, text: "Apakah bisa diduduki?" },
-  { start: 296, end: 310, text: "Apakah kuat?" },
-  { start: 324, end: 361, text: "Apakah ini kursi?" },
-  { start: 367, end: 418, text: "Kamu nggak akan selesai-selesai." },
-  {
-    start: 426,
-    end: 496,
-    text: "Makanya otak menggunakan pengalaman sebelumnya",
-  },
-  { start: 496, end: 551, text: "untuk membuat prediksi dengan cepat." },
-  { start: 569, end: 624, text: "Masalahnya, prediksi bisa salah." },
-  { start: 636, end: 697, text: "Dan ketika prediksi itu salah," },
-  { start: 715, end: 763, text: "kita bisa mengalami hal-hal aneh." },
-  { start: 780, end: 864, text: "Salah satunya adalah dejavu." },
-  { start: 878, end: 919, text: "Kamu sedang berada di tempat baru." },
-  { start: 935, end: 989, text: "Tiba-tiba muncul perasaan," },
-  { start: 991, end: 1027, text: "gue pernah mengalami ini." },
-  { start: 1042, end: 1067, text: "Padahal belum tentu." },
-  {
-    start: 1067,
-    end: 1163,
-    text: "Otak mungkin menemukan kemiripan antara situasi sekarang",
-  },
-  { start: 1163, end: 1213, text: "dengan pengalaman sebelumnya." },
-  { start: 1219, end: 1280, text: "Mungkin tata letak ruangan mirip," },
-  { start: 1298, end: 1319, text: "suasananya mirip," },
-  { start: 1338, end: 1360, text: "pencahayaan mirip," },
-  { start: 1372, end: 1448, text: "atau bahkan perasaan yang kamu rasakan" },
-  { start: 1448, end: 1497, text: "mirip dengan pengalaman lama." },
-  { start: 1511, end: 1548, text: "Otak kemudian memberi sinyal," },
-];
-
-const reveal = (frame: number, cue: number, duration = 30) =>
-  interpolate(frame, [cue, cue + Math.max(0.001, duration)], [0, 1], CLAMP);
-
-const settle = (frame: number, cue: number, fps: number) =>
+const enter = (frame: number, fps: number, start: number) =>
   spring({
-    frame: Math.max(0, frame - cue),
+    frame: Math.max(0, frame - start),
     fps,
-    config: { damping: 18, mass: 0.8, stiffness: 85 },
+    config: { damping: 18, mass: 0.65, stiffness: 90 },
   });
 
-const KineticText: React.FC<{
+/**
+ * An SVG-native timeline layer. All layers stay mounted; entrances and exits
+ * are continuous, frame-derived crossfades. This keeps the component
+ * self-contained without importing any additional Remotion components.
+ */
+const Sequence: React.FC<{
+  frame: number;
+  from: number;
+  durationInFrames: number;
+  fadeIn?: number;
+  fadeOut?: number;
+  children: React.ReactNode;
+}> = ({
+  frame,
+  from,
+  durationInFrames,
+  fadeIn = 24,
+  fadeOut = 24,
+  children,
+}) => {
+  const incoming = from === 0 ? 1 : ramp(frame, from, fadeIn);
+  const outgoing =
+    fadeOut === 0
+      ? 1
+      : interpolate(
+          frame,
+          [from + durationInFrames - fadeOut, from + durationInFrames],
+          [1, 0],
+          CLAMP,
+        );
+
+  return <g opacity={Math.min(incoming, outgoing)}>{children}</g>;
+};
+
+const Words: React.FC<{
   text: string;
+  x: number;
+  y: number;
+  width: number;
   frame: number;
   fps: number;
-  cue: number;
+  start: number;
   size?: number;
-  color?: string;
   weight?: number;
+  color?: string;
   stagger?: number;
 }> = ({
   text,
+  x,
+  y,
+  width,
   frame,
   fps,
-  cue,
-  size = 46,
-  color = C.ink,
+  start,
+  size = 34,
   weight = 700,
+  color = C.ink,
   stagger = 3,
 }) => (
-  <span
-    style={{
-      display: "inline-flex",
-      flexWrap: "wrap",
-      gap: "0.26em",
-      fontFamily: FONT,
-      fontSize: size,
-      fontWeight: weight,
-      color,
-      lineHeight: 1.2,
-    }}
-  >
-    {text.split(" ").map((word, index) => {
-      const start = cue + index * stagger;
-      const p = settle(frame, start, fps);
-      return (
-        <span
-          key={`${word}-${index}`}
-          style={{
-            display: "inline-block",
-            opacity: reveal(frame, start, 9),
-            transform: `translateY(${(1 - p) * 20}px)`,
-          }}
-        >
-          {word}
-        </span>
-      );
-    })}
-  </span>
+  <foreignObject x={x} y={y} width={width} height={size * 2.8}>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "baseline",
+        columnGap: size * 0.25,
+        rowGap: 4,
+        fontFamily: FONT,
+        fontSize: size,
+        fontWeight: weight,
+        lineHeight: 1.18,
+        letterSpacing: size > 55 ? -2.6 : -0.7,
+        color,
+      }}
+    >
+      {text.split(" ").map((word, i) => {
+        const p = enter(frame, fps, start + i * stagger);
+        return (
+          <span
+            key={`${word}-${i}`}
+            style={{
+              display: "inline-block",
+              opacity: ramp(frame, start + i * stagger, 14),
+              transform: `translateY(${(1 - p) * 13}px)`,
+            }}
+          >
+            {word}
+          </span>
+        );
+      })}
+    </div>
+  </foreignObject>
 );
 
-const Tag: React.FC<{
+const Label: React.FC<{
+  x: number;
+  y: number;
   children: React.ReactNode;
   color?: string;
-  dark?: boolean;
-}> = ({ children, color = C.yellow, dark = false }) => (
-  <div
-    style={{
-      display: "inline-block",
-      padding: "10px 15px",
-      background: color,
-      color: dark ? C.white : C.ink,
-      fontFamily: MONO,
-      fontWeight: 700,
-      fontSize: 19,
-      letterSpacing: 1.5,
-    }}
+  size?: number;
+  spacing?: number;
+}> = ({
+  x,
+  y,
+  children,
+  color = C.muted,
+  size = 16,
+  spacing = 2,
+}) => (
+  <text
+    x={x}
+    y={y}
+    fill={color}
+    fontFamily={MONO}
+    fontSize={size}
+    fontWeight={700}
+    letterSpacing={spacing}
   >
     {children}
-  </div>
+  </text>
 );
 
-const DrawPath: React.FC<{
-  d: string;
-  progress: number;
+const Pill: React.FC<{
+  x: number;
+  y: number;
+  width: number;
+  text: string;
+  frame: number;
+  fps: number;
+  start: number;
+  fill?: string;
   color?: string;
-  width?: number;
-  opacity?: number;
-  dashed?: boolean;
 }> = ({
-  d,
-  progress,
-  color = C.ink,
-  width = 4,
-  opacity = 1,
-  dashed = false,
-}) => (
+  x,
+  y,
+  width,
+  text,
+  frame,
+  fps,
+  start,
+  fill = C.ink,
+  color = C.white,
+}) => {
+  const p = enter(frame, fps, start);
+  return (
+    <g
+      opacity={ramp(frame, start, 22)}
+      transform={`translate(${x + (1 - p) * 24} ${y})`}
+    >
+      <rect width={width} height={39} rx={19.5} fill={fill} />
+      <text
+        x={width / 2}
+        y={25}
+        textAnchor="middle"
+        fontFamily={FONT}
+        fontSize={17}
+        fontWeight={700}
+        fill={color}
+        letterSpacing={0.5}
+      >
+        {text}
+      </text>
+    </g>
+  );
+};
+
+const Marker: React.FC<{
+  frame: number;
+  start: number;
+  d: string;
+  duration?: number;
+}> = ({ frame, start, d, duration = 48 }) => (
   <path
     d={d}
     fill="none"
-    stroke={color}
-    strokeWidth={width}
+    stroke={C.red}
+    strokeWidth={5}
     strokeLinecap="round"
     strokeLinejoin="round"
     pathLength={1}
-    strokeDasharray={dashed ? "0.025 0.025" : 1}
-    strokeDashoffset={dashed ? 0 : 1 - progress}
-    opacity={dashed ? opacity * progress : opacity}
+    strokeDasharray="1 1"
+    strokeDashoffset={1 - ramp(frame, start, duration)}
+    opacity={ramp(frame, start, 12)}
   />
 );
 
-const Chair: React.FC<{
+const Arrow: React.FC<{
+  d: string;
+  frame: number;
+  start: number;
   color?: string;
-  fill?: string;
-  wire?: boolean;
-}> = ({ color = C.ink, fill = C.yellow, wire = false }) => (
-  <g stroke={color} strokeWidth={7} strokeLinejoin="round">
-    <path
-      d="M48 20 L210 20 L225 170 L68 170 Z"
-      fill={wire ? "none" : fill}
-    />
-    <path
-      d="M68 170 L225 170 L278 221 L99 221 Z"
-      fill={wire ? "none" : C.white}
-    />
-    <path d="M100 221 L85 355 M270 221 L290 355 M74 174 L43 300 M221 170 L228 290" />
-    <path d="M76 63 L210 63 M81 104 L214 104" strokeWidth={3} opacity={0.35} />
+  dashed?: boolean;
+}> = ({ d, frame, start, color = C.ink, dashed = false }) => {
+  const p = ramp(frame, start, 40);
+  return (
+    <g opacity={ramp(frame, start, 20)}>
+      <path
+        d={d}
+        fill="none"
+        stroke={color}
+        strokeWidth={3}
+        strokeLinecap="round"
+        pathLength={1}
+        strokeDasharray="1 1"
+        strokeDashoffset={1 - p}
+      />
+      {dashed ? (
+        <path
+          d={d}
+          fill="none"
+          stroke={C.paper}
+          strokeWidth={3.5}
+          strokeDasharray="3 13"
+          strokeDashoffset={-frame * 0.25}
+          opacity={p}
+        />
+      ) : null}
+    </g>
+  );
+};
+
+const FaceIcon: React.FC<{ x: number; y: number; color?: string }> = ({
+  x,
+  y,
+  color = C.blue,
+}) => (
+  <g
+    transform={`translate(${x} ${y})`}
+    fill="none"
+    stroke={color}
+    strokeWidth={3}
+    strokeLinecap="round"
+  >
+    <rect x={-23} y={-29} width={46} height={57} rx={19} />
+    <path d="M-9 -4h1 M8 -4h1 M0 -3v10 M-9 15q9 7 18 0" />
+    <path d="M-35 -17v-18h18 M17 -35h18v18 M35 18v18H17 M-17 36h-18V18" />
   </g>
 );
 
-const Brain: React.FC<{
+const HeartIcon: React.FC<{ x: number; y: number }> = ({ x, y }) => (
+  <g transform={`translate(${x} ${y})`}>
+    <path
+      d="M0 25C-8 17-28 3-28-11C-28-29-8-35 0-19C8-35 28-29 28-11C28 3 8 17 0 25Z"
+      fill={C.red}
+      fillOpacity={0.1}
+      stroke={C.red}
+      strokeWidth={3}
+    />
+    <path
+      d="M-23 0h11l6-9 9 18 6-9h15"
+      fill="none"
+      stroke={C.red}
+      strokeWidth={3}
+      strokeLinejoin="round"
+    />
+  </g>
+);
+
+const LoopIcon: React.FC<{
+  x: number;
+  y: number;
   frame: number;
-  active?: boolean;
-  error?: boolean;
-}> = ({ frame, active = true, error = false }) => {
-  const nodes = [
-    [75, 112],
-    [125, 66],
-    [168, 112],
-    [224, 60],
-    [259, 120],
-    [207, 180],
-    [118, 179],
-    [294, 181],
-    [170, 228],
-  ];
-  const links = [
-    [0, 1],
-    [0, 2],
-    [1, 3],
-    [2, 3],
-    [2, 4],
-    [2, 6],
-    [4, 5],
-    [4, 7],
-    [5, 6],
-    [5, 8],
-    [6, 8],
-    [7, 8],
-  ];
-  const accent = error ? C.red : C.blue;
+  color?: string;
+}> = ({ x, y, frame, color = C.teal }) => (
+  <g transform={`translate(${x} ${y})`}>
+    <circle
+      r={29}
+      fill="none"
+      stroke={color}
+      strokeWidth={3}
+      strokeDasharray="128 54"
+      transform={`rotate(${frame * 0.12 - 35})`}
+    />
+    <path d="M20-23l12 1-4 11" fill="none" stroke={color} strokeWidth={3} />
+    <path d="M-20 23l-12-1 4-11" fill="none" stroke={color} strokeWidth={3} />
+    <circle r={6} fill={color} />
+  </g>
+);
+
+const brainOutline =
+  "M-182 83C-219 72-239 37-227 7C-261-24-252-71-214-88" +
+  "C-218-132-179-157-143-152C-120-192-66-202-34-175" +
+  "C-1-201 48-185 60-159C102-174 146-153 154-119" +
+  "C195-111 225-73 215-39C247-12 241 33 216 54" +
+  "C219 91 188 123 150 124C132 158 84 167 52 145" +
+  "C24 166-18 163-41 141C-77 164-125 146-137 122" +
+  "C-156 126-179 110-182 83Z";
+
+const NODES = [
+  [-176, -47],
+  [-125, -112],
+  [-66, -135],
+  [2, -122],
+  [69, -115],
+  [133, -73],
+  [179, -12],
+  [141, 54],
+  [72, 103],
+  [-4, 94],
+  [-89, 101],
+  [-153, 43],
+  [-82, -25],
+  [-15, -46],
+  [68, -20],
+  [13, 24],
+  [-59, 39],
+] as const;
+
+const CONNECTIONS = [
+  [0, 1],
+  [1, 2],
+  [2, 3],
+  [3, 4],
+  [4, 5],
+  [5, 6],
+  [6, 7],
+  [7, 8],
+  [8, 9],
+  [9, 10],
+  [10, 11],
+  [11, 0],
+  [0, 12],
+  [2, 12],
+  [12, 13],
+  [13, 3],
+  [13, 14],
+  [14, 5],
+  [14, 7],
+  [14, 15],
+  [15, 9],
+  [15, 16],
+  [16, 10],
+  [16, 12],
+] as const;
+
+const Brain: React.FC<{ frame: number; fps: number }> = ({ frame, fps }) => {
+  const habitual = ramp(frame, 763, 65);
+  const warning = ramp(frame, 1001, 55);
+  const float = Math.sin(frame * 0.018) * 3;
+
   return (
-    <g>
+    <g transform={`translate(450 ${472 + float})`}>
+      <circle r={242} fill="none" stroke={C.line} strokeWidth={1} />
+      <circle
+        r={254}
+        fill="none"
+        stroke={C.line}
+        strokeDasharray="2 15"
+        strokeWidth={2}
+        transform={`rotate(${frame * 0.045})`}
+      />
+      <g transform={`rotate(${frame * 0.09})`}>
+        <path
+          d="M-252 0A252 252 0 0 1-218-126"
+          fill="none"
+          stroke={C.blue}
+          strokeWidth={3}
+          opacity={0.45}
+        />
+        <path
+          d="M252 0A252 252 0 0 1 218 126"
+          fill="none"
+          stroke={C.teal}
+          strokeWidth={3}
+          opacity={0.45}
+        />
+      </g>
+
       <path
-        d="M170 30 C137 4 90 20 81 49 C40 46 19 79 29 111
-           C2 140 20 184 51 191 C50 227 90 250 122 240
-           C144 267 187 269 207 246 C246 259 279 238 286 213
-           C322 210 344 173 328 143 C350 106 325 66 297 65
-           C287 29 251 16 222 30 C204 13 183 16 170 30 Z"
+        d={brainOutline}
         fill={C.white}
         stroke={C.ink}
-        strokeWidth={4}
+        strokeWidth={3}
+        strokeLinejoin="round"
       />
+
       <path
-        d="M170 31 C152 70 183 100 163 133 C143 169 183 203 171 251
-           M82 50 C112 67 92 91 62 100
-           M31 143 C68 129 96 145 89 178
-           M53 192 C93 185 114 212 122 240
-           M224 31 C212 73 259 69 268 97
-           M328 143 C283 131 258 152 270 181
-           M208 246 C227 207 204 201 217 171"
+        d="M-144-147C-131-102-155-83-127-56C-105-33-119-1-104 22
+           M-38-171C-51-140-32-117-48-91C-65-68-47-44-55-23
+           M59-155C41-127 71-111 48-78C28-51 57-24 42-1
+           M151-116C114-105 133-79 105-58C83-40 103-13 90 8
+           M-181 78C-158 65-151 92-127 83C-96 68-76 91-53 73
+           M-29 137C-18 109 1 105 0 77C-2 53 26 62 37 42
+           M143 121C120 99 139 78 114 65C94 51 106 26 82 21"
         fill="none"
         stroke={C.line}
         strokeWidth={5}
         strokeLinecap="round"
       />
-      {links.map(([a, b], index) => (
-        <line
-          key={index}
-          x1={nodes[a][0]}
-          y1={nodes[a][1]}
-          x2={nodes[b][0]}
-          y2={nodes[b][1]}
-          stroke={accent}
-          strokeWidth={2}
-          opacity={active ? 0.26 : 0.08}
-        />
-      ))}
-      {nodes.map(([x, y], index) => {
-        const phase = (Math.sin(frame / 16 - index * 0.9) + 1) / 2;
+
+      {CONNECTIONS.map(([a, b], i) => {
+        const n1 = NODES[a];
+        const n2 = NODES[b];
+        const phase = ((frame * 0.007 + i * 0.173) % 1 + 1) % 1;
+        const px = n1[0] + (n2[0] - n1[0]) * phase;
+        const py = n1[1] + (n2[1] - n1[1]) * phase;
+
         return (
-          <g key={index}>
-            <circle
-              cx={x}
-              cy={y}
-              r={active ? 9 + phase * 8 : 8}
-              fill={accent}
-              opacity={active ? 0.08 + phase * 0.12 : 0.04}
+          <g key={`edge-${i}`}>
+            <line
+              x1={n1[0]}
+              y1={n1[1]}
+              x2={n2[0]}
+              y2={n2[1]}
+              stroke={i % 3 === 0 ? C.blue : C.teal}
+              strokeWidth={1.8}
+              opacity={0.28}
             />
             <circle
-              cx={x}
-              cy={y}
-              r={active ? 4 + phase * 2 : 4}
-              fill={accent}
-              opacity={active ? 0.55 + phase * 0.45 : 0.2}
+              cx={px}
+              cy={py}
+              r={2.4}
+              fill={i % 3 === 0 ? C.blue : C.teal}
+              opacity={0.45 + Math.sin(phase * Math.PI) * 0.45}
             />
           </g>
         );
       })}
+
+      <g opacity={habitual}>
+        <path
+          d="M-153 43C-126-38-70-100 2-122C90-149 177-58 141 54
+             C115 128-59 143-153 43"
+          fill="none"
+          stroke={C.yellow}
+          strokeWidth={13}
+          strokeOpacity={0.6}
+          strokeLinecap="round"
+        />
+        <path
+          d="M-153 43C-126-38-70-100 2-122C90-149 177-58 141 54
+             C115 128-59 143-153 43"
+          fill="none"
+          stroke={C.teal}
+          strokeWidth={3}
+          strokeDasharray="7 10"
+          strokeDashoffset={-frame * 0.55}
+        />
+      </g>
+
+      {NODES.map(([x, y], i) => {
+        const pulse = 1 + Math.sin(frame * 0.055 + i * 1.3) * 0.14;
+        return (
+          <g key={`node-${i}`}>
+            <circle
+              cx={x}
+              cy={y}
+              r={10 * pulse}
+              fill={i % 3 === 0 ? C.blue : C.teal}
+              opacity={0.09}
+            />
+            <circle
+              cx={x}
+              cy={y}
+              r={4.6}
+              fill={i % 3 === 0 ? C.blue : C.teal}
+              stroke={C.white}
+              strokeWidth={1.5}
+            />
+          </g>
+        );
+      })}
+
+      <g opacity={warning}>
+        <path
+          d="M13 24C91 28 131-35 179-12"
+          fill="none"
+          stroke={C.red}
+          strokeWidth={4}
+          strokeDasharray="8 7"
+          strokeDashoffset={-frame * 0.4}
+        />
+        <circle
+          cx={179}
+          cy={-12}
+          r={13 + Math.sin(frame * 0.055) * 3}
+          fill={C.red}
+          opacity={0.15}
+        />
+        <circle cx={179} cy={-12} r={5.5} fill={C.red} />
+      </g>
+
+      <g opacity={ramp(frame, 341, 26)}>
+        <rect
+          x={-140}
+          y={184}
+          width={280}
+          height={47}
+          rx={9}
+          fill={C.yellow}
+          transform={`scale(${0.98 + enter(frame, fps, 341) * 0.02} 1)`}
+        />
+        <text
+          x={0}
+          y={215}
+          textAnchor="middle"
+          fontFamily={FONT}
+          fontSize={23}
+          fontWeight={800}
+          fill={C.ink}
+        >
+          PROSES OTOMATIS
+        </text>
+      </g>
     </g>
   );
 };
 
-const Room: React.FC<{
-  variant?: "present" | "memory";
-  layout?: number;
-  atmosphere?: number;
-  light?: number;
-}> = ({
-  variant = "present",
-  layout = 0,
-  atmosphere = 0,
-  light = 0,
+const RecognitionAct: React.FC<{ frame: number; fps: number }> = ({
+  frame,
+  fps,
 }) => {
-  const memory = variant === "memory";
-  const accent = memory ? C.teal : C.blue;
+  const emotion = enter(frame, fps, 175);
+  const automatic = enter(frame, fps, 341);
+
   return (
     <g>
-      <rect x={0} y={0} width={620} height={380} fill={memory ? "#EFEDE3" : "#F8F7F2"} />
-      <path d="M0 0 L115 83 L505 83 L620 0" fill="#E8E4DA" />
-      <path d="M0 380 L115 282 L505 282 L620 380" fill="#E1DDCF" />
-      <rect x={115} y={83} width={390} height={199} fill={C.white} />
-      <path
-        d="M0 0 L115 83 V282 L0 380 M620 0 L505 83 V282 L620 380 M115 282 H505"
-        fill="none"
-        stroke="#B6B1A5"
-        strokeWidth={2}
-      />
-      <rect x={memory ? 323 : 328} y={113} width={115} height={104} fill="#DCE8ED" stroke="#AEBCC1" strokeWidth={4} />
-      <path d="M385 114 V216 M329 164 H438" stroke={C.white} strokeWidth={4} />
-      <path
-        d="M331 218 L439 218 L572 380 L276 380 Z"
-        fill={C.yellow}
-        opacity={0.045 + light * 0.3}
-      />
-      <rect x={165} y={129} width={77} height={63} fill={memory ? "#DADACD" : "#E3D5C6"} />
-      <path d="M172 181 L194 151 L215 169 L234 143" fill="none" stroke="#B4A38E" strokeWidth={3} />
-      <g transform={`translate(${memory ? 163 : 159}, 216) scale(.29)`}>
-        <Chair fill={memory ? "#AFC7BE" : "#DDBF96"} color="#625F55" />
+      <Label x={973} y={278}>01 — BEKERJA TANPA DISURUH</Label>
+
+      <g transform={`translate(0 ${Math.sin(frame * 0.018) * 1.4})`}>
+        <rect x={970} y={313} width={772} height={130} rx={16} fill="#F0F4F7" />
+        <FaceIcon x={1038} y={377} />
+        <Words
+          text="Wajah yang familiar"
+          x={1100}
+          y={335}
+          width={570}
+          size={32}
+          frame={frame}
+          fps={fps}
+          start={-38}
+        />
+        <rect
+          x={1099}
+          y={384}
+          width={374 * ramp(frame, 36, 43)}
+          height={29}
+          rx={2}
+          fill={C.yellow}
+          opacity={0.85}
+        />
+        <text
+          x={1102}
+          y={405}
+          fontFamily={FONT}
+          fontSize={22}
+          fill={C.ink}
+          opacity={ramp(frame, 18, 24)}
+        >
+          Dikenali tanpa sengaja mengingat
+        </text>
+        <circle cx={1699} cy={378} r={6} fill={C.blue} />
+        <circle
+          cx={1699}
+          cy={378}
+          r={12 + Math.sin(frame * 0.06) * 3}
+          fill={C.blue}
+          opacity={0.1}
+        />
       </g>
-      <ellipse cx={384} cy={311} rx={88} ry={20} fill="#C9C4B7" opacity={0.4} />
-      <path d="M317 268 H450 L462 290 H305 Z" fill={memory ? "#B2B7A7" : "#BDAF99"} stroke="#797567" strokeWidth={2} />
-      <path d="M318 288 L310 344 M449 289 L457 344" stroke="#797567" strokeWidth={5} />
-      <path d="M77 218 V313 M57 244 Q40 209 77 226 Q101 186 104 225 Q100 249 77 244" fill="#A2B6A0" stroke="#7B967B" strokeWidth={3} />
-      <path d="M58 290 H97 L90 322 H64 Z" fill="#B9A28C" />
-      <rect x={0} y={0} width={620} height={380} fill={accent} opacity={atmosphere * 0.065} />
-      <g opacity={layout}>
-        <path d="M144 251 H261 V362 H144 Z M298 254 H467 V353 H298 Z" fill="none" stroke={accent} strokeWidth={3} strokeDasharray="9 7" />
-        <path d="M155 346 H451" stroke={accent} strokeWidth={2} />
-        <circle cx={203} cy={309} r={7} fill={accent} />
-        <circle cx={382} cy={309} r={7} fill={accent} />
+
+      <g
+        opacity={ramp(frame, 175, 25)}
+        transform={`translate(${(1 - emotion) * 26} 0)`}
+      >
+        <rect x={970} y={462} width={772} height={130} rx={16} fill="#F8EFEC" />
+        <HeartIcon x={1038} y={527} />
+        <Words
+          text="Reaksi emosional"
+          x={1100}
+          y={484}
+          width={590}
+          size={32}
+          frame={frame}
+          fps={fps}
+          start={179}
+        />
+        <text
+          x={1102}
+          y={555}
+          fontFamily={FONT}
+          fontSize={22}
+          fill={C.muted}
+          opacity={ramp(frame, 198, 26)}
+        >
+          Terasa dulu. Alasannya menyusul.
+        </text>
+        <path
+          d="M1632 527h17l9-16 12 32 9-16h30"
+          fill="none"
+          stroke={C.red}
+          strokeWidth={2.5}
+          strokeDasharray="104 104"
+          strokeDashoffset={104 * (1 - ramp(frame, 201, 42))}
+        />
       </g>
-      <g opacity={light}>
-        <rect x={325} y={109} width={118} height={111} fill="none" stroke={C.yellow} strokeWidth={5} />
-        <path d="M387 229 L408 266 M401 224 L435 255 M375 229 L381 268" stroke={C.yellow} strokeWidth={4} />
+
+      <g
+        opacity={ramp(frame, 341, 24)}
+        transform={`translate(0 ${(1 - automatic) * 16})`}
+      >
+        <line x1={1002} y1={629} x2={1710} y2={629} stroke={C.line} />
+        <LoopIcon x={1038} y={701} frame={frame} />
+        <Words
+          text="Tidak perlu memikirkan"
+          x={1100}
+          y={660}
+          width={590}
+          size={30}
+          frame={frame}
+          fps={fps}
+          start={345}
+        />
+        <Words
+          text="setiap hal kecil."
+          x={1100}
+          y={699}
+          width={580}
+          size={30}
+          frame={frame}
+          fps={fps}
+          start={359}
+          color={C.teal}
+        />
+        <Pill
+          x={1100}
+          y={764}
+          width={244}
+          text="LEBIH SEDIKIT USAHA"
+          frame={frame}
+          fps={fps}
+          start={392}
+          fill="#E0ECE7"
+          color={C.teal}
+        />
       </g>
     </g>
   );
 };
 
-const Background: React.FC<{ frame: number }> = ({ frame }) => (
-  <AbsoluteLayer>
-    <svg width="1920" height="1080" viewBox="0 0 1920 1080">
-      <defs>
-        <pattern id="s03-paper-grid" width="48" height="48" patternUnits="userSpaceOnUse">
-          <path d="M48 0 H0 V48" fill="none" stroke={C.ink} strokeWidth={0.6} opacity={0.055} />
-        </pattern>
-        <radialGradient id="s03-paper-glow">
-          <stop offset="0%" stopColor={C.yellow} stopOpacity={0.15} />
-          <stop offset="100%" stopColor={C.yellow} stopOpacity={0} />
-        </radialGradient>
-      </defs>
-      <rect width="1920" height="1080" fill={C.paper} />
-      <rect width="1920" height="1080" fill="url(#s03-paper-grid)" />
-      <ellipse
-        cx={970 + Math.sin(frame / 160) * 130}
-        cy={435 + Math.cos(frame / 190) * 65}
-        rx={710}
-        ry={470}
-        fill="url(#s03-paper-glow)"
-      />
-      <path d="M72 148 H1848 M72 902 H1848" stroke={C.line} />
-      <path d="M72 132 V148 H88 M1832 148 H1848 V132 M72 918 V902 H88 M1832 902 H1848 V918" stroke={C.ink} strokeWidth={2} />
-    </svg>
-  </AbsoluteLayer>
-);
-
-const AbsoluteLayer: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <div style={{ position: "absolute", inset: 0 }}>{children}</div>
-);
-
-const Inquiry: React.FC<MotionProps> = ({ frame, fps }) => {
-  const questions = [
-    { cue: 191, text: "Ini benda apa?", code: "IDENTIFIKASI" },
-    { cue: 248, text: "Bisa diduduki?", code: "FUNGSI" },
-    { cue: 296, text: "Apakah kuat?", code: "KEAMANAN" },
-    { cue: 324, text: "Apakah ini kursi?", code: "KESIMPULAN" },
-  ];
-  const overload = reveal(frame, 367, 34);
+const Walker: React.FC<{ frame: number; active: number }> = ({
+  frame,
+  active,
+}) => {
+  const cycle = frame * 0.065;
+  const step = Math.sin(cycle) * 19;
+  const lift = Math.sin(cycle * 2) * 2.5;
 
   return (
-    <AbsoluteLayer>
-      <div style={{ position: "absolute", top: 186, left: 100 }}>
-        {frame >= 122 && (
-          <KineticText text="Melihat ≠ sekadar menerima." cue={122} frame={frame} fps={fps} size={51} />
-        )}
-      </div>
-
-      <svg
-        width="1920"
-        height="1080"
-        viewBox="0 0 1920 1080"
-        style={{ position: "absolute", inset: 0, fontFamily: FONT }}
-      >
-        {frame >= 122 && (
-          <g
-            opacity={reveal(frame, 122, 22)}
-            transform={`translate(182 ${366 + (1 - settle(frame, 122, fps)) * 30})`}
-          >
-            <ellipse cx={170} cy={384} rx={170} ry={22} fill={C.ink} opacity={0.065} />
-            <g transform="translate(18 0) scale(1.06)">
-              <Chair />
-            </g>
-            <circle cx={162} cy={176} r={222} fill="none" stroke={C.line} strokeWidth={2} />
-            <g transform={`rotate(${(frame - 122) * 0.18}, 162, 176)`}>
-              <path d="M162 -46 A222 222 0 0 1 376 117" fill="none" stroke={C.blue} strokeWidth={3} />
-              <circle cx={376} cy={117} r={5} fill={C.blue} />
-            </g>
-            <text x={-5} y={450} fontSize={19} fontFamily={MONO} fill={C.muted}>01 / INPUT VISUAL</text>
-          </g>
-        )}
-
-        {frame >= 165 && (
-          <g opacity={reveal(frame, 165, 20)}>
-            <DrawPath d="M590 534 H750" progress={reveal(frame, 165, 28)} color={C.blue} />
-            <path d="M738 525 L751 534 L738 543" fill="none" stroke={C.blue} strokeWidth={3} />
-            <g transform={`translate(740 ${395 + (1 - settle(frame, 165, fps)) * 22}) scale(.9)`}>
-              <Brain frame={frame} error={frame >= 367} />
-            </g>
-            <text x={760} y={735} fontSize={23} fontWeight={700}>OTAK HARUS BERPIKIR</text>
-          </g>
-        )}
-
-        {questions.map((q, i) => {
-          if (frame < q.cue) return null;
-          const y = 331 + i * 112;
-          return (
-            <g key={q.cue} opacity={reveal(frame, q.cue, 12)}>
-              <DrawPath
-                d={`M1060 527 C1115 527 1090 ${y + 37} 1150 ${y + 37}`}
-                progress={reveal(frame, q.cue, 24)}
-                color={frame >= 367 ? C.red : C.ink}
-                width={2}
-              />
-              <g transform={`translate(${1150 + (1 - settle(frame, q.cue, fps)) * 20},${y})`}>
-                <rect width={530} height={83} fill={C.white} stroke={C.line} strokeWidth={2} />
-                <rect width={6} height={83} fill={frame >= 367 ? C.red : C.yellow} />
-                <text x={25} y={27} fill={C.muted} fontSize={13} fontFamily={MONO} letterSpacing={2}>{q.code}</text>
-                <text x={25} y={61} fontSize={31} fontWeight={700}>{q.text}</text>
-                <text x={484} y={55} fontSize={30} fill={C.muted}>?</text>
-              </g>
-            </g>
-          );
-        })}
-
-        {frame >= 367 && (
-          <g>
-            <DrawPath
-              d="M1712 755 C1818 781 1827 323 1689 305 C1609 286 1215 283 1132 311"
-              progress={overload}
-              color={C.red}
-              width={5}
-            />
-            <path d="M1147 297 L1132 311 L1153 316" fill="none" stroke={C.red} strokeWidth={4} opacity={overload} />
-            <text x={1158} y={831} fill={C.red} fontSize={24} fontWeight={700} opacity={overload}>PERTANYAAN TANPA AKHIR ↻</text>
-          </g>
-        )}
-      </svg>
-    </AbsoluteLayer>
+    <g transform={`translate(1116 ${548 + lift})`}>
+      <ellipse cx={0} cy={177 - lift} rx={78} ry={11} fill={C.ink} opacity={0.06} />
+      <g stroke={C.ink} strokeWidth={10} strokeLinecap="round" fill="none">
+        <circle cx={0} cy={-104} r={27} fill={C.white} strokeWidth={4} />
+        <path d="M0-74L-5 9" />
+        <g transform={`rotate(${step} -5 9)`}>
+          <path d="M-5 9L-25 84L-7 153L13 153" />
+        </g>
+        <g transform={`rotate(${-step} -5 9)`}>
+          <path d="M-5 9L27 84L14 153L35 153" />
+        </g>
+        <g transform={`rotate(${-step * 0.9} 0 -58)`}>
+          <path d="M0-58L-34-11L-18 19" />
+        </g>
+        <g transform={`rotate(${step * 0.9} 0 -58)`}>
+          <path d="M0-58L35-11L46-34" />
+        </g>
+      </g>
+      <g fill={C.yellow} stroke={C.ink} strokeWidth={2}>
+        <circle cx={-5} cy={9} r={7} />
+        <circle cx={0} cy={-58} r={7} />
+      </g>
+      <g opacity={active} stroke={C.teal} fill="none" strokeWidth={2}>
+        <circle
+          cx={-5}
+          cy={9}
+          r={16 + Math.sin(frame * 0.06) * 3}
+          strokeOpacity={0.55}
+        />
+        <path d="M-21 9H-76V-61" />
+        <path d="M14 14H76V-45" />
+      </g>
+    </g>
   );
 };
 
-const Prediction: React.FC<MotionProps> = ({ frame, fps }) => {
-  const wrong = frame >= 569;
+const WalkingAct: React.FC<{ frame: number; fps: number }> = ({
+  frame,
+  fps,
+}) => {
+  const learned = ramp(frame, 763, 40);
+
   return (
-    <AbsoluteLayer>
-      <div style={{ position: "absolute", left: 100, top: 186 }}>
-        <KineticText text="Pengalaman menjadi jalan pintas." cue={426} frame={frame} fps={fps} size={51} stagger={5} />
-      </div>
-
-      <svg width="1920" height="1080" viewBox="0 0 1920 1080" style={{ fontFamily: FONT }}>
-        <g opacity={reveal(frame, 426, 24)}>
-          {[0, 1, 2].map((i) => (
-            <g key={i} transform={`translate(${142 + i * 21},${360 - i * 18}) rotate(${(i - 1) * 3}, 175, 170)`}>
-              <rect width={350} height={348} fill={C.white} stroke={C.line} strokeWidth={2} />
-              <rect x={20} y={20} width={310} height={35} fill={i === 2 ? C.yellow : "#E7E3D8"} />
-              <path d="M22 82 H325 M22 94 H255" stroke={C.line} strokeWidth={3} />
-              <g transform="translate(113 116) scale(.46)">
-                <Chair fill="#DCD7C6" color="#69675E" />
-              </g>
-              <text x={23} y={324} fontSize={14} fontFamily={MONO}>ARSIP PENGALAMAN / {String(i + 1).padStart(2, "0")}</text>
-            </g>
-          ))}
-          <text x={160} y={784} fontSize={23} fontWeight={700}>PENGALAMAN SEBELUMNYA</text>
-          <DrawPath d="M583 535 H774" progress={reveal(frame, 426, 55)} color={C.blue} />
-          <g transform="translate(771 392) scale(1.05)">
-            <Brain frame={frame} error={wrong} />
-          </g>
-          <text x={878} y={784} fontSize={23} fontWeight={700}>MODEL INTERNAL</text>
-        </g>
-
-        {frame >= 496 && (
-          <g opacity={reveal(frame, 496, 24)}>
-            <DrawPath d="M1143 535 H1322" progress={reveal(frame, 496, 32)} color={wrong ? C.red : C.teal} />
-            <g transform={`translate(1320 ${345 + (1 - settle(frame, 496, fps)) * 25})`}>
-              <rect width={424} height={358} fill={C.white} stroke={wrong ? C.red : C.teal} strokeWidth={3} />
-              <rect x={0} y={0} width={424} height={47} fill={wrong ? C.red : C.teal} />
-              <text x={22} y={31} fontSize={18} fontFamily={MONO} fill={C.white}>PREDIKSI</text>
-              <g transform="translate(141 72) scale(.43)">
-                <Chair fill={wrong ? "#F5C9C8" : "#D6E6D7"} color={wrong ? C.red : C.teal} />
-              </g>
-              <text x={212} y={291} textAnchor="middle" fontSize={37} fontWeight={700}>“Ini kursi.”</text>
-              <text x={212} y={326} textAnchor="middle" fontSize={16} fontFamily={MONO} fill={C.muted}>HASIL, BUKAN KEPASTIAN</text>
-            </g>
-          </g>
-        )}
-
-        {frame >= 569 && (
-          <g opacity={reveal(frame, 569, 20)}>
-            <DrawPath
-              d="M1353 640 C1300 572 1353 493 1550 485 C1764 477 1798 571 1721 639 C1659 692 1388 697 1349 636"
-              progress={reveal(frame, 569, 43)}
-              color={C.red}
-              width={7}
-            />
-            <text x={1325} y={759} fontSize={27} fill={C.red} fontWeight={700}>PREDIKSI BISA SALAH.</text>
-          </g>
-        )}
-
-        {frame >= 636 && (
-          <g opacity={reveal(frame, 636, 24)}>
-            <DrawPath
-              d="M1483 779 C1450 852 1110 854 992 719"
-              progress={reveal(frame, 636, 45)}
-              color={C.red}
-              dashed
-              width={3}
-            />
-            <circle cx={992} cy={719} r={8} fill={C.red} />
-          </g>
-        )}
-
-        {frame >= 715 && (
-          <g opacity={reveal(frame, 715, 22)}>
-            <rect x={756} y={811} width={397} height={49} fill={C.yellow} />
-            <text x={954} y={843} textAnchor="middle" fontSize={22} fontWeight={700}>PERSEPSI TERASA ANEH</text>
-            {[0, 1, 2].map((i) => (
-              <path
-                key={i}
-                d={`M${815 + i * 110} 320 l14 -13 l14 13 l14 -13`}
-                fill="none"
-                stroke={C.red}
-                strokeWidth={3}
-                opacity={0.5 + 0.3 * Math.sin(frame / 15 + i)}
-              />
-            ))}
-          </g>
-        )}
-      </svg>
-    </AbsoluteLayer>
-  );
-};
-
-const DejaVu: React.FC<MotionProps> = ({ frame, fps }) => (
-  <AbsoluteLayer>
-    <div style={{ position: "absolute", left: 100, top: 178 }}>
-      <Tag>CONTOH / 01</Tag>
-      <div style={{ marginTop: 18 }}>
-        <KineticText text="DÉJÀ VU" cue={780} frame={frame} fps={fps} size={104} stagger={7} />
-      </div>
-      <div
-        style={{
-          height: 12,
-          width: 443 * reveal(frame, 804, 43),
-          marginTop: 2,
-          background: C.yellow,
-        }}
+    <g>
+      <Label x={973} y={278}>02 — BAYANGKAN SETIAP LANGKAH</Label>
+      <Words
+        text="Kalau semuanya harus dipikirkan…"
+        x={973}
+        y={308}
+        width={755}
+        size={35}
+        frame={frame}
+        fps={fps}
+        start={492}
       />
-    </div>
 
-    <svg width="1920" height="1080" viewBox="0 0 1920 1080" style={{ fontFamily: FONT }}>
-      <g opacity={reveal(frame, 780, 34)} transform="translate(1180 268)">
-        <circle cx={228} cy={226} r={211} fill="none" stroke={C.line} strokeWidth={2} />
-        <g transform={`rotate(${(frame - 780) * 0.11},228,226)`}>
-          <path d="M228 15 A211 211 0 0 1 439 226" stroke={C.blue} strokeWidth={4} fill="none" />
-          <path d="M228 437 A211 211 0 0 1 17 226" stroke={C.teal} strokeWidth={4} fill="none" />
-        </g>
-        <g transform="translate(72 92) scale(.9)">
-          <Brain frame={frame} active={frame >= 935} />
-        </g>
-        <text x={228} y={490} textAnchor="middle" fontFamily={MONO} fontSize={18} fill={C.muted}>RASA FAMILIAR ≠ BUKTI</text>
+      <Walker frame={frame - 487} active={ramp(frame, 535, 35)} />
+
+      <g opacity={ramp(frame, 548, 28)}>
+        <Label x={996} y={435} size={13} spacing={1}>BAHU</Label>
+        <Label x={1170} y={467} size={13} spacing={1}>PINGGUL</Label>
+        <path
+          d="M1200 544h74 M1200 629h74 M1200 704h74"
+          fill="none"
+          stroke={C.line}
+          strokeWidth={2}
+        />
       </g>
 
-      {frame >= 878 && (
-        <g opacity={reveal(frame, 878, 27)} transform="translate(104 419)">
-          <rect x={-8} y={-8} width={730} height={402} fill={C.white} stroke={C.line} strokeWidth={2} />
-          <g transform="scale(1.15 .99)">
-            <Room />
-          </g>
-          <rect x={19} y={18} width={184} height={33} fill={C.blue} />
-          <text x={34} y={41} fill={C.white} fontSize={17} fontFamily={MONO}>TEMPAT BARU</text>
-        </g>
-      )}
-
-      {frame >= 935 && (
-        <g opacity={reveal(frame, 935, 30)}>
-          <DrawPath d="M838 609 C974 609 1010 513 1232 513" progress={reveal(frame, 935, 35)} color={C.teal} width={3} />
-          <circle cx={1070} cy={562} r={33 + Math.sin((frame - 935) / 18) * 4} fill={C.teal} opacity={0.08} />
-          <circle cx={1070} cy={562} r={8} fill={C.teal} />
-          <text x={904} y={650} fontSize={18} fontFamily={MONO} fill={C.teal}>RASA FAMILIAR</text>
-        </g>
-      )}
-    </svg>
-
-    {frame >= 991 && (
-      <div
-        style={{
-          position: "absolute",
-          left: 889,
-          top: 706,
-          padding: "19px 24px",
-          background: C.yellow,
-          transform: `rotate(-2deg) translateY(${(1 - settle(frame, 991, fps)) * 16}px)`,
-          opacity: reveal(frame, 991, 15),
-        }}
-      >
-        <KineticText text="“Gue pernah mengalami ini.”" frame={frame} fps={fps} cue={991} size={36} stagger={3} />
-      </div>
-    )}
-
-    {frame >= 1042 && (
-      <div style={{ position: "absolute", left: 924, top: 812 }}>
-        <KineticText text="Padahal belum tentu." cue={1042} frame={frame} fps={fps} size={30} color={C.red} stagger={2} />
-      </div>
-    )}
-  </AbsoluteLayer>
-);
-
-const Comparison: React.FC<MotionProps> = ({ frame, fps }) => {
-  const layout = reveal(frame, 1219, 35);
-  const atmosphere = reveal(frame, 1298, 24);
-  const lighting = reveal(frame, 1338, 24);
-  const feeling = reveal(frame, 1372, 42);
-  const matched = reveal(frame, 1448, 34);
-  const signal = reveal(frame, 1511, 28);
-
-  const chips = [
-    { cue: 1219, x: 271, text: "TATA LETAK", color: C.blue },
-    { cue: 1298, x: 619, text: "SUASANA", color: C.teal },
-    { cue: 1338, x: 967, text: "PENCAHAYAAN", color: "#927A00" },
-    { cue: 1372, x: 1315, text: "PERASAAN", color: C.red },
-  ];
-
-  return (
-    <AbsoluteLayer>
-      <div style={{ position: "absolute", left: 100, top: 186 }}>
-        <KineticText text="Mirip, bukan berarti sama." cue={1067} frame={frame} fps={fps} size={51} stagger={5} />
-      </div>
-
-      <svg width="1920" height="1080" viewBox="0 0 1920 1080" style={{ fontFamily: FONT }}>
-        <g opacity={reveal(frame, 1067, 26)}>
-          <text x={117} y={317} fontSize={18} fontFamily={MONO} fill={C.blue} letterSpacing={2}>01 / SITUASI SEKARANG</text>
-          <rect x={108} y={344} width={722} height={454} fill={C.white} stroke={C.blue} strokeWidth={2} />
-          <g transform="translate(119 355) scale(1.127 1.134)">
-            <Room layout={layout} atmosphere={atmosphere} light={lighting} />
-          </g>
-          <rect x={131} y={371} width={83} height={30} fill={C.blue} />
-          <text x={144} y={392} fill={C.white} fontFamily={MONO} fontSize={15}>BARU</text>
-        </g>
-
-        {frame >= 1163 && (
-          <g opacity={reveal(frame, 1163, 30)}>
-            <text x={1109} y={317} fontSize={18} fontFamily={MONO} fill={C.teal} letterSpacing={2}>02 / PENGALAMAN SEBELUMNYA</text>
-            <rect x={1100} y={344} width={722} height={454} fill={C.white} stroke={C.teal} strokeWidth={2} />
-            <g transform="translate(1111 355) scale(1.127 1.134)">
-              <Room variant="memory" layout={layout} atmosphere={atmosphere} light={lighting} />
-            </g>
-            <rect x={1123} y={371} width={170} height={30} fill={C.teal} />
-            <text x={1136} y={392} fill={C.white} fontFamily={MONO} fontSize={15}>MEMORI LAMA</text>
-            <DrawPath d="M850 565 H922 M1001 565 H1080" progress={reveal(frame, 1163, 35)} color={C.ink} width={2} />
-            <circle cx={960} cy={565} r={40} fill={C.yellow} />
-            <text x={960} y={577} textAnchor="middle" fontSize={36} fontWeight={700}>≈</text>
-          </g>
-        )}
-
-        {frame >= 1219 && (
-          <g opacity={layout}>
-            <DrawPath d="M349 707 C549 822 1227 822 1341 707" progress={layout} color={C.blue} width={2} dashed />
-            <circle cx={349} cy={707} r={6} fill={C.blue} />
-            <circle cx={1341} cy={707} r={6} fill={C.blue} />
-          </g>
-        )}
-
-        {frame >= 1372 && (
-          <g opacity={feeling}>
-            <path d="M291 742 H332 L342 727 L354 754 L369 728 L380 742 H464" fill="none" stroke={C.red} strokeWidth={3} />
-            <path d="M1283 742 H1324 L1334 727 L1346 754 L1361 728 L1372 742 H1456" fill="none" stroke={C.red} strokeWidth={3} />
-            <ellipse cx={379} cy={739} rx={119} ry={38} fill="none" stroke={C.red} strokeWidth={2} opacity={0.3} />
-            <ellipse cx={1371} cy={739} rx={119} ry={38} fill="none" stroke={C.red} strokeWidth={2} opacity={0.3} />
-          </g>
-        )}
-
-        {chips.map((chip) => {
-          if (frame < chip.cue) return null;
-          return (
-            <g key={chip.cue} opacity={reveal(frame, chip.cue, 18)} transform={`translate(${chip.x},${823 + (1 - settle(frame, chip.cue, fps)) * 12})`}>
-              <rect width={288} height={49} fill={C.white} stroke={chip.color} strokeWidth={1.5} />
-              <circle cx={24} cy={24} r={5} fill={chip.color} />
-              <text x={43} y={31} fontFamily={MONO} fontSize={17} fontWeight={700} fill={chip.color}>{chip.text}</text>
-            </g>
-          );
-        })}
-
-        {frame >= 1448 && (
-          <g opacity={matched}>
-            <DrawPath
-              d="M894 557 C891 507 1018 504 1027 559 C1036 615 898 632 889 567"
-              progress={matched}
-              color={C.red}
-              width={4}
+      {[
+        { y: 442, text: "Gerakkan otot", start: 539 },
+        { y: 522, text: "Jaga keseimbangan", start: 572 },
+        { y: 602, text: "Ulangi lagi", start: 605 },
+      ].map((item, i) => {
+        const p = enter(frame, fps, item.start);
+        return (
+          <g
+            key={item.text}
+            opacity={ramp(frame, item.start, 24)}
+            transform={`translate(${(1 - p) * 20} 0)`}
+          >
+            <rect
+              x={1292}
+              y={item.y}
+              width={405}
+              height={62}
+              rx={10}
+              fill={C.white}
+              stroke={C.line}
             />
-            <rect x={839} y={648} width={243} height={57} fill={C.yellow} />
-            <text x={960} y={672} textAnchor="middle" fontFamily={MONO} fontSize={13}>POLA SERUPA</text>
-            <text x={960} y={696} textAnchor="middle" fontSize={19} fontWeight={700}>MEMORI TERPICU</text>
+            <text
+              x={1310}
+              y={item.y + 39}
+              fill={C.muted}
+              fontFamily={MONO}
+              fontSize={17}
+            >
+              0{i + 1}
+            </text>
+            <Words
+              text={item.text}
+              x={1360}
+              y={item.y + 18}
+              width={330}
+              size={23}
+              weight={600}
+              frame={frame}
+              fps={fps}
+              start={item.start + 3}
+            />
           </g>
-        )}
+        );
+      })}
 
-        {frame >= 1511 && (
-          <g opacity={signal}>
-            <rect x={811} y={359} width={298} height={117} rx={3} fill={C.ink} />
-            <text x={960} y={393} textAnchor="middle" fontFamily={MONO} fontSize={16} fill={C.yellow}>SINYAL DARI OTAK</text>
-            <path d="M845 433 H873 L886 411 L902 450 L921 415 L938 433 H1075" fill="none" stroke={C.yellow} strokeWidth={3} pathLength={1} strokeDasharray={1} strokeDashoffset={1 - signal} />
-            <DrawPath d="M960 476 V514" progress={signal} color={C.ink} width={3} />
-          </g>
-        )}
-      </svg>
-    </AbsoluteLayer>
+      <g opacity={ramp(frame, 671, 28)}>
+        <text
+          x={1495}
+          y={718}
+          textAnchor="middle"
+          fontFamily={FONT}
+          fontSize={27}
+          fontWeight={700}
+          fill={C.ink}
+        >
+          Pasti melelahkan.
+        </text>
+        <Marker
+          frame={frame}
+          start={687}
+          d="M1336 695C1383 677 1607 674 1651 704C1681 736 1591 750 1478 748C1368 749 1326 728 1336 695"
+        />
+      </g>
+
+      <g opacity={learned}>
+        <rect x={971} y={767} width={770} height={58} rx={10} fill={C.yellow} />
+        <LoopIcon x={1008} y={796} frame={frame} />
+        <Words
+          text="Pengalaman + kebiasaan → lebih otomatis"
+          x={1053}
+          y={782}
+          width={667}
+          size={25}
+          frame={frame}
+          fps={fps}
+          start={767}
+          stagger={4}
+        />
+        <Arrow
+          d="M1723 780C1780 712 1772 457 1719 423"
+          frame={frame}
+          start={814}
+          color={C.teal}
+          dashed
+        />
+        <path
+          d="M1719 423l2 17m-2-17l17 5"
+          stroke={C.teal}
+          strokeWidth={3}
+          fill="none"
+          opacity={ramp(frame, 850, 20)}
+        />
+      </g>
+    </g>
   );
 };
 
-const Overlay: React.FC<MotionProps> = ({ frame, fps }) => {
-  const active = beats.reduce<(typeof beats)[number] | null>(
-    (previous, beat) => (frame >= beat.start ? beat : previous),
-    null,
-  );
-  const act =
-    frame < 426 ? "01 / MELIHAT" :
-    frame < 780 ? "02 / MEMPREDIKSI" :
-    frame < 1067 ? "03 / MERASA FAMILIAR" :
-    "04 / MENCARI KEMIRIPAN";
+const PhoneAct: React.FC<{ frame: number; fps: number }> = ({
+  frame,
+  fps,
+}) => {
+  const social = ramp(frame, 1222, 30);
+  const notification = enter(frame, fps, 1318);
+  const float = Math.sin(frame * 0.022) * 2.2;
 
   return (
-    <AbsoluteLayer>
-      <div
-        style={{
-          position: "absolute",
-          left: 74,
-          right: 74,
-          top: 58,
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 19 }}>
-          <div style={{ width: 53, height: 53, background: C.yellow, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, fontSize: 25 }}>03</div>
-          <div style={{ fontSize: 19, fontWeight: 700, letterSpacing: 2 }}>CARA OTAK MEMBACA DUNIA</div>
-        </div>
-        <div style={{ fontFamily: MONO, fontSize: 16, color: C.muted, letterSpacing: 1.5 }}>{act}</div>
-      </div>
-
-      <div
-        style={{
-          position: "absolute",
-          left: 101,
-          right: 101,
-          top: 942,
-          height: 81,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
-      >
-        {active && (
-          <div key={active.start}>
-            <KineticText
-              text={active.text}
-              frame={frame}
-              fps={fps}
-              cue={active.start}
-              size={36}
-              weight={500}
-              stagger={Math.min(3, Math.max(1, Math.floor((active.end - active.start) / (active.text.split(" ").length * 2))))}
-            />
-          </div>
-        )}
-      </div>
-
-      <div style={{ position: "absolute", left: 73, bottom: 28, fontFamily: MONO, fontSize: 12, color: C.muted, letterSpacing: 1.8 }}>
-        PENJELASAN KONSEPTUAL · ILUSTRASI SKEMATIS
-      </div>
-      <div style={{ position: "absolute", right: 74, bottom: 28, fontFamily: MONO, fontSize: 12, color: C.muted }}>
-        03 / 11
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          left: 0,
-          bottom: 0,
-          height: 5,
-          width: `${interpolate(frame, [0, Math.max(0 + 0.001, 1548)], [0, 100], CLAMP)}%`,
-          background: C.ink,
-        }}
+    <g>
+      <Label x={973} y={278} color={C.red}>03 — SISI LAIN AUTOPILOT</Label>
+      <Words
+        text="Membantu. Tapi bisa kebablasan."
+        x={973}
+        y={310}
+        width={775}
+        size={37}
+        frame={frame}
+        fps={fps}
+        start={1005}
       />
-    </AbsoluteLayer>
+
+      <g opacity={ramp(frame, 1042, 30)}>
+        <rect x={980} y={426} width={398} height={73} rx={12} fill="#EAF1EB" />
+        <LoopIcon x={1026} y={462} frame={frame} />
+        <Words
+          text="Respons yang terbiasa"
+          x={1077}
+          y={450}
+          width={289}
+          size={23}
+          frame={frame}
+          fps={fps}
+          start={1045}
+        />
+
+        <Arrow
+          d="M1180 507V570"
+          frame={frame}
+          start={1073}
+          color={C.red}
+        />
+        <path
+          d="M1172 560l8 11 8-11"
+          fill="none"
+          stroke={C.red}
+          strokeWidth={3}
+          opacity={ramp(frame, 1095, 20)}
+        />
+
+        <rect
+          x={980}
+          y={586}
+          width={398}
+          height={91}
+          rx={12}
+          fill="#F8EEEB"
+        />
+        <Words
+          text="Bukan selalu"
+          x={1003}
+          y={602}
+          width={359}
+          size={27}
+          frame={frame}
+          fps={fps}
+          start={1084}
+        />
+        <Words
+          text="yang kita inginkan."
+          x={1003}
+          y={638}
+          width={359}
+          size={27}
+          color={C.red}
+          frame={frame}
+          fps={fps}
+          start={1096}
+        />
+
+        <Marker
+          frame={frame}
+          start={1134}
+          d="M978 600C1011 565 1325 565 1388 597C1421 639 1377 690 1232 695C1087 702 957 675 978 600"
+          duration={58}
+        />
+      </g>
+
+      <g transform={`translate(1571 ${582 + float})`}>
+        <rect
+          x={-118}
+          y={-184}
+          width={236}
+          height={373}
+          rx={35}
+          fill={C.ink}
+          opacity={ramp(frame, 1001, 38)}
+        />
+        <rect
+          x={-108}
+          y={-174}
+          width={216}
+          height={352}
+          rx={26}
+          fill="#EEEAE1"
+          opacity={ramp(frame, 1001, 38)}
+        />
+        <rect
+          x={-42}
+          y={-163}
+          width={84}
+          height={17}
+          rx={8.5}
+          fill={C.ink}
+          opacity={ramp(frame, 1001, 38)}
+        />
+        <rect
+          x={-38}
+          y={160}
+          width={76}
+          height={5}
+          rx={2.5}
+          fill={C.ink}
+          opacity={0.25 * ramp(frame, 1001, 38)}
+        />
+
+        <g opacity={social}>
+          <Label x={-84} y={-108} size={12} spacing={1}>MEDIA SOSIAL</Label>
+          <rect x={-86} y={-85} width={172} height={91} rx={12} fill={C.white} />
+          <circle cx={-58} cy={-60} r={11} fill="#D4E5E8" />
+          <rect x={-36} y={-66} width={83} height={7} rx={3.5} fill={C.line} />
+          <rect x={-36} y={-51} width={52} height={5} rx={2.5} fill={C.line} />
+          <rect x={-72} y={-27} width={144} height={19} rx={4} fill="#E1E9EC" />
+          <rect x={-86} y={19} width={172} height={78} rx={12} fill={C.white} />
+          <rect x={-71} y={34} width={142} height={38} rx={5} fill="#D7E5DC" />
+          <rect x={-71} y={80} width={94} height={5} rx={2.5} fill={C.line} />
+
+          <g transform={`translate(0 ${119 + Math.sin(frame * 0.025) * 1.5})`}>
+            <rect x={-28} y={-20} width={56} height={42} rx={11} fill={C.blue} />
+            <path
+              d="M-11-7H11V7H1L-5 13V7H-11Z"
+              fill="none"
+              stroke={C.white}
+              strokeWidth={2.5}
+              strokeLinejoin="round"
+            />
+          </g>
+        </g>
+
+        <g
+          opacity={ramp(frame, 1318, 18)}
+          transform={`translate(29 97) scale(${0.75 + notification * 0.25})`}
+        >
+          <circle
+            r={22 + Math.sin(frame * 0.075) * 2}
+            fill={C.red}
+            opacity={0.13}
+          />
+          <circle r={16} fill={C.red} stroke={C.white} strokeWidth={3} />
+          <text
+            y={6}
+            textAnchor="middle"
+            fontFamily={FONT}
+            fontSize={18}
+            fontWeight={800}
+            fill={C.white}
+          >
+            1
+          </text>
+        </g>
+      </g>
+
+      <g opacity={social}>
+        <Arrow
+          d="M1386 633C1413 633 1430 655 1457 685"
+          frame={frame}
+          start={1240}
+          color={C.red}
+        />
+        <path
+          d="M1442 680l15 5-2-15"
+          fill="none"
+          stroke={C.red}
+          strokeWidth={3}
+          opacity={ramp(frame, 1270, 20)}
+        />
+        <Pill
+          x={980}
+          y={748}
+          width={323}
+          text="KEBIASAAN MEMBUKA APLIKASI"
+          frame={frame}
+          fps={fps}
+          start={1228}
+          fill={C.ink}
+        />
+      </g>
+
+      <g opacity={ramp(frame, 1318, 24)}>
+        <path
+          d="M1600 701V804H1410"
+          fill="none"
+          stroke={C.red}
+          strokeWidth={2}
+          pathLength={1}
+          strokeDasharray="1 1"
+          strokeDashoffset={1 - ramp(frame, 1318, 37)}
+        />
+        <rect x={1309} y={781} width={258} height={39} rx={5} fill={C.yellow} />
+        <Words
+          text="“Cuma satu notifikasi.”"
+          x={1320}
+          y={789}
+          width={250}
+          size={21}
+          frame={frame}
+          fps={fps}
+          start={1322}
+          stagger={4}
+        />
+      </g>
+    </g>
   );
 };
 
 export const Scene_03: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
-  const scale = Math.min(width / 1920, height / 1080);
+
+  const scanY = 246 + ((frame * 0.36) % 568);
+  const awareness = ramp(frame, 763, 45);
+  const warning = ramp(frame, 1001, 45);
 
   return (
     <div
       style={{
         position: "absolute",
         inset: 0,
+        width,
+        height,
         overflow: "hidden",
-        background: C.paper,
-        fontFamily: FONT,
-        color: C.ink,
+        backgroundColor: C.paper,
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          left: (width - 1920 * scale) / 2,
-          top: (height - 1080 * scale) / 2,
-          width: 1920,
-          height: 1080,
-          transform: `scale(${scale})`,
-          transformOrigin: "top left",
-        }}
+      <svg
+        viewBox="0 0 1920 1080"
+        width="100%"
+        height="100%"
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        aria-label="Diagram proses otomatis otak: mengenali wajah, bereaksi, berjalan, dan membuka media sosial."
+        style={{ display: "block", fontFamily: FONT }}
       >
-        <Sequence from={0} durationInFrames={1549} layout="none">
-          <Background frame={frame} />
+        <defs>
+          <pattern id="s03-grid" width={40} height={40} patternUnits="userSpaceOnUse">
+            <path
+              d="M40 0H0V40"
+              fill="none"
+              stroke={C.ink}
+              strokeWidth={0.6}
+              opacity={0.055}
+            />
+          </pattern>
+          <pattern id="s03-paper" width={13} height={17} patternUnits="userSpaceOnUse">
+            <circle cx={2} cy={4} r={0.65} fill={C.ink} opacity={0.06} />
+            <circle cx={9} cy={13} r={0.55} fill={C.ink} opacity={0.04} />
+          </pattern>
+          <radialGradient id="s03-glow">
+            <stop offset="0%" stopColor={C.yellow} stopOpacity={0.13} />
+            <stop offset="100%" stopColor={C.yellow} stopOpacity={0} />
+          </radialGradient>
+          <clipPath id="s03-brain-panel">
+            <rect x={90} y={231} width={735} height={615} rx={20} />
+          </clipPath>
+        </defs>
+
+        {/* Background: quiet paper, drifting warmth, and fine diagram grid. */}
+        <g>
+          <rect width={1920} height={1080} fill={C.paper} />
+          <rect width={1920} height={1080} fill="url(#s03-paper)" />
+          <ellipse
+            cx={450 + Math.sin(frame * 0.006) * 35}
+            cy={440 + Math.cos(frame * 0.008) * 20}
+            rx={610}
+            ry={465}
+            fill="url(#s03-glow)"
+          />
+          <rect x={65} y={208} width={1790} height={665} fill="url(#s03-grid)" />
+        </g>
+
+        {/* Established editorial header — already readable at frame zero. */}
+        <g>
+          <rect x={91} y={48} width={41} height={29} rx={3} fill={C.yellow} />
+          <text
+            x={111.5}
+            y={69}
+            fill={C.ink}
+            fontSize={17}
+            fontFamily={MONO}
+            fontWeight={800}
+            textAnchor="middle"
+          >
+            03
+          </text>
+          <Label x={150} y={69}>PIKIRAN DI BALIK KEBIASAAN</Label>
+          <Label x={1709} y={69} size={14}>03 / 08</Label>
+
+          <Words
+            text="Otak di balik autopilot"
+            x={88}
+            y={100}
+            width={1550}
+            size={76}
+            weight={800}
+            frame={frame}
+            fps={fps}
+            start={-70}
+            stagger={3}
+          />
+          <line x1={92} y1={199} x2={1824} y2={199} stroke={C.ink} strokeWidth={1.5} />
+          <rect
+            x={92}
+            y={198}
+            width={interpolate(frame, [0, 1405], [215, 1732], CLAMP)}
+            height={3}
+            fill={C.yellow}
+          />
+        </g>
+
+        {/* Persistent foundations: the diagram never disappears between acts. */}
+        <g>
+          <rect
+            x={96}
+            y={239}
+            width={735}
+            height={615}
+            rx={20}
+            fill={C.ink}
+            opacity={0.04}
+          />
+          <rect
+            x={90}
+            y={231}
+            width={735}
+            height={615}
+            rx={20}
+            fill={C.white}
+            stroke={C.line}
+            strokeWidth={1.3}
+          />
+          <rect
+            x={930}
+            y={231}
+            width={858}
+            height={615}
+            rx={20}
+            fill={C.white}
+            stroke={C.line}
+            strokeWidth={1.3}
+          />
+          <Label x={123} y={271} size={14}>DIAGRAM KONSEPTUAL / OTAK</Label>
+          <circle
+            cx={785}
+            cy={265}
+            r={4.5 + Math.sin(frame * 0.04) * 0.5}
+            fill={C.teal}
+          />
+          <Label x={123} y={805} size={13} spacing={1.4}>PERSEPSI → PENGALAMAN → RESPONS</Label>
+
+          <g clipPath="url(#s03-brain-panel)" opacity={0.11}>
+            <line
+              x1={103}
+              y1={scanY}
+              x2={810}
+              y2={scanY}
+              stroke={C.blue}
+              strokeWidth={1}
+            />
+          </g>
+        </g>
+
+        {/* Persistent living neural network. */}
+        <Brain frame={frame} fps={fps} />
+
+        {/* The connector gains meaning rather than being replaced. */}
+        <g>
+          <path
+            d="M825 480H928"
+            fill="none"
+            stroke={C.line}
+            strokeWidth={2}
+          />
+          <path
+            d="M825 480H928"
+            fill="none"
+            stroke={C.teal}
+            strokeWidth={3}
+            strokeDasharray="5 10"
+            strokeDashoffset={-frame * 0.35}
+            opacity={0.55}
+          />
+          <path d="M916 472l12 8-12 8" fill="none" stroke={C.teal} strokeWidth={3} />
+          <circle
+            cx={872}
+            cy={480}
+            r={7 + Math.sin(frame * 0.06) * 1.3}
+            fill={C.white}
+            stroke={C.teal}
+            strokeWidth={2}
+          />
+          <g opacity={warning}>
+            <path
+              d="M825 480H928"
+              fill="none"
+              stroke={C.red}
+              strokeWidth={3}
+              strokeDasharray="5 10"
+              strokeDashoffset={-frame * 0.35}
+            />
+            <path d="M916 472l12 8-12 8" fill="none" stroke={C.red} strokeWidth={3} />
+          </g>
+        </g>
+
+        {/* Three long, overlapping acts: 0–511, 487–1025, 1001–1406. */}
+        <Sequence frame={frame} from={0} durationInFrames={511}>
+          <RecognitionAct frame={frame} fps={fps} />
         </Sequence>
 
-        <Sequence from={0} durationInFrames={426} layout="none">
-          <Inquiry frame={frame} fps={fps} />
+        <Sequence frame={frame} from={487} durationInFrames={538}>
+          <WalkingAct frame={frame} fps={fps} />
         </Sequence>
 
-        <Sequence from={426} durationInFrames={354} layout="none">
-          <Prediction frame={frame} fps={fps} />
+        <Sequence
+          frame={frame}
+          from={1001}
+          durationInFrames={405}
+          fadeOut={0}
+        >
+          <PhoneAct frame={frame} fps={fps} />
         </Sequence>
 
-        <Sequence from={780} durationInFrames={287} layout="none">
-          <DejaVu frame={frame} fps={fps} />
-        </Sequence>
+        {/* Small evidence tags build onto the original left-side diagram. */}
+        <g>
+          <Pill
+            x={118}
+            y={722}
+            width={202}
+            text="TANPA DISENGAJA"
+            frame={frame}
+            fps={fps}
+            start={72}
+            fill="#EAF0F5"
+            color={C.blue}
+          />
+          <Pill
+            x={333}
+            y={722}
+            width={192}
+            text="SEBELUM ALASAN"
+            frame={frame}
+            fps={fps}
+            start={224}
+            fill="#F8EAE6"
+            color={C.red}
+          />
+          <Pill
+            x={538}
+            y={722}
+            width={256}
+            text="BELAJAR DARI KEBIASAAN"
+            frame={frame}
+            fps={fps}
+            start={781}
+            fill="#DFEEE7"
+            color={C.teal}
+          />
 
-        <Sequence from={1067} durationInFrames={482} layout="none">
-          <Comparison frame={frame} fps={fps} />
-        </Sequence>
+          <g opacity={awareness * (1 - warning)}>
+            <path
+              d="M151 692C199 680 225 656 264 631"
+              fill="none"
+              stroke={C.teal}
+              strokeWidth={2}
+              strokeDasharray="4 7"
+              strokeDashoffset={-frame * 0.2}
+            />
+          </g>
+        </g>
 
-        <Sequence from={0} durationInFrames={1549} layout="none">
-          <Overlay frame={frame} fps={fps} />
-        </Sequence>
-      </div>
+        {/* Intentionally no text, caption boxes, or foreground content at Y ≥ 900. */}
+      </svg>
     </div>
   );
 };

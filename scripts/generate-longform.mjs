@@ -41,11 +41,45 @@ if (!fs.existsSync(cacheDir)) {
 const rawArgs = process.argv.slice(2);
 const audioArg = rawArgs.find((a) => !a.startsWith("--"));
 const forceRegenerate = rawArgs.includes("--force");
+const enableSfx = rawArgs.includes("--sfx");
+const shouldRender = rawArgs.includes("--render");
+const isRepairOnly = rawArgs.includes("--repair") || rawArgs.includes("--fix");
 const targetAudioFile = path.join(publicDir, "voiceover.mp3");
+
+// Reasoning effort configuration (Default: medium)
+let reasoningEffort = "medium";
+if (rawArgs.includes("--high")) {
+  reasoningEffort = "high";
+} else if (rawArgs.includes("--low")) {
+  reasoningEffort = "low";
+} else if (rawArgs.includes("--medium")) {
+  reasoningEffort = "medium";
+}
+
+// Sync SFX configuration file
+const sfxConfigFile = path.join(rootDir, "src", "vox", "sfxConfig.ts");
+try {
+  fs.writeFileSync(
+    sfxConfigFile,
+    `/**
+ * Global Sound Effects (SFX) Configuration
+ * Generated automatically by pipeline
+ */
+export const SFX_ENABLED = ${enableSfx};\n`
+  );
+} catch (e) {
+  console.warn("⚠️ Gagal memperbarui sfxConfig.ts:", e.message);
+}
 
 console.log("\n==================================================================");
 console.log("🎬 FULL AUTONOMOUS MULTI-SCENE REACT GENERATOR (LONG-FORM 10+ MINS)");
-console.log("   Whisper AI + GPT-6.1 Sol -> Autonomous TSX React Scenes -> Remotion <Series>");
+console.log("   Whisper AI + GPT-6.1 Sol -> Autonomous TSX React Scenes");
+console.log(`🧠  Reasoning Effort : ${reasoningEffort.toUpperCase()} (pilihan: --low, --medium [default], --high)`);
+if (enableSfx) {
+  console.log("🔊  Sound Effects (SFX): DIAKTIFKAN (--sfx)");
+} else {
+  console.log("🔇  Sound Effects (SFX): NONAKTIF (default). Gunakan flag --sfx jika ingin menambahkan SFX.");
+}
 console.log("==================================================================\n");
 
 async function prepareAudio() {
@@ -149,22 +183,48 @@ function partitionIntoStoryChapters(segments, totalDuration) {
   // Target chapter duration: ~45 to 55 seconds (ideal for Vox scene pacing)
   const targetSec = 50;
   const numChapters = Math.max(2, Math.round(totalDuration / targetSec));
-  const chapterDuration = totalDuration / numChapters;
+
+  // Natural sentence snapping: find Whisper segment boundaries closest to target intervals
+  const cutIndices = [];
+  for (let c = 1; c < numChapters; c++) {
+    const targetTime = c * (totalDuration / numChapters);
+    let bestIdx = 0;
+    let bestDiff = Infinity;
+    for (let i = 0; i < segments.length - 1; i++) {
+      const diff = Math.abs(segments[i].end - targetTime);
+      if (diff < bestDiff) {
+        bestDiff = diff;
+        bestIdx = i;
+      }
+    }
+    cutIndices.push(bestIdx);
+  }
+
+  const boundaries = [0, ...cutIndices.map((idx) => segments[idx].end), totalDuration];
   const chapters = [];
+  let currentFrameCursor = 0;
+  const totalFrames = Math.ceil(totalDuration * 30);
 
   for (let i = 0; i < numChapters; i++) {
-    const startSec = i * chapterDuration;
-    const endSec = i === numChapters - 1 ? totalDuration : (i + 1) * chapterDuration;
+    const startSec = boundaries[i];
+    const endSec = boundaries[i + 1];
+    const durationFrames =
+      i === numChapters - 1
+        ? totalFrames - currentFrameCursor
+        : Math.round((endSec - startSec) * 30);
+    const startFrame = currentFrameCursor;
+    const endFrame = startFrame + durationFrames;
+    currentFrameCursor = endFrame;
 
-    const chapterSegments = segments.filter((s) => s.start >= startSec && s.start < endSec);
+    const chapterSegments = segments.filter(
+      (s) => s.start >= startSec - 0.05 && s.end <= endSec + 0.05
+    );
     const chapterText = chapterSegments.map((s) => s.text).join(" ").trim();
-
-    const startFrame = Math.round(startSec * 30);
-    const endFrame = Math.round(endSec * 30);
-    const durationFrames = endFrame - startFrame;
 
     chapters.push({
       id: i + 1,
+      startFrame,
+      endFrame,
       startSec,
       endSec,
       durationFrames,
@@ -182,20 +242,45 @@ function partitionIntoStoryChapters(segments, totalDuration) {
   return chapters;
 }
 
-async function callOpenAI(messages, model, maxRetries = 3) {
+async function callOpenAI(messages, model, reasoningEffort = "medium", maxRetries = 4) {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      const payload = {
+        model,
+        messages,
+      };
+      if (reasoningEffort) {
+        payload.reasoning_effort = reasoningEffort;
+      }
+
+      let response = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${apiKey}`,
         },
-        body: JSON.stringify({
-          model,
-          messages,
-        }),
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(360_000), // 6-minute generous timeout
       });
+
+      // If reasoning_effort is rejected by a model, retry without it
+      if (!response.ok && response.status === 400) {
+        const errText = await response.text();
+        if (errText.includes("reasoning_effort")) {
+          delete payload.reasoning_effort;
+          response = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${apiKey}`,
+            },
+            body: JSON.stringify(payload),
+            signal: AbortSignal.timeout(360_000),
+          });
+        } else {
+          throw new Error(`OpenAI API Error (${response.status}): ${errText}`);
+        }
+      }
 
       if (!response.ok) {
         const errText = await response.text();
@@ -205,26 +290,83 @@ async function callOpenAI(messages, model, maxRetries = 3) {
       const data = await response.json();
       return data.choices[0]?.message?.content || "";
     } catch (err) {
-      console.warn(`   ⚠️ OpenAI network attempt ${attempt}/${maxRetries} failed: ${err.message}`);
+      const reason = err.cause?.message || err.cause?.code || err.message || "Unknown network error";
+      console.warn(`   ⚠️ Koneksi OpenAI percobaan ${attempt}/${maxRetries} terkendala (${reason}).`);
+
       if (attempt === maxRetries) throw err;
-      await new Promise((r) => setTimeout(r, attempt * 2000));
+      const waitTime = attempt * 3000;
+      console.log(`   ⏳ Menunggu ${waitTime / 1000} detik sebelum mencoba kembali...`);
+      await new Promise((r) => setTimeout(r, waitTime));
     }
   }
 }
 
-async function generateAutonomousSceneCode(chapter, totalChapters, rulesText) {
+async function generateAutonomousSceneCode(chapter, totalChapters, rulesText, enableSfx = false, reasoningEffort = "medium") {
   const model = process.env.OPENAI_MODEL || "gpt-6.1-sol";
   const sceneNum = chapter.id;
   const scenePad = sceneNum.toString().padStart(2, "0");
   const componentName = `Scene_${scenePad}`;
   const durationSec = chapter.durationFrames / 30;
 
-  const timelineCues = (chapter.segments || [])
+  // Group segments into 2 to 3 calm Story Acts (15-20s each)
+  const segments = chapter.segments || [];
+  const numActs = Math.min(3, Math.max(2, Math.round(chapter.durationFrames / 500)));
+  const actDuration = Math.round(chapter.durationFrames / numActs);
+
+  const actsList = [];
+  for (let a = 0; a < numActs; a++) {
+    const actStart = a * actDuration;
+    const actEnd = a === numActs - 1 ? chapter.durationFrames : (a + 1) * actDuration;
+    const actSegments = segments.filter(
+      (s) => s.localStartFrame >= actStart && s.localStartFrame < actEnd
+    );
+    const actText = actSegments.map((s) => s.text).join(" ").trim();
+    const cuesText = actSegments
+      .map(
+        (s) =>
+          `      • Cue at local frame ${s.localStartFrame} (+${s.startSec}s): "${s.text}"`
+      )
+      .join("\n");
+
+    actsList.push({
+      actNum: a + 1,
+      startFrame: actStart,
+      endFrame: actEnd,
+      durationSec: ((actEnd - actStart) / 30).toFixed(1),
+      text: actText || `Act ${a + 1}`,
+      cues: cuesText || "      • Progressive visual buildup",
+    });
+  }
+
+  const timelineCues = actsList
     .map(
-      (s, idx) =>
-        `   • Beat ${idx + 1} [Frames ${s.localStartFrame} - ${s.localEndFrame} | +${s.startSec}s to +${s.endSec}s]: "${s.text}"`
+      (act) =>
+        `   🎬 ACT ${act.actNum} [Frames ${act.startFrame} to ${act.endFrame} | ~${act.durationSec}s]:\n      Narration: "${act.text}"\n${act.cues}`
     )
-    .join("\n");
+    .join("\n\n");
+
+  const sfxPrompt = enableSfx
+    ? `5. DOCUMENTARY SOUND DESIGN (AUDIO SFX - MINIMALIST & STRICTLY RELEVANT):
+   Sound effects MUST be subtle, organic, and STRICTLY tied to real physical visual events.
+   import { VoxSoundEffect } from "../../VoxSoundEffect";
+
+   STRICT MATCHING RULES (Never violate these):
+   • "highlighter": ONLY use when an actual yellow highlighter stroke animates across text. NEVER use on plain text!
+   • "paper_slide": ONLY use when a dossier card, archival document, or comparison panel slides into view. NEVER on plain words!
+   • "camera": ONLY use when an archival photograph, polaroid snapshot, or historical clipping appears. NEVER on checklists!
+   • "click": ONLY use on subtle interactive checklist checkmarks or toggle switches.
+   • "pop": ONLY use on small tactile data badges or pill callouts.
+
+   GOLDEN EDITORIAL RULES:
+   - In Vox documentaries, the narrator's voice is PRIMARY. Over-using SFX sounds cartoonish and chaotic.
+   - Limit to 1 to 2 SFX per scene! If a scene is pure kinetic typography or dialogue, use 0 SFX (silence is elegant).
+   - Keep volume warm and gentle: volume={0.25} to {0.30} (never exceed 0.32).
+   Example:
+   <VoxSoundEffect type="paper_slide" cue={dossierCue} volume={0.28} />`
+    : `5. SOUND EFFECTS RESTRICTION (DEFAULT: NO SFX):
+   DO NOT import VoxSoundEffect or Audio!
+   DO NOT add any sound effects or audio elements in this component.
+   The audio is strictly handled globally by the voiceover narration track without SFX.`;
 
   const systemPrompt = `You are a Lead Motion Designer and Master React/Remotion Engineer at Vox Media.
 Your task is to write a COMPLETE, BEAUTIFUL, PRODUCTION-READY, 100% SELF-CONTAINED TypeScript React component (.tsx) for Scene ${sceneNum} of ${totalChapters} in an investigative Vox-style documentary.
@@ -238,19 +380,50 @@ ${rulesText}
 2. Frame Scope:
    useCurrentFrame() is local to this scene, starting at 0 and ending at ${chapter.durationFrames} (${durationSec.toFixed(1)} seconds at 30 fps).
 
-3. CRITICAL AUDIO-VISUAL SYNCHRONIZATION (DO NOT ANIMATE TOO FAST!):
-   In previous renders, animations appeared too fast before the narrator actually spoke the words.
-   The narrator speaks in a calm, measured documentary tone.
-   You MUST time each visual entrance, text reveal, and diagram animation to match the EXACT spoken timeline cues below:
-${timelineCues}
+3. CRITICAL VOX MOTION DESIGN & PACING RULES (SEAMLESS, CALM & ELEGANT):
+   - SATU TITIK FOKUS / ANTI PUSING (ONE MOVEMENT AT A TIME - CHOREOGRAPHED EYE FLOW):
+     * NEVER animate multiple elements simultaneously across the screen! (DILARANG teks bergerak bersamaan dengan diagram membesar dan badge berdenyut).
+     * The viewer's eyes must be guided like a director's spotlight: ONE clear movement at a time.
+     * Sequential Choreography Order:
+       1) Frame 0-30: Headline or core question enters smoothly. Once entered, IT STAYS COMPLETELY STILL (locked resting state).
+       2) Frame 35-75: ONLY after the text is still, the main card / diagram enters. The text remains still.
+       3) Frame 90-140: ONLY after the card is still, a connector line or arrow draws out.
+       4) Frame Cue: When the narrator speaks a key word, an animated yellow highlighter (#FFE600) or red marker circle (#E63946) highlights that specific word.
 
-   RULES FOR PERFECT PACING:
-   - DO NOT trigger all graphics in the first 50-100 frames!
-   - Elements for Beat 1 must enter at Beat 1's start frame.
-   - Elements for Beat 2 must enter at Beat 2's start frame.
-   - When a specific sentence or concept is spoken (e.g. at frame 400), reveal the corresponding graphic/card at frame 400!
-   - Use 'spring({ frame: Math.max(0, frame - cueFrame), ... })' or conditional render 'frame >= cueFrame'.
-   - This ensures the visual motion flows in 100% perfect lockstep with the spoken voice!
+   - RESTING STATES (TENANG & STABIL - NO SENSORY OVERLOAD):
+     * Once an element finishes its entrance, it MUST enter a calm resting state.
+     * FORBIDDEN: constant jitter, harsh pulsing, fast spinning, or shaking that distracts from the voiceover.
+     * Ketenangan (visual rest) gives the video weight, authority, and premium documentary feel.
+
+   - CALM DOCUMENTARY PACING (2 TO 3 ACTS MAX PER SCENE):
+     * A Vox documentary is NOT a frantic TikTok slideshow! Do NOT switch slides every 3-5 seconds!
+     * Structure this 50-second scene strictly into the 2 or 3 Acts defined below.
+     * Within an Act, DO NOT wipe the canvas! Use PROGRESSIVE BUILDUP: keep the core card present and build context on top of it.
+     * NEVER create short sequences or cards that last under 150 frames (5 seconds).
+
+   - PROGRESSIVE BUILDUP OVER REPLACING:
+     * Instead of wiping the screen clean every time a new sentence is spoken, BUILD UPON the existing screen!
+     * Keep the core visual card/diagram present, and progressively animate:
+       1) an animated yellow highlighter (#FFE600) across key words,
+       2) an evidence badge/pill sliding in beside it,
+       3) a red marker circle (#E63946) drawing around a key insight,
+       4) an SVG arrow expanding to connect two ideas.
+     * This gives the viewer time to read and digest the information naturally.
+
+   - NEVER LEAVE THE SCREEN BLANK AT FRAME 0:
+     * Every scene MUST open at frame 0 with an immediate established layout (title, editorial header, and foundational diagram framing). Do NOT wait until frame 60 or 160 to show the first visual!
+
+   - NO HARD JUMPS / PATAH (CROSSFADE TRANSITIONS):
+     * Never abruptly remove elements with hard 'return null' cuts without a fade-out.
+     * Always crossfade smoothly between narrative Acts (e.g., interpolate opacity over 15-20 frames on entrance and exit: Math.min(fadeIn, fadeOut)).
+
+   - GENTLE DOCUMENTARY SPRING PHYSICS:
+     * Use weighted, cinematic spring configs:
+       spring({ frame: Math.max(0, frame - cue), fps, config: { damping: 22, mass: 0.9, stiffness: 70 } })
+     * DURATION: entrances should feel deliberate and elegant (~20-25 frames), never nervous or hyperactive.
+
+   - STRUCTURED STORY ACTS FOR THIS SCENE:
+${timelineCues}
 
 4. RICH VOX VISUAL GRAPHICS (NO STATIC SCREENS):
    - Bespoke custom SVG diagrams tailored directly to this scene's concepts:
@@ -262,24 +435,7 @@ ${timelineCues}
      * Hand-drawn red marker circle (#E63946) to emphasize key findings
    - High visual polish: Vox warm paper background (#F5F2EB), rich accents (#18181B, #FFE600, #E63946, #2563EB, #0D9488).
 
-5. PROCEDURAL SOUND DESIGN (AUDIO SFX):
-   You can add documentary-grade sound effects synchronized with visual events:
-   import { VoxSoundEffect } from "../../VoxSoundEffect";
-
-   Available SFX types:
-   • "paper_slide" or "woosh": Trigger at frame 0 or when a new card/dossier slides into view.
-   • "highlighter": Trigger when highlighting text or data.
-   • "pop": Trigger when a stat card, callout bubble, or data badge pops up.
-   • "click": Trigger on subtle checklist checks, toggle switches, or data tick points.
-   • "camera": Trigger when an archival photo, polaroid, or evidence item appears.
-
-   Usage example:
-   <VoxSoundEffect type="paper_slide" cue={0} volume={0.45} />
-   <VoxSoundEffect type="pop" cue={statCueFrame} volume={0.4} />
-
-   RULES:
-   - Select 2 to 4 purposeful, punchy moments per scene that match the visual events.
-   - Keep volume balanced (0.35 to 0.5) so it enhances the narrator's voice without overpowering it.
+${sfxPrompt}
 
 6. STRICT CODING RESTRICTIONS:
    - All styles must be inline React CSS.
@@ -303,7 +459,8 @@ Write the complete ${componentName}.tsx React code from scratch now!`;
       { role: "system", content: systemPrompt },
       { role: "user", content: userPrompt },
     ],
-    model
+    model,
+    reasoningEffort
   );
 
   const match = rawContent.match(/```(?:tsx|typescript|jsx|javascript)?([\s\S]*?)```/);
@@ -360,43 +517,42 @@ async function run() {
     fs.mkdirSync(generatedDir, { recursive: true });
   }
 
-  console.log(`\n🧠 GPT-6.1 Sol is writing AUTONOMOUS REACT COMPONENTS for each scene...`);
-
-  // Generate in parallel batches of 3 scenes
-  const concurrency = 3;
-  for (let i = 0; i < chapters.length; i += concurrency) {
-    const batch = chapters.slice(i, i + concurrency);
-    await Promise.all(
-      batch.map(async (chap) => {
-        const scenePad = chap.id.toString().padStart(2, "0");
-        const sceneFile = path.join(generatedDir, `Scene_${scenePad}.tsx`);
-
-        if (fs.existsSync(sceneFile) && !forceRegenerate) {
-          console.log(`   ⚡ [Scene ${chap.id}/${chapters.length}] Scene_${scenePad}.tsx already exists, using cached code.`);
-          return;
-        }
-
-        console.log(`   🎨 [Scene ${chap.id}/${chapters.length}] GPT-6.1 Sol coding Scene_${scenePad}.tsx (${chap.durationFrames} frames)...`);
-        const code = await generateAutonomousSceneCode(chap, chapters.length, rulesText);
-        fs.writeFileSync(sceneFile, code, "utf-8");
-        console.log(`   ✅ Saved: src/vox/scenes/generated/Scene_${scenePad}.tsx`);
+  function updateGeneratedIndex() {
+    const availableChapters = chapters
+      .filter((c) => {
+        const scenePad = c.id.toString().padStart(2, "0");
+        return fs.existsSync(path.join(generatedDir, `Scene_${scenePad}.tsx`));
       })
+      .sort((a, b) => a.id - b.id);
+
+    if (availableChapters.length === 0) {
+      const emptyContent = `import React from "react";
+
+export interface GeneratedSceneInfo {
+  id: number;
+  name: string;
+  Component: React.FC;
+  startFrame: number;
+  durationFrames: number;
+}
+
+export const generatedScenes: GeneratedSceneInfo[] = [];
+`;
+      fs.writeFileSync(path.join(generatedDir, "index.ts"), emptyContent, "utf-8");
+      return;
+    }
+
+    const importLines = availableChapters.map((c) => {
+      const scenePad = c.id.toString().padStart(2, "0");
+      return `import { Scene_${scenePad} } from "./Scene_${scenePad}";`;
+    });
+    const exportNames = availableChapters.map((c) => `Scene_${c.id.toString().padStart(2, "0")}`);
+    const sceneListEntries = availableChapters.map(
+      (c) =>
+        `  { id: ${c.id}, name: "Scene_${c.id.toString().padStart(2, "0")}", Component: Scene_${c.id.toString().padStart(2, "0")}, startFrame: ${c.startFrame}, durationFrames: ${c.durationFrames} },`
     );
-  }
 
-  // Create generated/index.ts barrel file
-  const importLines = [];
-  const exportNames = [];
-  const sceneListEntries = [];
-  for (const chap of chapters) {
-    const scenePad = chap.id.toString().padStart(2, "0");
-    const name = `Scene_${scenePad}`;
-    importLines.push(`import { ${name} } from "./${name}";`);
-    exportNames.push(name);
-    sceneListEntries.push(`  { id: ${chap.id}, name: "${name}", Component: ${name}, durationFrames: ${chap.durationFrames} },`);
-  }
-
-  const barrelContent = `import React from "react";
+    const barrelContent = `import React from "react";
 ${importLines.join("\n")}
 
 export {
@@ -407,6 +563,7 @@ export interface GeneratedSceneInfo {
   id: number;
   name: string;
   Component: React.FC;
+  startFrame: number;
   durationFrames: number;
 }
 
@@ -414,7 +571,79 @@ export const generatedScenes: GeneratedSceneInfo[] = [
 ${sceneListEntries.join("\n")}
 ];
 `;
-  fs.writeFileSync(path.join(generatedDir, "index.ts"), barrelContent, "utf-8");
+    fs.writeFileSync(path.join(generatedDir, "index.ts"), barrelContent, "utf-8");
+  }
+
+  // Audio change detection
+  const metaFile = path.join(generatedDir, "longform-audio-meta.json");
+  let previousAudioKey = "";
+  if (fs.existsSync(metaFile)) {
+    try {
+      const prevMeta = JSON.parse(fs.readFileSync(metaFile, "utf-8"));
+      previousAudioKey = prevMeta.audioKey || "";
+    } catch {}
+  }
+  const currentStat = fs.statSync(audioSource);
+  const currentAudioKey = `${path.basename(audioSource)}_${currentStat.size}_${Math.round(currentStat.mtimeMs)}`;
+  const isDifferentAudio = previousAudioKey !== currentAudioKey;
+
+  if (isDifferentAudio && !isRepairOnly) {
+    console.log(`🆕 Audio baru: ${path.basename(audioSource)} (${duration.toFixed(1)}s)`);
+    console.log(`🧹 Membersihkan scene lama & meng-generate ulang untuk audio baru...`);
+    const existing = fs.readdirSync(generatedDir);
+    for (const f of existing) {
+      if (f.startsWith("Scene_") && f.endsWith(".tsx")) {
+        fs.unlinkSync(path.join(generatedDir, f));
+      }
+    }
+    updateGeneratedIndex();
+  }
+
+  // Save current audio metadata
+  fs.writeFileSync(
+    metaFile,
+    JSON.stringify(
+      {
+        audioKey: currentAudioKey,
+        audioFile: path.basename(audioSource),
+        duration,
+        scenesCount: chapters.length,
+      },
+      null,
+      2
+    )
+  );
+
+  // Ensure index.ts starts safe
+  updateGeneratedIndex();
+
+  if (!isRepairOnly) {
+    console.log(`\n🧠 GPT-6.1 Sol is writing AUTONOMOUS REACT COMPONENTS for each scene...`);
+
+    // Strictly sequential: Scene 1, then Scene 2, then Scene 3... in exact order
+    for (let i = 0; i < chapters.length; i++) {
+      const chap = chapters[i];
+      const scenePad = chap.id.toString().padStart(2, "0");
+      const sceneFile = path.join(generatedDir, `Scene_${scenePad}.tsx`);
+
+      if (fs.existsSync(sceneFile) && !forceRegenerate && !isDifferentAudio) {
+        console.log(`   ⚡ [Scene ${chap.id}/${chapters.length}] Scene_${scenePad}.tsx already exists, using cached code.`);
+        continue;
+      }
+
+      console.log(`   🎨 [Scene ${chap.id}/${chapters.length}] GPT-6.1 Sol coding Scene_${scenePad}.tsx (${chap.durationFrames} frames | ${reasoningEffort} reasoning)...`);
+      const code = await generateAutonomousSceneCode(chap, chapters.length, rulesText, enableSfx, reasoningEffort);
+      fs.writeFileSync(sceneFile, code, "utf-8");
+      // Live progressive update
+      updateGeneratedIndex();
+      console.log(`   ✅ Saved: src/vox/scenes/generated/Scene_${scenePad}.tsx`);
+    }
+  } else {
+    console.log(`🔧 Mode perbaikan aktif (--repair/--fix): Melewati pembuatan scene baru, langsung memeriksa dan memperbaiki error...`);
+  }
+
+  // Finalize barrel file
+  updateGeneratedIndex();
 
   // Save metadata
   const metaPath = path.join(rootDir, "src", "vox", "longform-meta.json");
@@ -484,41 +713,50 @@ ${sceneListEntries.join("\n")}
     }
   }
 
-  // Generate snapshots
-  console.log("\n📸 Capturing visual inspection snapshots for story chapters...");
-  let accumulatedFrames = 0;
-  for (const snapChap of chapters.slice(0, 4)) {
-    const snapFrame = accumulatedFrames + Math.round(snapChap.durationFrames * 0.3);
-    const snapFile = path.join(rootDir, "out", `longform-scene${snapChap.id.toString().padStart(2, "0")}.png`);
-    try {
-      execSync(`npx remotion still src/index.ts LongFormVideo "${snapFile}" --frame=${snapFrame}`, { cwd: rootDir, stdio: "pipe" });
-      console.log(`   📸 Captured Snapshot Scene ${snapChap.id} (Frame ${snapFrame})`);
-    } catch (e) {
-      console.warn(`   ⚠️ Snapshot Scene ${snapChap.id} warning:`, e.message);
+  if (shouldRender) {
+    // Generate snapshots
+    console.log("\n📸 Capturing visual inspection snapshots for story chapters...");
+    let accumulatedFrames = 0;
+    for (const snapChap of chapters.slice(0, 4)) {
+      const snapFrame = accumulatedFrames + Math.round(snapChap.durationFrames * 0.3);
+      const snapFile = path.join(rootDir, "out", `longform-scene${snapChap.id.toString().padStart(2, "0")}.png`);
+      try {
+        execSync(`npx remotion still src/index.ts LongFormVideo "${snapFile}" --frame=${snapFrame}`, { cwd: rootDir, stdio: "pipe" });
+        console.log(`   📸 Captured Snapshot Scene ${snapChap.id} (Frame ${snapFrame})`);
+      } catch (e) {
+        console.warn(`   ⚠️ Snapshot Scene ${snapChap.id} warning:`, e.message);
+      }
+      accumulatedFrames += snapChap.durationFrames;
     }
-    accumulatedFrames += snapChap.durationFrames;
-  }
 
-  // Render MP4
-  const tempVideo = path.join(rootDir, "out", "longform-temp.mp4");
-  const finalVideo = path.join(rootDir, "out", "longform-video.mp4");
+    // Render MP4
+    const tempVideo = path.join(rootDir, "out", "longform-temp.mp4");
+    const finalVideo = path.join(rootDir, "out", "longform-video.mp4");
 
-  console.log(`\n🎥 1. Rendering ${totalFrames} frames with Remotion <Series> across ${chapters.length} autonomous scenes...`);
-  const renderCmd = `npx remotion render src/index.ts LongFormVideo "${tempVideo}"`;
-  execSync(renderCmd, { stdio: "inherit", cwd: rootDir });
+    console.log(`\n🎥 1. Rendering ${totalFrames} frames with Remotion <Series> across ${chapters.length} autonomous scenes...`);
+    const renderCmd = `npx remotion render src/index.ts LongFormVideo "${tempVideo}"`;
+    execSync(renderCmd, { stdio: "inherit", cwd: rootDir });
 
-  console.log("\n🔊 2. Muxing original audio track directly into MP4 via FFmpeg...");
-  const muxCmd = `npx remotion ffmpeg -y -i "${tempVideo}" -i "${targetAudioFile}" -c:v copy -c:a aac -b:a 192k -shortest "${finalVideo}"`;
-  try {
-    execSync(muxCmd, { stdio: "inherit", cwd: rootDir });
-    if (fs.existsSync(tempVideo)) fs.unlinkSync(tempVideo);
-    console.log("\n🎉 Full Autonomous Long-Form Vox Video is Ready!");
-    console.log(`📁 File location : ${finalVideo}`);
-    console.log(`⏱️ Duration      : ${Math.ceil(duration)}s (${totalFrames} frames)`);
-    console.log(`🎬 Total Scenes  : ${chapters.length} uniquely coded React components in src/vox/scenes/generated/\n`);
-  } catch (muxErr) {
-    console.warn("⚠️ FFmpeg mux warning, keeping temp video:", muxErr.message);
-    if (fs.existsSync(tempVideo)) fs.renameSync(tempVideo, finalVideo);
+    console.log("\n🔊 2. Muxing original audio track directly into MP4 via FFmpeg...");
+    const muxCmd = `npx remotion ffmpeg -y -i "${tempVideo}" -i "${targetAudioFile}" -c:v copy -c:a aac -b:a 192k -shortest "${finalVideo}"`;
+    try {
+      execSync(muxCmd, { stdio: "inherit", cwd: rootDir });
+      if (fs.existsSync(tempVideo)) fs.unlinkSync(tempVideo);
+      console.log("\n🎉 Full Autonomous Long-Form Vox Video is Ready!");
+      console.log(`📁 File location : ${finalVideo}`);
+      console.log(`⏱️ Duration      : ${Math.ceil(duration)}s (${totalFrames} frames)`);
+      console.log(`🎬 Total Scenes  : ${chapters.length} uniquely coded React components in src/vox/scenes/generated/\n`);
+    } catch (muxErr) {
+      console.warn("⚠️ FFmpeg mux warning, keeping temp video:", muxErr.message);
+      if (fs.existsSync(tempVideo)) fs.renameSync(tempVideo, finalVideo);
+    }
+  } else {
+    console.log("\n🎉 SELESAI! Video long-form 16:9 siap dijalankan.");
+    console.log("👉 Untuk melihat preview di Remotion Studio:");
+    console.log("   npm start");
+    console.log("👉 Untuk merender video MP4:");
+    console.log(`   npm run longform -- ${path.basename(audioSource)} --render`);
+    console.log("   atau: npx remotion render src/index.ts LongFormVideo out/longform-video.mp4\n");
   }
 }
 

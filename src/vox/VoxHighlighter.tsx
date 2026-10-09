@@ -1,4 +1,5 @@
 import { Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { SFX_ENABLED } from "./sfxConfig";
 
 interface VoxHighlighterProps {
   children: React.ReactNode;
@@ -62,9 +63,9 @@ export const VoxHighlighter: React.FC<VoxHighlighterProps> = ({
           transition: "none",
         }}
       />
-      {playSound && (
+      {playSound && SFX_ENABLED && (
         <Sequence from={delay}>
-          <Audio src={staticFile("sfx/highlighter_scratch.mp3")} volume={0.4} />
+          <Audio src={staticFile("sfx/highlighter_scratch.mp3")} volume={0.3} />
         </Sequence>
       )}
       {children}

@@ -7,9 +7,6 @@ import { Scene_05 } from "./Scene_05";
 import { Scene_06 } from "./Scene_06";
 import { Scene_07 } from "./Scene_07";
 import { Scene_08 } from "./Scene_08";
-import { Scene_09 } from "./Scene_09";
-import { Scene_10 } from "./Scene_10";
-import { Scene_11 } from "./Scene_11";
 
 export {
   Scene_01,
@@ -20,28 +17,23 @@ export {
   Scene_06,
   Scene_07,
   Scene_08,
-  Scene_09,
-  Scene_10,
-  Scene_11,
 };
 
 export interface GeneratedSceneInfo {
   id: number;
   name: string;
   Component: React.FC;
+  startFrame: number;
   durationFrames: number;
 }
 
 export const generatedScenes: GeneratedSceneInfo[] = [
-  { id: 1, name: "Scene_01", Component: Scene_01, durationFrames: 1548 },
-  { id: 2, name: "Scene_02", Component: Scene_02, durationFrames: 1549 },
-  { id: 3, name: "Scene_03", Component: Scene_03, durationFrames: 1548 },
-  { id: 4, name: "Scene_04", Component: Scene_04, durationFrames: 1548 },
-  { id: 5, name: "Scene_05", Component: Scene_05, durationFrames: 1548 },
-  { id: 6, name: "Scene_06", Component: Scene_06, durationFrames: 1549 },
-  { id: 7, name: "Scene_07", Component: Scene_07, durationFrames: 1548 },
-  { id: 8, name: "Scene_08", Component: Scene_08, durationFrames: 1548 },
-  { id: 9, name: "Scene_09", Component: Scene_09, durationFrames: 1548 },
-  { id: 10, name: "Scene_10", Component: Scene_10, durationFrames: 1549 },
-  { id: 11, name: "Scene_11", Component: Scene_11, durationFrames: 1549 },
+  { id: 1, name: "Scene_01", Component: Scene_01, startFrame: 0, durationFrames: 1564 },
+  { id: 2, name: "Scene_02", Component: Scene_02, startFrame: 1564, durationFrames: 1466 },
+  { id: 3, name: "Scene_03", Component: Scene_03, startFrame: 3030, durationFrames: 1405 },
+  { id: 4, name: "Scene_04", Component: Scene_04, startFrame: 4435, durationFrames: 1585 },
+  { id: 5, name: "Scene_05", Component: Scene_05, startFrame: 6020, durationFrames: 1397 },
+  { id: 6, name: "Scene_06", Component: Scene_06, startFrame: 7417, durationFrames: 1573 },
+  { id: 7, name: "Scene_07", Component: Scene_07, startFrame: 8990, durationFrames: 1458 },
+  { id: 8, name: "Scene_08", Component: Scene_08, startFrame: 10448, durationFrames: 1564 },
 ];

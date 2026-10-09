@@ -47,12 +47,33 @@ const rawArgs = process.argv.slice(2);
 const shouldRender = rawArgs.includes("--render");
 const forceRegenerate = rawArgs.includes("--force");
 const isRepairOnly = rawArgs.includes("--repair") || rawArgs.includes("--fix");
+const enableSfx = rawArgs.includes("--sfx");
 const audioArg = rawArgs.find((a) => !a.startsWith("--"));
 const targetAudioFile = path.join(publicDir, "voiceover.mp3");
+
+// Sync SFX configuration file
+const sfxConfigFile = path.join(rootDir, "src", "vox", "sfxConfig.ts");
+try {
+  fs.writeFileSync(
+    sfxConfigFile,
+    `/**
+ * Global Sound Effects (SFX) Configuration
+ * Generated automatically by pipeline
+ */
+export const SFX_ENABLED = ${enableSfx};\n`
+  );
+} catch (e) {
+  console.warn("⚠️ Gagal memperbarui sfxConfig.ts:", e.message);
+}
 
 console.log("\n==================================================================");
 console.log("🧢  AUTONOMOUS MINO SHORTS 9:16 GENERATOR (GPT-6.1 SOL MEDIUM + WHISPER)");
 console.log("    Whisper Timestamps -> Dynamic Shorts Pacing -> AI TSX Scenes -> Remotion <Series>");
+if (enableSfx) {
+  console.log("🔊  Sound Effects (SFX): DIAKTIFKAN (--sfx)");
+} else {
+  console.log("🔇  Sound Effects (SFX): NONAKTIF (default). Gunakan flag --sfx jika ingin menambahkan SFX.");
+}
 console.log("==================================================================\n");
 
 // 2. Audio Preparation
@@ -203,11 +224,18 @@ function partitionIntoShortsScenes(segments, totalDuration) {
 }
 
 // 5. OpenAI API Call with reasoning_effort: "medium"
-async function callOpenAI(messages, model, maxRetries = 3) {
+async function callOpenAI(messages, model, maxRetries = 4) {
+  const fallbackModel = process.env.FALLBACK_MODEL || "gpt-4o";
+
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    const currentModel = attempt === maxRetries && model !== fallbackModel ? fallbackModel : model;
+    if (attempt === maxRetries && model !== fallbackModel) {
+      console.warn(`   🔄 Mencoba model cadangan (${fallbackModel})...`);
+    }
+
     try {
       const payload = {
-        model,
+        model: currentModel,
         messages,
         reasoning_effort: "medium", // User requested medium reasoning effort
       };
@@ -219,6 +247,7 @@ async function callOpenAI(messages, model, maxRetries = 3) {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(180_000), // 3-minute generous timeout
       });
 
       // If reasoning_effort is rejected by a standard model, retry without it
@@ -233,6 +262,7 @@ async function callOpenAI(messages, model, maxRetries = 3) {
               Authorization: `Bearer ${apiKey}`,
             },
             body: JSON.stringify(payload),
+            signal: AbortSignal.timeout(180_000),
           });
         } else {
           throw new Error(`OpenAI API Error (${response.status}): ${errText}`);
@@ -247,15 +277,19 @@ async function callOpenAI(messages, model, maxRetries = 3) {
       const data = await response.json();
       return data.choices[0]?.message?.content || "";
     } catch (err) {
-      console.warn(`   ⚠️ OpenAI percobaan ${attempt}/${maxRetries} gagal: ${err.message}`);
+      const reason = err.cause?.message || err.cause?.code || err.message || "Unknown network error";
+      console.warn(`   ⚠️ Koneksi OpenAI percobaan ${attempt}/${maxRetries} terkendala (${reason}).`);
+
       if (attempt === maxRetries) throw err;
-      await new Promise((r) => setTimeout(r, attempt * 2000));
+      const waitTime = attempt * 3000;
+      console.log(`   ⏳ Menunggu ${waitTime / 1000} detik sebelum mencoba kembali...`);
+      await new Promise((r) => setTimeout(r, waitTime));
     }
   }
 }
 
 // 6. Generate Autonomous TSX React Code for a Single Scene
-async function generateAutonomousMinoSceneCode(scene, totalScenes, rulesText) {
+async function generateAutonomousMinoSceneCode(scene, totalScenes, rulesText, enableSfx = false) {
   const model = process.env.OPENAI_MODEL || "gpt-6.1-sol";
   const sceneNum = scene.id;
   const scenePad = sceneNum.toString().padStart(2, "0");
@@ -268,6 +302,29 @@ async function generateAutonomousMinoSceneCode(scene, totalScenes, rulesText) {
         `   • Beat ${idx + 1} [Frames ${s.localStartFrame} - ${s.localEndFrame} | +${s.startSec}s to +${s.endSec}s]: "${s.text}"`
     )
     .join("\n");
+
+  const sfxPrompt = enableSfx
+    ? `5. DOCUMENTARY SOUND DESIGN (AUDIO SFX - MINIMALIST & STRICTLY RELEVANT):
+   Sound effects MUST be subtle, organic, and STRICTLY tied to real physical visual events.
+   import { VoxSoundEffect } from "../../../VoxSoundEffect";
+
+   STRICT MATCHING RULES (Never violate these):
+   • "highlighter": ONLY use when an actual yellow highlighter stroke animates across text. NEVER use on plain text!
+   • "paper_slide": ONLY use when a dossier card, paper sheet, or comparison panel slides into view. NEVER on plain words!
+   • "camera": ONLY use when an archival photograph, polaroid snapshot, or evidence clipping appears. NEVER on checklists!
+   • "click": ONLY use on subtle interactive checklist checkmarks or toggle switches.
+   • "pop": ONLY use on small tactile data badges or pill callouts.
+
+   GOLDEN EDITORIAL RULES:
+   - In Vox documentaries, the narrator's voice is PRIMARY. Over-using SFX sounds cartoonish and chaotic.
+   - Limit to 1 to 2 SFX per scene! If a scene is pure kinetic typography, use 0 SFX (silence is elegant).
+   - Keep volume warm and gentle: volume={0.25} to {0.30} (never exceed 0.32).
+   Example:
+   <VoxSoundEffect type="paper_slide" cue={dossierCue} volume={0.28} />`
+    : `5. SOUND EFFECTS RESTRICTION (DEFAULT: NO SFX):
+   DO NOT import VoxSoundEffect or Audio!
+   DO NOT add any sound effects or audio elements in this component.
+   The audio is strictly handled globally by the voiceover narration track without SFX.`;
 
   const systemPrompt = `You are a Lead Motion Graphics Designer and Master React/Remotion Engineer at Vox Media.
 Your task is to write a COMPLETE, BEAUTIFUL, PRODUCTION-READY, 100% SELF-CONTAINED TypeScript React component (.tsx) for Scene ${sceneNum} of ${totalScenes} in a 9:16 VERTICAL SHORT-FORM VIDEO (1080 × 1920).
@@ -300,37 +357,26 @@ ${rulesText}
 
 4. BESPOKE VOX VISUAL PANEL (Upper Area: Y = 180 to 950):
    Create dynamic, bespoke editorial visual graphics in the top area (Y: 180 - 950):
-   - Kinetic editorial headline (bold typography, Playfair Display / Inter, staggered word entry).
-   - Bespoke inline SVG diagrams illustrating this scene's concepts:
-     * Brain synapses / neural pathways
-     * Polaroid archival photo cards with tape
-     * Dual comparison dossier / matching cues
-     * 3-item trigger cards / checklist
-     * Data statistics / large numbers with hand-drawn red circles (#E63946)
-     * Editorial yellow highlighter (#FFE600)
+   - SATU TITIK FOKUS / ANTI PUSING (ONE MOVEMENT AT A TIME - CHOREOGRAPHED EYE FLOW):
+     * NEVER animate multiple elements simultaneously! (DILARANG teks bergerak bersamaan dengan diagram membesar dan badge berdenyut).
+     * The viewer's eyes must be guided like a director's spotlight: ONE clear movement at a time.
+     * Sequential Choreography Order:
+       1) Headline text enters smoothly. Once entered, IT STAYS COMPLETELY STILL (locked resting state).
+       2) ONLY after the text is still, the illustration card / diagram enters. Teks tidak boleh ikut bergerak.
+       3) ONLY after the card is still, an arrow / connector line draws out.
+       4) When a key spoken word occurs, a yellow highlighter (#FFE600) or red marker circle (#E63946) draws around that specific word.
+   - RESTING STATES (TENANG & STABIL):
+     * Once an element finishes its entrance, it MUST enter a calm resting state.
+     * FORBIDDEN: constant jitter, harsh pulsing, fast spinning, or shaking that distracts from the message.
+   - VISUAL LONGEVITY & PROGRESSIVE BUILDUP:
+     * Do NOT wipe the screen or dismiss headline/cards halfway through the scene! Elements should enter smoothly at their respective spoken beat cue and REMAIN visible and readable until the scene concludes. Give the viewer time to read!
+     * Progressively build up context on top of existing cards rather than wiping the screen clean.
+   - GENTLE DOCUMENTARY SPRING PHYSICS:
+     * Use calm spring configs: { damping: 22, mass: 0.9, stiffness: 70 }.
    - Synchronize visual animations with the EXACT spoken cues:
 ${timelineCues}
-   - VISUAL LONGEVITY & COMFORTABLE PACING:
-     Do NOT fade out or dismiss headline/cards halfway through the scene! Elements should enter smoothly at their respective spoken beat cue and REMAIN visible and readable until the scene concludes. Give the viewer time to read!
 
-5. PROCEDURAL SOUND DESIGN (AUDIO SFX):
-   You can add documentary-grade sound effects synchronized with visual events:
-   import { VoxSoundEffect } from "../../../VoxSoundEffect";
-
-   Available SFX types:
-   • "paper_slide" or "woosh": Trigger at frame 0 or when a new card/panel slides into view.
-   • "highlighter": Trigger when highlighting text or data.
-   • "pop": Trigger when a stat card, callout bubble, or data badge pops up.
-   • "click": Trigger on subtle checklist checks, toggle switches, or data tick points.
-   • "camera": Trigger when an archival photo, polaroid, or evidence item appears.
-
-   Usage example:
-   <VoxSoundEffect type="paper_slide" cue={0} volume={0.45} />
-   <VoxSoundEffect type="pop" cue={statCueFrame} volume={0.4} />
-
-   RULES:
-   - Select 2 to 4 purposeful, punchy moments per scene that match the visual events.
-   - Keep volume balanced (0.35 to 0.5) so it enhances the narrator's voice without overpowering it.
+${sfxPrompt}
 
 6. STRICT RESTRICTIONS:
    - All styles inline React CSS.
@@ -428,6 +474,63 @@ async function run() {
   const currentAudioKey = `${path.basename(audioSource)}_${currentStat.size}_${Math.round(currentStat.mtimeMs)}`;
   const isDifferentAudio = previousAudioKey !== currentAudioKey;
 
+  function updateGeneratedIndexFile() {
+    // Only register scenes that ACTUALLY exist on disk to prevent Webpack compile errors
+    const availableScenes = scenes.filter((s) => {
+      const scenePad = s.id.toString().padStart(2, "0");
+      return fs.existsSync(path.join(generatedDir, `MinoScene_${scenePad}.tsx`));
+    });
+
+    if (availableScenes.length === 0) {
+      const emptyContent = `import React from "react";
+
+export interface GeneratedMinoSceneInfo {
+  id: number;
+  name: string;
+  Component: React.FC;
+  durationFrames: number;
+}
+
+export const generatedMinoScenes: GeneratedMinoSceneInfo[] = [];
+`;
+      fs.writeFileSync(path.join(generatedDir, "index.ts"), emptyContent, "utf-8");
+      return;
+    }
+
+    const indexImports = availableScenes
+      .map((s) => `import { MinoScene_${s.id.toString().padStart(2, "0")} } from "./MinoScene_${s.id.toString().padStart(2, "0")}";`)
+      .join("\n");
+    const indexExports = availableScenes
+      .map((s) => `  MinoScene_${s.id.toString().padStart(2, "0")},`)
+      .join("\n");
+    const indexScenesList = availableScenes
+      .map(
+        (s) =>
+          `  { id: ${s.id}, name: "MinoScene_${s.id.toString().padStart(2, "0")}", Component: MinoScene_${s.id.toString().padStart(2, "0")}, durationFrames: ${s.durationFrames} },`
+      )
+      .join("\n");
+
+    const indexContent = `import React from "react";
+${indexImports}
+
+export {
+${indexExports}
+};
+
+export interface GeneratedMinoSceneInfo {
+  id: number;
+  name: string;
+  Component: React.FC;
+  durationFrames: number;
+}
+
+export const generatedMinoScenes: GeneratedMinoSceneInfo[] = [
+${indexScenesList}
+];
+`;
+    fs.writeFileSync(path.join(generatedDir, "index.ts"), indexContent, "utf-8");
+  }
+
   if (isDifferentAudio && !isRepairOnly) {
     console.log(`🆕 Audio baru: ${path.basename(audioSource)} (${duration.toFixed(1)}s)`);
     console.log(`🧹 Membersihkan scene lama & meng-generate ulang untuk audio baru...`);
@@ -437,6 +540,7 @@ async function run() {
         fs.unlinkSync(path.join(generatedDir, f));
       }
     }
+    updateGeneratedIndexFile();
   }
 
   // Save current audio metadata
@@ -473,8 +577,10 @@ async function run() {
           }
 
           console.log(`   ✍️ Menulis ${filename} (${scene.durationFrames} frames, ~${(scene.durationFrames / 30).toFixed(1)}s)...`);
-          const code = await generateAutonomousMinoSceneCode(scene, scenes.length, rulesText);
+          const code = await generateAutonomousMinoSceneCode(scene, scenes.length, rulesText, enableSfx);
           fs.writeFileSync(filePath, code, "utf-8");
+          // Progressive update: update index immediately so partial preview works live in Studio!
+          updateGeneratedIndexFile();
           console.log(`   ✅ Selesai: ${filename}`);
         })
       );
@@ -483,42 +589,9 @@ async function run() {
     console.log(`🔧 Mode perbaikan aktif (--repair/--fix): Melewati pembuatan scene baru, langsung memeriksa dan memperbaiki error...`);
   }
 
-  // Generate index.ts
-  console.log(`\n📦 Menyusun file index.ts untuk semua adegan...`);
-  const indexImports = scenes
-    .map((s) => `import { MinoScene_${s.id.toString().padStart(2, "0")} } from "./MinoScene_${s.id.toString().padStart(2, "0")}";`)
-    .join("\n");
-  const indexExports = scenes
-    .map((s) => `  MinoScene_${s.id.toString().padStart(2, "0")},`)
-    .join("\n");
-  const indexScenesList = scenes
-    .map(
-      (s) =>
-        `  { id: ${s.id}, name: "MinoScene_${s.id.toString().padStart(2, "0")}", Component: MinoScene_${s.id.toString().padStart(2, "0")}, durationFrames: ${s.durationFrames} },`
-    )
-    .join("\n");
-
-  const indexContent = `import React from "react";
-${indexImports}
-
-export {
-${indexExports}
-};
-
-export interface GeneratedMinoSceneInfo {
-  id: number;
-  name: string;
-  Component: React.FC;
-  durationFrames: number;
-}
-
-export const generatedMinoScenes: GeneratedMinoSceneInfo[] = [
-${indexScenesList}
-];
-`;
-
-  fs.writeFileSync(path.join(generatedDir, "index.ts"), indexContent, "utf-8");
-  console.log(`✅ src/vox/mino/scenes/generated/index.ts berhasil dibuat.`);
+  // Finalize index.ts
+  updateGeneratedIndexFile();
+  console.log(`\n📦 File index.ts telah diperbarui untuk adegan yang tersedia.`);
 
   // Update vox-meta.json
   const metaPath = path.join(rootDir, "src", "vox", "vox-meta.json");

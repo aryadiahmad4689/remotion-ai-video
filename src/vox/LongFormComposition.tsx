@@ -1,11 +1,31 @@
 import React from "react";
-import { AbsoluteFill, Audio, Series, staticFile, Solid } from "remotion";
+import { AbsoluteFill, Audio, Sequence, staticFile, Solid, useCurrentFrame, interpolate } from "remotion";
 import { VoxPaperBackground } from "./VoxPaperBackground";
 import { EditorialHeader } from "./EditorialHeader";
 import { VoxCaptions } from "./VoxCaptions";
 import { generatedScenes } from "./scenes/generated";
 import defaultCaptions from "./longform-captions.json";
 import { CaptionWord } from "./types";
+
+const SceneWrapper: React.FC<{
+  durationInFrames: number;
+  children: React.ReactNode;
+}> = ({ durationInFrames, children }) => {
+  const frame = useCurrentFrame();
+  const fadeIn = interpolate(frame, [0, 10], [0, 1], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  const fadeOut = interpolate(frame, [durationInFrames - 10, durationInFrames], [1, 0], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+  return (
+    <AbsoluteFill style={{ opacity: Math.min(fadeIn, fadeOut) }}>
+      {children}
+    </AbsoluteFill>
+  );
+};
 
 export const LongFormComposition: React.FC = () => {
   const captions = defaultCaptions as CaptionWord[];
@@ -22,22 +42,23 @@ export const LongFormComposition: React.FC = () => {
         {/* 3. Uninterrupted Continuous Voiceover Audio Track */}
         <Audio src={staticFile("voiceover.mp3")} />
       
-        {/* 3. Modular Autonomous Scenes coded by GPT-6.1 Sol sequenced in Remotion <Series> */}
+        {/* 4. Modular Autonomous Scenes strictly anchored to each chapter's exact timeline startFrame */}
         {generatedScenes.length > 0 ? (
-          <Series>
-            {generatedScenes.map((scene) => {
-              const SceneComp = scene.Component;
-              return (
-                <Series.Sequence
-                  key={`${scene.id}-${scene.name}`}
-                  durationInFrames={scene.durationFrames}
-                  name={scene.name}
-                >
+          generatedScenes.map((scene) => {
+            const SceneComp = scene.Component;
+            return (
+              <Sequence
+                key={`${scene.id}-${scene.name}`}
+                from={scene.startFrame}
+                durationInFrames={scene.durationFrames}
+                name={scene.name}
+              >
+                <SceneWrapper durationInFrames={scene.durationFrames}>
                   <SceneComp />
-                </Series.Sequence>
-              );
-            })}
-          </Series>
+                </SceneWrapper>
+              </Sequence>
+            );
+          })
         ) : (
           <AbsoluteFill
             style={{

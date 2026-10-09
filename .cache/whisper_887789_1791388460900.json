@@ -1,0 +1,1000 @@
+{
+  "transcript": "Pernah nggak kamu nggak suka sama seseorang padahal belum pernah ngobrol sama sekali? Belum tahu sifatnya, belum tahu ceritanya, tapi entah kenapa rasanya sudah sebel banget. Aneh, kan? Ternyata, otak kita sering membuat penilaian sangat cepat berdasarkan hal-hal kecil, cara berpakaian, ekspresi wajah, cara bicara, bahkan informasi yang kita dengar dari orang lain. Masalahnya, penilaian pertama belum tentu sama dengan kenyataan. Kalau sejak awal kita sudah punya kesan buruk, otak juga cenderung mencari hal-hal yang mendukung kesan itu. Akhirnya, orang tersebut belum melakukan apa-apa, tapi kita sudah punya alasan untuk nggak menyukainya. Jadi mungkin, kadang kita bukan membenci orangnya, kita cuma membenci versi tentang dia yang sudah dibuat oleh kepala kita sendiri. Ini Mino, tetap penasaran.",
+  "words": [
+    {
+      "word": "Pernah",
+      "start": 0,
+      "end": 0.47999998927116394
+    },
+    {
+      "word": "nggak",
+      "start": 0.47999998927116394,
+      "end": 0.6000000238418579
+    },
+    {
+      "word": "kamu",
+      "start": 0.6000000238418579,
+      "end": 1.1200000047683716
+    },
+    {
+      "word": "nggak",
+      "start": 1.1200000047683716,
+      "end": 1.7200000286102295
+    },
+    {
+      "word": "suka",
+      "start": 1.7200000286102295,
+      "end": 1.940000057220459
+    },
+    {
+      "word": "sama",
+      "start": 1.940000057220459,
+      "end": 2.259999990463257
+    },
+    {
+      "word": "seseorang",
+      "start": 2.259999990463257,
+      "end": 2.8399999141693115
+    },
+    {
+      "word": "padahal",
+      "start": 2.8399999141693115,
+      "end": 3.9000000953674316
+    },
+    {
+      "word": "belum",
+      "start": 3.9000000953674316,
+      "end": 4.139999866485596
+    },
+    {
+      "word": "pernah",
+      "start": 4.139999866485596,
+      "end": 4.519999980926514
+    },
+    {
+      "word": "ngobrol",
+      "start": 4.519999980926514,
+      "end": 4.860000133514404
+    },
+    {
+      "word": "sama",
+      "start": 4.860000133514404,
+      "end": 5.139999866485596
+    },
+    {
+      "word": "sekali",
+      "start": 5.139999866485596,
+      "end": 5.539999961853027
+    },
+    {
+      "word": "Belum",
+      "start": 6.360000133514404,
+      "end": 6.360000133514404
+    },
+    {
+      "word": "tahu",
+      "start": 6.360000133514404,
+      "end": 6.559999942779541
+    },
+    {
+      "word": "sifatnya",
+      "start": 6.559999942779541,
+      "end": 7.159999847412109
+    },
+    {
+      "word": "belum",
+      "start": 7.579999923706055,
+      "end": 7.78000020980835
+    },
+    {
+      "word": "tahu",
+      "start": 7.78000020980835,
+      "end": 7.960000038146973
+    },
+    {
+      "word": "ceritanya",
+      "start": 7.960000038146973,
+      "end": 8.600000381469727
+    },
+    {
+      "word": "tapi",
+      "start": 9.15999984741211,
+      "end": 9.399999618530273
+    },
+    {
+      "word": "entah",
+      "start": 9.399999618530273,
+      "end": 10.140000343322754
+    },
+    {
+      "word": "kenapa",
+      "start": 10.140000343322754,
+      "end": 10.699999809265137
+    },
+    {
+      "word": "rasanya",
+      "start": 10.699999809265137,
+      "end": 12.15999984741211
+    },
+    {
+      "word": "sudah",
+      "start": 12.15999984741211,
+      "end": 12.699999809265137
+    },
+    {
+      "word": "sebel",
+      "start": 12.699999809265137,
+      "end": 13.359999656677246
+    },
+    {
+      "word": "banget",
+      "start": 13.359999656677246,
+      "end": 13.819999694824219
+    },
+    {
+      "word": "Aneh",
+      "start": 14.460000038146973,
+      "end": 14.640000343322754
+    },
+    {
+      "word": "kan",
+      "start": 15.100000381469727,
+      "end": 15.319999694824219
+    },
+    {
+      "word": "Ternyata",
+      "start": 15.920000076293945,
+      "end": 16.3799991607666
+    },
+    {
+      "word": "otak",
+      "start": 16.959999084472656,
+      "end": 17.139999389648438
+    },
+    {
+      "word": "kita",
+      "start": 17.139999389648438,
+      "end": 17.459999084472656
+    },
+    {
+      "word": "sering",
+      "start": 17.459999084472656,
+      "end": 17.639999389648438
+    },
+    {
+      "word": "membuat",
+      "start": 17.639999389648438,
+      "end": 17.959999084472656
+    },
+    {
+      "word": "penilaian",
+      "start": 17.959999084472656,
+      "end": 18.440000534057617
+    },
+    {
+      "word": "sangat",
+      "start": 18.440000534057617,
+      "end": 18.700000762939453
+    },
+    {
+      "word": "cepat",
+      "start": 18.700000762939453,
+      "end": 19.440000534057617
+    },
+    {
+      "word": "berdasarkan",
+      "start": 19.440000534057617,
+      "end": 20.15999984741211
+    },
+    {
+      "word": "hal",
+      "start": 20.15999984741211,
+      "end": 20.440000534057617
+    },
+    {
+      "word": "hal",
+      "start": 20.440000534057617,
+      "end": 20.84000015258789
+    },
+    {
+      "word": "kecil",
+      "start": 20.84000015258789,
+      "end": 21.079999923706055
+    },
+    {
+      "word": "cara",
+      "start": 21.799999237060547,
+      "end": 21.799999237060547
+    },
+    {
+      "word": "berpakaian",
+      "start": 21.799999237060547,
+      "end": 22.5
+    },
+    {
+      "word": "ekspresi",
+      "start": 23.260000228881836,
+      "end": 23.559999465942383
+    },
+    {
+      "word": "wajah",
+      "start": 23.559999465942383,
+      "end": 24.020000457763672
+    },
+    {
+      "word": "cara",
+      "start": 24.600000381469727,
+      "end": 24.600000381469727
+    },
+    {
+      "word": "bicara",
+      "start": 24.600000381469727,
+      "end": 25.059999465942383
+    },
+    {
+      "word": "bahkan",
+      "start": 25.6200008392334,
+      "end": 25.8799991607666
+    },
+    {
+      "word": "informasi",
+      "start": 25.8799991607666,
+      "end": 26.459999084472656
+    },
+    {
+      "word": "yang",
+      "start": 26.459999084472656,
+      "end": 26.6200008392334
+    },
+    {
+      "word": "kita",
+      "start": 26.6200008392334,
+      "end": 26.979999542236328
+    },
+    {
+      "word": "dengar",
+      "start": 26.979999542236328,
+      "end": 27.100000381469727
+    },
+    {
+      "word": "dari",
+      "start": 27.100000381469727,
+      "end": 27.399999618530273
+    },
+    {
+      "word": "orang",
+      "start": 27.399999618530273,
+      "end": 27.600000381469727
+    },
+    {
+      "word": "lain",
+      "start": 27.600000381469727,
+      "end": 27.899999618530273
+    },
+    {
+      "word": "Masalahnya",
+      "start": 28.68000030517578,
+      "end": 29.299999237060547
+    },
+    {
+      "word": "penilaian",
+      "start": 29.65999984741211,
+      "end": 29.8799991607666
+    },
+    {
+      "word": "pertama",
+      "start": 29.8799991607666,
+      "end": 30.260000228881836
+    },
+    {
+      "word": "belum",
+      "start": 30.260000228881836,
+      "end": 30.5
+    },
+    {
+      "word": "tentu",
+      "start": 30.5,
+      "end": 30.760000228881836
+    },
+    {
+      "word": "sama",
+      "start": 30.760000228881836,
+      "end": 30.979999542236328
+    },
+    {
+      "word": "dengan",
+      "start": 30.979999542236328,
+      "end": 31.239999771118164
+    },
+    {
+      "word": "kenyataan",
+      "start": 31.239999771118164,
+      "end": 31.84000015258789
+    },
+    {
+      "word": "Kalau",
+      "start": 32.31999969482422,
+      "end": 32.5
+    },
+    {
+      "word": "sejak",
+      "start": 32.5,
+      "end": 32.79999923706055
+    },
+    {
+      "word": "awal",
+      "start": 32.79999923706055,
+      "end": 33.099998474121094
+    },
+    {
+      "word": "kita",
+      "start": 33.099998474121094,
+      "end": 33.36000061035156
+    },
+    {
+      "word": "sudah",
+      "start": 33.36000061035156,
+      "end": 33.619998931884766
+    },
+    {
+      "word": "punya",
+      "start": 33.619998931884766,
+      "end": 33.84000015258789
+    },
+    {
+      "word": "kesan",
+      "start": 33.84000015258789,
+      "end": 34.15999984741211
+    },
+    {
+      "word": "buruk",
+      "start": 34.15999984741211,
+      "end": 34.5
+    },
+    {
+      "word": "otak",
+      "start": 35.34000015258789,
+      "end": 35.52000045776367
+    },
+    {
+      "word": "juga",
+      "start": 35.52000045776367,
+      "end": 35.91999816894531
+    },
+    {
+      "word": "cenderung",
+      "start": 35.91999816894531,
+      "end": 36.18000030517578
+    },
+    {
+      "word": "mencari",
+      "start": 36.18000030517578,
+      "end": 36.58000183105469
+    },
+    {
+      "word": "hal",
+      "start": 36.58000183105469,
+      "end": 36.939998626708984
+    },
+    {
+      "word": "hal",
+      "start": 36.939998626708984,
+      "end": 37.099998474121094
+    },
+    {
+      "word": "yang",
+      "start": 37.099998474121094,
+      "end": 37.2599983215332
+    },
+    {
+      "word": "mendukung",
+      "start": 37.2599983215332,
+      "end": 37.619998931884766
+    },
+    {
+      "word": "kesan",
+      "start": 37.619998931884766,
+      "end": 37.959999084472656
+    },
+    {
+      "word": "itu",
+      "start": 37.959999084472656,
+      "end": 38.2599983215332
+    },
+    {
+      "word": "Akhirnya",
+      "start": 38.939998626708984,
+      "end": 39.36000061035156
+    },
+    {
+      "word": "orang",
+      "start": 39.97999954223633,
+      "end": 40.099998474121094
+    },
+    {
+      "word": "tersebut",
+      "start": 40.099998474121094,
+      "end": 40.41999816894531
+    },
+    {
+      "word": "belum",
+      "start": 40.41999816894531,
+      "end": 40.63999938964844
+    },
+    {
+      "word": "melakukan",
+      "start": 40.63999938964844,
+      "end": 40.97999954223633
+    },
+    {
+      "word": "apa",
+      "start": 40.97999954223633,
+      "end": 41.36000061035156
+    },
+    {
+      "word": "apa",
+      "start": 41.36000061035156,
+      "end": 41.540000915527344
+    },
+    {
+      "word": "tapi",
+      "start": 42.2400016784668,
+      "end": 42.2599983215332
+    },
+    {
+      "word": "kita",
+      "start": 42.2599983215332,
+      "end": 42.560001373291016
+    },
+    {
+      "word": "sudah",
+      "start": 42.560001373291016,
+      "end": 42.7599983215332
+    },
+    {
+      "word": "punya",
+      "start": 42.7599983215332,
+      "end": 42.97999954223633
+    },
+    {
+      "word": "alasan",
+      "start": 42.97999954223633,
+      "end": 43.34000015258789
+    },
+    {
+      "word": "untuk",
+      "start": 43.34000015258789,
+      "end": 43.599998474121094
+    },
+    {
+      "word": "nggak",
+      "start": 43.599998474121094,
+      "end": 43.720001220703125
+    },
+    {
+      "word": "menyukainya",
+      "start": 43.720001220703125,
+      "end": 44.70000076293945
+    },
+    {
+      "word": "Jadi",
+      "start": 44.86000061035156,
+      "end": 45.040000915527344
+    },
+    {
+      "word": "mungkin",
+      "start": 45.040000915527344,
+      "end": 45.47999954223633
+    },
+    {
+      "word": "kadang",
+      "start": 46.2400016784668,
+      "end": 46.31999969482422
+    },
+    {
+      "word": "kita",
+      "start": 46.31999969482422,
+      "end": 46.58000183105469
+    },
+    {
+      "word": "bukan",
+      "start": 46.58000183105469,
+      "end": 46.7599983215332
+    },
+    {
+      "word": "membenci",
+      "start": 46.7599983215332,
+      "end": 47.13999938964844
+    },
+    {
+      "word": "orangnya",
+      "start": 47.13999938964844,
+      "end": 47.63999938964844
+    },
+    {
+      "word": "kita",
+      "start": 48.15999984741211,
+      "end": 48.34000015258789
+    },
+    {
+      "word": "cuma",
+      "start": 48.34000015258789,
+      "end": 48.58000183105469
+    },
+    {
+      "word": "membenci",
+      "start": 48.58000183105469,
+      "end": 49.040000915527344
+    },
+    {
+      "word": "versi",
+      "start": 49.040000915527344,
+      "end": 49.41999816894531
+    },
+    {
+      "word": "tentang",
+      "start": 49.41999816894531,
+      "end": 49.70000076293945
+    },
+    {
+      "word": "dia",
+      "start": 49.70000076293945,
+      "end": 50.060001373291016
+    },
+    {
+      "word": "yang",
+      "start": 50.060001373291016,
+      "end": 50.779998779296875
+    },
+    {
+      "word": "sudah",
+      "start": 50.779998779296875,
+      "end": 51.060001373291016
+    },
+    {
+      "word": "dibuat",
+      "start": 51.060001373291016,
+      "end": 51.439998626708984
+    },
+    {
+      "word": "oleh",
+      "start": 51.439998626708984,
+      "end": 51.70000076293945
+    },
+    {
+      "word": "kepala",
+      "start": 51.70000076293945,
+      "end": 52.02000045776367
+    },
+    {
+      "word": "kita",
+      "start": 52.02000045776367,
+      "end": 52.31999969482422
+    },
+    {
+      "word": "sendiri",
+      "start": 52.31999969482422,
+      "end": 52.7400016784668
+    },
+    {
+      "word": "Ini",
+      "start": 53.599998474121094,
+      "end": 53.599998474121094
+    },
+    {
+      "word": "Mino",
+      "start": 53.599998474121094,
+      "end": 53.91999816894531
+    },
+    {
+      "word": "tetap",
+      "start": 54.439998626708984,
+      "end": 54.599998474121094
+    },
+    {
+      "word": "penasaran",
+      "start": 54.599998474121094,
+      "end": 55.13999938964844
+    }
+  ],
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 5.539999961853027,
+      "text": " Pernah nggak kamu nggak suka sama seseorang padahal belum pernah ngobrol sama sekali?",
+      "tokens": [
+        50364,
+        430,
+        1248,
+        545,
+        28631,
+        20705,
+        28631,
+        39076,
+        17768,
+        262,
+        1130,
+        37909,
+        6887,
+        545,
+        304,
+        48532,
+        41136,
+        6415,
+        996,
+        6623,
+        17768,
+        45016,
+        30,
+        50658
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2793177366256714,
+      "compression_ratio": 1.616740107536316,
+      "no_speech_prob": 0.05306804180145264
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 6.360000133514404,
+      "end": 13.819999694824219,
+      "text": " Belum tahu sifatnya, belum tahu ceritanya, tapi entah kenapa rasanya sudah sebel banget.",
+      "tokens": [
+        50658,
+        6248,
+        449,
+        27294,
+        262,
+        351,
+        267,
+        7457,
+        11,
+        48532,
+        27294,
+        10146,
+        270,
+        8791,
+        11,
+        23901,
+        948,
+        545,
+        18787,
+        7961,
+        26815,
+        8791,
+        262,
+        532,
+        545,
+        46122,
+        24909,
+        13,
+        51064
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2793177366256714,
+      "compression_ratio": 1.616740107536316,
+      "no_speech_prob": 0.05306804180145264
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 14.460000038146973,
+      "end": 15.319999694824219,
+      "text": " Aneh, kan?",
+      "tokens": [
+        51064,
+        316,
+        30540,
+        11,
+        4608,
+        30,
+        51148
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2793177366256714,
+      "compression_ratio": 1.616740107536316,
+      "no_speech_prob": 0.05306804180145264
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 15.920000076293945,
+      "end": 21.079999923706055,
+      "text": " Ternyata, otak kita sering membuat penilaian sangat cepat berdasarkan hal-hal kecil,",
+      "tokens": [
+        51148,
+        314,
+        1248,
+        88,
+        3274,
+        11,
+        4337,
+        514,
+        8965,
+        816,
+        278,
+        1334,
+        45143,
+        3435,
+        7371,
+        952,
+        31917,
+        45026,
+        267,
+        5948,
+        27476,
+        45173,
+        7523,
+        12,
+        4947,
+        803,
+        3208,
+        11,
+        51434
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2793177366256714,
+      "compression_ratio": 1.616740107536316,
+      "no_speech_prob": 0.05306804180145264
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 21.799999237060547,
+      "end": 27.899999618530273,
+      "text": " cara berpakaian, ekspresi wajah, cara bicara, bahkan informasi yang kita dengar dari orang lain.",
+      "tokens": [
+        51434,
+        10962,
+        5948,
+        79,
+        7849,
+        952,
+        11,
+        30724,
+        14508,
+        72,
+        261,
+        1805,
+        545,
+        11,
+        10962,
+        34472,
+        2419,
+        11,
+        12913,
+        5225,
+        1356,
+        8483,
+        5581,
+        8965,
+        1441,
+        2976,
+        15597,
+        17481,
+        29272,
+        13,
+        51774
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2793177366256714,
+      "compression_ratio": 1.616740107536316,
+      "no_speech_prob": 0.05306804180145264
+    },
+    {
+      "id": 5,
+      "seek": 2790,
+      "start": 28.68000030517578,
+      "end": 31.84000015258789,
+      "text": " Masalahnya, penilaian pertama belum tentu sama dengan kenyataan.",
+      "tokens": [
+        50384,
+        5224,
+        16434,
+        7457,
+        11,
+        3435,
+        7371,
+        952,
+        49109,
+        48532,
+        7054,
+        84,
+        17768,
+        13877,
+        18787,
+        88,
+        3274,
+        282,
+        13,
+        50580
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23208631575107574,
+      "compression_ratio": 1.6964980363845825,
+      "no_speech_prob": 0.0032197434920817614
+    },
+    {
+      "id": 6,
+      "seek": 2790,
+      "start": 32.31999969482422,
+      "end": 38.2599983215332,
+      "text": " Kalau sejak awal kita sudah punya kesan buruk, otak juga cenderung mencari hal-hal yang mendukung kesan itu.",
+      "tokens": [
+        50580,
+        36366,
+        369,
+        36230,
+        1714,
+        304,
+        8965,
+        24940,
+        32781,
+        16050,
+        282,
+        2779,
+        2034,
+        11,
+        4337,
+        514,
+        14462,
+        269,
+        3216,
+        1063,
+        1706,
+        66,
+        3504,
+        7523,
+        12,
+        4947,
+        5581,
+        31161,
+        2034,
+        1063,
+        16050,
+        282,
+        9032,
+        13,
+        50904
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23208631575107574,
+      "compression_ratio": 1.6964980363845825,
+      "no_speech_prob": 0.0032197434920817614
+    },
+    {
+      "id": 7,
+      "seek": 2790,
+      "start": 38.939998626708984,
+      "end": 44.70000076293945,
+      "text": " Akhirnya, orang tersebut belum melakukan apa-apa, tapi kita sudah punya alasan untuk nggak menyukainya.",
+      "tokens": [
+        50904,
+        9629,
+        24118,
+        7457,
+        11,
+        17481,
+        1796,
+        405,
+        5955,
+        48532,
+        4795,
+        42774,
+        15951,
+        12,
+        7961,
+        11,
+        23901,
+        8965,
+        24940,
+        32781,
+        419,
+        40336,
+        12711,
+        28631,
+        46975,
+        2034,
+        491,
+        3016,
+        13,
+        51208
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23208631575107574,
+      "compression_ratio": 1.6964980363845825,
+      "no_speech_prob": 0.0032197434920817614
+    },
+    {
+      "id": 8,
+      "seek": 2790,
+      "start": 44.86000061035156,
+      "end": 47.63999938964844,
+      "text": " Jadi mungkin, kadang kita bukan membenci orangnya,",
+      "tokens": [
+        51208,
+        21662,
+        32633,
+        11,
+        8064,
+        656,
+        8965,
+        31794,
+        1334,
+        1799,
+        537,
+        17481,
+        7457,
+        11,
+        51372
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23208631575107574,
+      "compression_ratio": 1.6964980363845825,
+      "no_speech_prob": 0.0032197434920817614
+    },
+    {
+      "id": 9,
+      "seek": 2790,
+      "start": 48.15999984741211,
+      "end": 52.7400016784668,
+      "text": " kita cuma membenci versi tentang dia yang sudah dibuat oleh kepala kita sendiri.",
+      "tokens": [
+        51372,
+        8965,
+        44630,
+        1334,
+        1799,
+        537,
+        1774,
+        72,
+        43575,
+        6801,
+        5581,
+        24940,
+        23064,
+        84,
+        267,
+        50051,
+        36428,
+        5159,
+        8965,
+        39536,
+        13,
+        51634
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23208631575107574,
+      "compression_ratio": 1.6964980363845825,
+      "no_speech_prob": 0.0032197434920817614
+    },
+    {
+      "id": 10,
+      "seek": 2790,
+      "start": 53.599998474121094,
+      "end": 55.13999938964844,
+      "text": " Ini Mino, tetap penasaran.",
+      "tokens": [
+        51634,
+        28929,
+        2829,
+        78,
+        11,
+        23319,
+        569,
+        3435,
+        296,
+        17142,
+        13,
+        51734
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.23208631575107574,
+      "compression_ratio": 1.6964980363845825,
+      "no_speech_prob": 0.0032197434920817614
+    }
+  ],
+  "duration": 55.400001525878906
+}

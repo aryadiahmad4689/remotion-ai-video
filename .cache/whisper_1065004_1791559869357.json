@@ -1,0 +1,1166 @@
+{
+  "transcript": "Pernah nggak kamu punya keinginan untuk mengubah hidup tapi justru takut saat kesempatan itu datang? Ingin pindah kerja tapi takut gagal, ingin memulai bisnis tapi takut rugi, ingin mencoba sesuatu yang baru tapi kepikiran terus. Kalau ternyata gue nggak mampu gimana? Akhirnya kamu memilih tetap di tempat yang sama. Tapi kenapa? Karena otak kita cenderung menyukai sesuatu yang sudah dikenal, meskipun belum tentu membuat kita bahagia. Sementara hal baru membawa ketidakpastian. Kita nggak tahu apa yang akan terjadi, apakah kita akan berhasil atau justru menyesal. Masalahnya kalau kita selalu menunggu sampai rasa takut itu hilang, mungkin kita nggak akan pernah mulai. Kamu nggak harus langsung berani melakukan semuanya. Mulai saja dari langkah kecil, meskipun masih merasa takut. Karena terkadang yang paling menghalangi kita bukan ketidakmampuan, tapi ketakutan terhadap sesuatu yang bahkan belum terjadi. Ini Mino, tetap penasaran.",
+  "words": [
+    {
+      "word": "Pernah",
+      "start": 0,
+      "end": 0.5
+    },
+    {
+      "word": "nggak",
+      "start": 0.5,
+      "end": 0.6399999856948853
+    },
+    {
+      "word": "kamu",
+      "start": 0.6399999856948853,
+      "end": 1.6200000047683716
+    },
+    {
+      "word": "punya",
+      "start": 1.6200000047683716,
+      "end": 1.8799999952316284
+    },
+    {
+      "word": "keinginan",
+      "start": 1.8799999952316284,
+      "end": 2.4200000762939453
+    },
+    {
+      "word": "untuk",
+      "start": 2.4200000762939453,
+      "end": 2.640000104904175
+    },
+    {
+      "word": "mengubah",
+      "start": 2.640000104904175,
+      "end": 3.0199999809265137
+    },
+    {
+      "word": "hidup",
+      "start": 3.0199999809265137,
+      "end": 3.380000114440918
+    },
+    {
+      "word": "tapi",
+      "start": 3.380000114440918,
+      "end": 4.440000057220459
+    },
+    {
+      "word": "justru",
+      "start": 4.440000057220459,
+      "end": 4.840000152587891
+    },
+    {
+      "word": "takut",
+      "start": 4.840000152587891,
+      "end": 5.199999809265137
+    },
+    {
+      "word": "saat",
+      "start": 5.199999809265137,
+      "end": 5.460000038146973
+    },
+    {
+      "word": "kesempatan",
+      "start": 5.460000038146973,
+      "end": 6.079999923706055
+    },
+    {
+      "word": "itu",
+      "start": 6.079999923706055,
+      "end": 6.28000020980835
+    },
+    {
+      "word": "datang",
+      "start": 6.28000020980835,
+      "end": 6.639999866485596
+    },
+    {
+      "word": "Ingin",
+      "start": 7.320000171661377,
+      "end": 7.360000133514404
+    },
+    {
+      "word": "pindah",
+      "start": 7.360000133514404,
+      "end": 7.679999828338623
+    },
+    {
+      "word": "kerja",
+      "start": 7.679999828338623,
+      "end": 8.100000381469727
+    },
+    {
+      "word": "tapi",
+      "start": 8.100000381469727,
+      "end": 9.039999961853027
+    },
+    {
+      "word": "takut",
+      "start": 9.039999961853027,
+      "end": 9.380000114440918
+    },
+    {
+      "word": "gagal",
+      "start": 9.380000114440918,
+      "end": 10.15999984741211
+    },
+    {
+      "word": "ingin",
+      "start": 10.319999694824219,
+      "end": 10.5
+    },
+    {
+      "word": "memulai",
+      "start": 10.5,
+      "end": 10.859999656677246
+    },
+    {
+      "word": "bisnis",
+      "start": 10.859999656677246,
+      "end": 11.260000228881836
+    },
+    {
+      "word": "tapi",
+      "start": 11.260000228881836,
+      "end": 12.359999656677246
+    },
+    {
+      "word": "takut",
+      "start": 12.359999656677246,
+      "end": 12.65999984741211
+    },
+    {
+      "word": "rugi",
+      "start": 12.65999984741211,
+      "end": 13.119999885559082
+    },
+    {
+      "word": "ingin",
+      "start": 13.619999885559082,
+      "end": 13.739999771118164
+    },
+    {
+      "word": "mencoba",
+      "start": 13.739999771118164,
+      "end": 14.0600004196167
+    },
+    {
+      "word": "sesuatu",
+      "start": 14.0600004196167,
+      "end": 14.479999542236328
+    },
+    {
+      "word": "yang",
+      "start": 14.479999542236328,
+      "end": 14.819999694824219
+    },
+    {
+      "word": "baru",
+      "start": 14.819999694824219,
+      "end": 14.979999542236328
+    },
+    {
+      "word": "tapi",
+      "start": 14.979999542236328,
+      "end": 15.720000267028809
+    },
+    {
+      "word": "kepikiran",
+      "start": 15.720000267028809,
+      "end": 16.15999984741211
+    },
+    {
+      "word": "terus",
+      "start": 16.15999984741211,
+      "end": 16.540000915527344
+    },
+    {
+      "word": "Kalau",
+      "start": 17.299999237060547,
+      "end": 17.559999465942383
+    },
+    {
+      "word": "ternyata",
+      "start": 17.559999465942383,
+      "end": 17.84000015258789
+    },
+    {
+      "word": "gue",
+      "start": 17.84000015258789,
+      "end": 18.100000381469727
+    },
+    {
+      "word": "nggak",
+      "start": 18.100000381469727,
+      "end": 18.239999771118164
+    },
+    {
+      "word": "mampu",
+      "start": 18.239999771118164,
+      "end": 18.600000381469727
+    },
+    {
+      "word": "gimana",
+      "start": 18.600000381469727,
+      "end": 18.920000076293945
+    },
+    {
+      "word": "Akhirnya",
+      "start": 19.68000030517578,
+      "end": 20.020000457763672
+    },
+    {
+      "word": "kamu",
+      "start": 20.020000457763672,
+      "end": 20.920000076293945
+    },
+    {
+      "word": "memilih",
+      "start": 20.920000076293945,
+      "end": 21.31999969482422
+    },
+    {
+      "word": "tetap",
+      "start": 21.31999969482422,
+      "end": 21.600000381469727
+    },
+    {
+      "word": "di",
+      "start": 21.600000381469727,
+      "end": 21.84000015258789
+    },
+    {
+      "word": "tempat",
+      "start": 21.84000015258789,
+      "end": 22.040000915527344
+    },
+    {
+      "word": "yang",
+      "start": 22.040000915527344,
+      "end": 22.399999618530273
+    },
+    {
+      "word": "sama",
+      "start": 22.399999618530273,
+      "end": 22.600000381469727
+    },
+    {
+      "word": "Tapi",
+      "start": 23.139999389648438,
+      "end": 23.260000228881836
+    },
+    {
+      "word": "kenapa",
+      "start": 23.260000228881836,
+      "end": 23.719999313354492
+    },
+    {
+      "word": "Karena",
+      "start": 23.719999313354492,
+      "end": 24.739999771118164
+    },
+    {
+      "word": "otak",
+      "start": 24.739999771118164,
+      "end": 25.780000686645508
+    },
+    {
+      "word": "kita",
+      "start": 25.780000686645508,
+      "end": 26.1200008392334
+    },
+    {
+      "word": "cenderung",
+      "start": 26.1200008392334,
+      "end": 26.440000534057617
+    },
+    {
+      "word": "menyukai",
+      "start": 26.440000534057617,
+      "end": 26.8799991607666
+    },
+    {
+      "word": "sesuatu",
+      "start": 26.8799991607666,
+      "end": 27.34000015258789
+    },
+    {
+      "word": "yang",
+      "start": 27.34000015258789,
+      "end": 27.5
+    },
+    {
+      "word": "sudah",
+      "start": 27.5,
+      "end": 27.760000228881836
+    },
+    {
+      "word": "dikenal",
+      "start": 27.760000228881836,
+      "end": 28.219999313354492
+    },
+    {
+      "word": "meskipun",
+      "start": 28.760000228881836,
+      "end": 29.260000228881836
+    },
+    {
+      "word": "belum",
+      "start": 29.260000228881836,
+      "end": 29.579999923706055
+    },
+    {
+      "word": "tentu",
+      "start": 29.579999923706055,
+      "end": 29.8799991607666
+    },
+    {
+      "word": "membuat",
+      "start": 29.8799991607666,
+      "end": 30.15999984741211
+    },
+    {
+      "word": "kita",
+      "start": 30.15999984741211,
+      "end": 30.520000457763672
+    },
+    {
+      "word": "bahagia",
+      "start": 30.520000457763672,
+      "end": 30.8799991607666
+    },
+    {
+      "word": "Sementara",
+      "start": 31.540000915527344,
+      "end": 32.08000183105469
+    },
+    {
+      "word": "hal",
+      "start": 32.08000183105469,
+      "end": 32.959999084472656
+    },
+    {
+      "word": "baru",
+      "start": 32.959999084472656,
+      "end": 33.220001220703125
+    },
+    {
+      "word": "membawa",
+      "start": 33.220001220703125,
+      "end": 33.63999938964844
+    },
+    {
+      "word": "ketidakpastian",
+      "start": 33.63999938964844,
+      "end": 34.5
+    },
+    {
+      "word": "Kita",
+      "start": 35.47999954223633,
+      "end": 35.560001373291016
+    },
+    {
+      "word": "nggak",
+      "start": 35.560001373291016,
+      "end": 35.7599983215332
+    },
+    {
+      "word": "tahu",
+      "start": 35.7599983215332,
+      "end": 36.18000030517578
+    },
+    {
+      "word": "apa",
+      "start": 36.18000030517578,
+      "end": 36.779998779296875
+    },
+    {
+      "word": "yang",
+      "start": 36.779998779296875,
+      "end": 36.939998626708984
+    },
+    {
+      "word": "akan",
+      "start": 36.939998626708984,
+      "end": 37.20000076293945
+    },
+    {
+      "word": "terjadi",
+      "start": 37.20000076293945,
+      "end": 37.63999938964844
+    },
+    {
+      "word": "apakah",
+      "start": 38.400001525878906,
+      "end": 38.58000183105469
+    },
+    {
+      "word": "kita",
+      "start": 38.58000183105469,
+      "end": 38.939998626708984
+    },
+    {
+      "word": "akan",
+      "start": 38.939998626708984,
+      "end": 39.18000030517578
+    },
+    {
+      "word": "berhasil",
+      "start": 39.18000030517578,
+      "end": 40.2400016784668
+    },
+    {
+      "word": "atau",
+      "start": 40.2400016784668,
+      "end": 40.560001373291016
+    },
+    {
+      "word": "justru",
+      "start": 40.560001373291016,
+      "end": 40.91999816894531
+    },
+    {
+      "word": "menyesal",
+      "start": 40.91999816894531,
+      "end": 41.86000061035156
+    },
+    {
+      "word": "Masalahnya",
+      "start": 42.29999923706055,
+      "end": 43.02000045776367
+    },
+    {
+      "word": "kalau",
+      "start": 43.02000045776367,
+      "end": 43.599998474121094
+    },
+    {
+      "word": "kita",
+      "start": 43.599998474121094,
+      "end": 43.900001525878906
+    },
+    {
+      "word": "selalu",
+      "start": 43.900001525878906,
+      "end": 44.13999938964844
+    },
+    {
+      "word": "menunggu",
+      "start": 44.13999938964844,
+      "end": 44.5
+    },
+    {
+      "word": "sampai",
+      "start": 44.5,
+      "end": 44.7400016784668
+    },
+    {
+      "word": "rasa",
+      "start": 44.7400016784668,
+      "end": 44.97999954223633
+    },
+    {
+      "word": "takut",
+      "start": 44.97999954223633,
+      "end": 45.2599983215332
+    },
+    {
+      "word": "itu",
+      "start": 45.2599983215332,
+      "end": 45.65999984741211
+    },
+    {
+      "word": "hilang",
+      "start": 45.65999984741211,
+      "end": 45.900001525878906
+    },
+    {
+      "word": "mungkin",
+      "start": 46.560001373291016,
+      "end": 46.68000030517578
+    },
+    {
+      "word": "kita",
+      "start": 46.68000030517578,
+      "end": 46.959999084472656
+    },
+    {
+      "word": "nggak",
+      "start": 46.959999084472656,
+      "end": 47.040000915527344
+    },
+    {
+      "word": "akan",
+      "start": 47.040000915527344,
+      "end": 47.2400016784668
+    },
+    {
+      "word": "pernah",
+      "start": 47.2400016784668,
+      "end": 47.52000045776367
+    },
+    {
+      "word": "mulai",
+      "start": 47.52000045776367,
+      "end": 47.91999816894531
+    },
+    {
+      "word": "Kamu",
+      "start": 48.58000183105469,
+      "end": 48.68000030517578
+    },
+    {
+      "word": "nggak",
+      "start": 48.68000030517578,
+      "end": 48.86000061035156
+    },
+    {
+      "word": "harus",
+      "start": 48.86000061035156,
+      "end": 49.119998931884766
+    },
+    {
+      "word": "langsung",
+      "start": 49.119998931884766,
+      "end": 49.599998474121094
+    },
+    {
+      "word": "berani",
+      "start": 49.599998474121094,
+      "end": 49.81999969482422
+    },
+    {
+      "word": "melakukan",
+      "start": 49.81999969482422,
+      "end": 50.2400016784668
+    },
+    {
+      "word": "semuanya",
+      "start": 50.2400016784668,
+      "end": 51.119998931884766
+    },
+    {
+      "word": "Mulai",
+      "start": 51.119998931884766,
+      "end": 51.68000030517578
+    },
+    {
+      "word": "saja",
+      "start": 51.68000030517578,
+      "end": 51.939998626708984
+    },
+    {
+      "word": "dari",
+      "start": 51.939998626708984,
+      "end": 52.20000076293945
+    },
+    {
+      "word": "langkah",
+      "start": 52.20000076293945,
+      "end": 52.400001525878906
+    },
+    {
+      "word": "kecil",
+      "start": 52.400001525878906,
+      "end": 52.84000015258789
+    },
+    {
+      "word": "meskipun",
+      "start": 53.560001373291016,
+      "end": 53.900001525878906
+    },
+    {
+      "word": "masih",
+      "start": 53.900001525878906,
+      "end": 54.20000076293945
+    },
+    {
+      "word": "merasa",
+      "start": 54.20000076293945,
+      "end": 54.599998474121094
+    },
+    {
+      "word": "takut",
+      "start": 54.599998474121094,
+      "end": 55.02000045776367
+    },
+    {
+      "word": "Karena",
+      "start": 56.220001220703125,
+      "end": 57.02000045776367
+    },
+    {
+      "word": "terkadang",
+      "start": 57.02000045776367,
+      "end": 57.81999969482422
+    },
+    {
+      "word": "yang",
+      "start": 57.81999969482422,
+      "end": 58.220001220703125
+    },
+    {
+      "word": "paling",
+      "start": 58.220001220703125,
+      "end": 58.47999954223633
+    },
+    {
+      "word": "menghalangi",
+      "start": 58.47999954223633,
+      "end": 58.91999816894531
+    },
+    {
+      "word": "kita",
+      "start": 58.91999816894531,
+      "end": 59.31999969482422
+    },
+    {
+      "word": "bukan",
+      "start": 59.31999969482422,
+      "end": 59.560001373291016
+    },
+    {
+      "word": "ketidakmampuan",
+      "start": 59.560001373291016,
+      "end": 60.439998626708984
+    },
+    {
+      "word": "tapi",
+      "start": 61.119998931884766,
+      "end": 61.18000030517578
+    },
+    {
+      "word": "ketakutan",
+      "start": 61.18000030517578,
+      "end": 61.81999969482422
+    },
+    {
+      "word": "terhadap",
+      "start": 61.81999969482422,
+      "end": 62.220001220703125
+    },
+    {
+      "word": "sesuatu",
+      "start": 62.220001220703125,
+      "end": 62.70000076293945
+    },
+    {
+      "word": "yang",
+      "start": 62.70000076293945,
+      "end": 62.900001525878906
+    },
+    {
+      "word": "bahkan",
+      "start": 62.900001525878906,
+      "end": 63.20000076293945
+    },
+    {
+      "word": "belum",
+      "start": 63.20000076293945,
+      "end": 63.380001068115234
+    },
+    {
+      "word": "terjadi",
+      "start": 63.380001068115234,
+      "end": 63.880001068115234
+    },
+    {
+      "word": "Ini",
+      "start": 64.5199966430664,
+      "end": 64.62000274658203
+    },
+    {
+      "word": "Mino",
+      "start": 64.62000274658203,
+      "end": 64.9800033569336
+    },
+    {
+      "word": "tetap",
+      "start": 65.5199966430664,
+      "end": 65.69999694824219
+    },
+    {
+      "word": "penasaran",
+      "start": 65.69999694824219,
+      "end": 66.22000122070312
+    }
+  ],
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 6.639999866485596,
+      "text": " Pernah nggak kamu punya keinginan untuk mengubah hidup tapi justru takut saat kesempatan itu datang?",
+      "tokens": [
+        50364,
+        430,
+        1248,
+        545,
+        28631,
+        20705,
+        32781,
+        803,
+        278,
+        259,
+        282,
+        12711,
+        15330,
+        836,
+        545,
+        16253,
+        1010,
+        23901,
+        445,
+        894,
+        991,
+        325,
+        23369,
+        16050,
+        443,
+        11584,
+        282,
+        9032,
+        1137,
+        656,
+        30,
+        50708
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2826283574104309,
+      "compression_ratio": 1.5942028760910034,
+      "no_speech_prob": 0.07088550180196762
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 7.320000171661377,
+      "end": 16.540000915527344,
+      "text": " Ingin pindah kerja tapi takut gagal, ingin memulai bisnis tapi takut rugi, ingin mencoba sesuatu yang baru tapi kepikiran terus.",
+      "tokens": [
+        50708,
+        286,
+        872,
+        259,
+        280,
+        471,
+        545,
+        19377,
+        2938,
+        23901,
+        991,
+        325,
+        34833,
+        304,
+        11,
+        3957,
+        259,
+        1334,
+        425,
+        1301,
+        7393,
+        10661,
+        23901,
+        991,
+        325,
+        18329,
+        72,
+        11,
+        3957,
+        259,
+        1706,
+        66,
+        19481,
+        5385,
+        84,
+        20546,
+        5581,
+        36171,
+        23901,
+        36428,
+        1035,
+        40111,
+        35977,
+        13,
+        51214
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2826283574104309,
+      "compression_ratio": 1.5942028760910034,
+      "no_speech_prob": 0.07088550180196762
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 17.299999237060547,
+      "end": 18.920000076293945,
+      "text": " Kalau ternyata gue nggak mampu gimana?",
+      "tokens": [
+        51214,
+        36366,
+        256,
+        1248,
+        88,
+        3274,
+        13987,
+        28631,
+        275,
+        1215,
+        84,
+        27071,
+        2095,
+        30,
+        51324
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2826283574104309,
+      "compression_ratio": 1.5942028760910034,
+      "no_speech_prob": 0.07088550180196762
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 19.68000030517578,
+      "end": 22.600000381469727,
+      "text": " Akhirnya kamu memilih tetap di tempat yang sama.",
+      "tokens": [
+        51324,
+        9629,
+        24118,
+        7457,
+        20705,
+        1334,
+        2312,
+        71,
+        23319,
+        569,
+        1026,
+        1383,
+        11584,
+        5581,
+        17768,
+        13,
+        51504
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2826283574104309,
+      "compression_ratio": 1.5942028760910034,
+      "no_speech_prob": 0.07088550180196762
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 23.139999389648438,
+      "end": 23.719999313354492,
+      "text": " Tapi kenapa?",
+      "tokens": [
+        51504,
+        25386,
+        18787,
+        7961,
+        30,
+        51564
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.2826283574104309,
+      "compression_ratio": 1.5942028760910034,
+      "no_speech_prob": 0.07088550180196762
+    },
+    {
+      "id": 5,
+      "seek": 2372,
+      "start": 23.719999313354492,
+      "end": 30.719999313354492,
+      "text": " Karena otak kita cenderung menyukai sesuatu yang sudah dikenal, meskipun belum tentu membuat kita bahagia.",
+      "tokens": [
+        50364,
+        45724,
+        4337,
+        514,
+        8965,
+        269,
+        3216,
+        1063,
+        46975,
+        2034,
+        1301,
+        5385,
+        84,
+        20546,
+        5581,
+        24940,
+        1026,
+        2653,
+        304,
+        11,
+        3813,
+        74,
+        647,
+        409,
+        48532,
+        7054,
+        84,
+        1334,
+        45143,
+        8965,
+        12913,
+        559,
+        654,
+        13,
+        50714
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1827983260154724,
+      "compression_ratio": 1.6666666269302368,
+      "no_speech_prob": 0.9166386127471924
+    },
+    {
+      "id": 6,
+      "seek": 2372,
+      "start": 31.540000915527344,
+      "end": 34.5,
+      "text": " Sementara hal baru membawa ketidakpastian.",
+      "tokens": [
+        50714,
+        318,
+        1712,
+        2419,
+        7523,
+        36171,
+        27942,
+        10449,
+        14979,
+        327,
+        514,
+        79,
+        28129,
+        13,
+        50914
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1827983260154724,
+      "compression_ratio": 1.6666666269302368,
+      "no_speech_prob": 0.9166386127471924
+    },
+    {
+      "id": 7,
+      "seek": 2372,
+      "start": 35.47999954223633,
+      "end": 41.86000061035156,
+      "text": " Kita nggak tahu apa yang akan terjadi, apakah kita akan berhasil atau justru menyesal.",
+      "tokens": [
+        50914,
+        27329,
+        28631,
+        27294,
+        15951,
+        5581,
+        16281,
+        1796,
+        30574,
+        11,
+        1882,
+        40060,
+        8965,
+        16281,
+        5948,
+        12438,
+        388,
+        22823,
+        445,
+        894,
+        1706,
+        2346,
+        304,
+        13,
+        51264
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1827983260154724,
+      "compression_ratio": 1.6666666269302368,
+      "no_speech_prob": 0.9166386127471924
+    },
+    {
+      "id": 8,
+      "seek": 2372,
+      "start": 42.29999923706055,
+      "end": 47.91999816894531,
+      "text": " Masalahnya kalau kita selalu menunggu sampai rasa takut itu hilang, mungkin kita nggak akan pernah mulai.",
+      "tokens": [
+        51264,
+        5224,
+        16434,
+        7457,
+        20218,
+        8965,
+        5851,
+        4929,
+        1706,
+        1063,
+        2794,
+        38569,
+        41493,
+        991,
+        325,
+        9032,
+        28315,
+        656,
+        11,
+        32633,
+        8965,
+        28631,
+        16281,
+        41136,
+        14077,
+        1301,
+        13,
+        51564
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1827983260154724,
+      "compression_ratio": 1.6666666269302368,
+      "no_speech_prob": 0.9166386127471924
+    },
+    {
+      "id": 9,
+      "seek": 2372,
+      "start": 48.58000183105469,
+      "end": 51.119998931884766,
+      "text": " Kamu nggak harus langsung berani melakukan semuanya.",
+      "tokens": [
+        51564,
+        11934,
+        84,
+        28631,
+        28219,
+        2265,
+        32052,
+        5948,
+        3782,
+        4795,
+        42774,
+        4361,
+        84,
+        8791,
+        13,
+        51714
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.1827983260154724,
+      "compression_ratio": 1.6666666269302368,
+      "no_speech_prob": 0.9166386127471924
+    },
+    {
+      "id": 10,
+      "seek": 5112,
+      "start": 51.119998931884766,
+      "end": 55.02000045776367,
+      "text": " Mulai saja dari langkah kecil, meskipun masih merasa takut.",
+      "tokens": [
+        50364,
+        29960,
+        1301,
+        32617,
+        15597,
+        2265,
+        37605,
+        803,
+        3208,
+        11,
+        3813,
+        74,
+        647,
+        409,
+        31510,
+        3551,
+        9994,
+        991,
+        325,
+        13,
+        50564
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.15338900685310364,
+      "compression_ratio": 1.429530143737793,
+      "no_speech_prob": 0.1529969424009323
+    },
+    {
+      "id": 11,
+      "seek": 5112,
+      "start": 56.220001220703125,
+      "end": 63.880001068115234,
+      "text": " Karena terkadang yang paling menghalangi kita bukan ketidakmampuan, tapi ketakutan terhadap sesuatu yang bahkan belum terjadi.",
+      "tokens": [
+        50564,
+        45724,
+        1796,
+        34985,
+        656,
+        5581,
+        49626,
+        15330,
+        4947,
+        43481,
+        8965,
+        31794,
+        14979,
+        327,
+        514,
+        76,
+        1215,
+        6139,
+        11,
+        23901,
+        14979,
+        514,
+        30624,
+        1796,
+        26326,
+        569,
+        5385,
+        84,
+        20546,
+        5581,
+        12913,
+        5225,
+        48532,
+        1796,
+        30574,
+        13,
+        51014
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.15338900685310364,
+      "compression_ratio": 1.429530143737793,
+      "no_speech_prob": 0.1529969424009323
+    },
+    {
+      "id": 12,
+      "seek": 5112,
+      "start": 64.5199966430664,
+      "end": 66.22000122070312,
+      "text": " Ini Mino, tetap penasaran.",
+      "tokens": [
+        51014,
+        28929,
+        2829,
+        78,
+        11,
+        23319,
+        569,
+        3435,
+        296,
+        17142,
+        13,
+        51114
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.15338900685310364,
+      "compression_ratio": 1.429530143737793,
+      "no_speech_prob": 0.1529969424009323
+    }
+  ],
+  "duration": 66.4800033569336
+}

@@ -10,7 +10,8 @@
     "generate:code": "node scripts/generate-autonomous.mjs",
     "vox": "node scripts/generate-vox.mjs",
     "longform": "node scripts/generate-longform.mjs",
-    "mino": "node scripts/generate-mino.mjs"
+    "mino": "node scripts/generate-mino.mjs",
+    "stock:studio": "node scripts/stock-studio-server.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",
